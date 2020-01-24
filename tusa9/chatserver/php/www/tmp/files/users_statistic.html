@@ -1,0 +1,89 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="PRAGMA" CONTENT="no-cache">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+<TITLE>users stat</TITLE>
+</head>
+
+<link rel=stylesheet type="text/css" href="/css/main.css">
+
+<style>
+#np {position: absolute; left: 31}
+#n {position: absolute; left: 1; font-size: 9px; text-align: right; width: 25px}
+#br {font-size: 9px; width: 13; text-align: center}
+#dd {position: absolute; top: 10;}
+
+IMG {border:0}
+</style>
+
+<script>
+document.write('<body topmargin=1 leftmargin=1>');
+function sh()
+{
+	document.getElementById("allg").style.visibility='visible';
+}
+
+function draw_bottom_row(arr)
+{
+	var s='';
+	//lines
+	s+='<div style="position: absolute; left: 30; top: 10">';
+	s+='<img src="/pics/stat/lb.gif" width=1 height=159></div>';
+	for(var i=1;i<arr.length*2;i++){
+		s+='<div style="position: absolute; left: '+(i*12+30)+'; top: 10">';
+		s+='<img src="/pics/stat/vlr.gif" width=1 height=159></div>\n';
+	}
+	//numbers
+	for(var i=0;i<arr.length;i++){
+		s+='<div id=br style="position: absolute; left: '+(i*24+35)+'; top: 170">';
+		s+=arr[i]+'</div>';
+	}
+	document.write(s);
+}
+
+function draw_left_row(arr)
+{
+	var s='';
+	var incr=160/(arr.length-1);
+	for(var i=0;i<arr.length-1;i++){
+		s+='<div id=np style="top: '+(i*incr+9)+'">';
+		if(i+1==arr.length){
+			s+='<img src="/pics/stat/lb.gif" width=277 height=1></div>';
+		}else{
+			s+='<img src="/pics/stat/vl.gif" width=277 height=1></div>';
+		}
+       	s+='<div id=n style="top: '+(i*incr+3)+'">';
+       	s+=arr[i]+'</div>';
+	}
+	s+='<div id=np style="top: '+((arr.length-1)*incr+9)+'">';
+	s+='<img src="/pics/stat/lb.gif" width=277 height=1></div>';
+   	s+='<div id=n style="top: '+((arr.length-1)*incr+3)+'">';
+   	s+=arr[i]+'</div>';
+	document.write(s);
+}
+
+function draw_data(arr,alts)
+{
+	var s='';
+	var p100=159/100;
+	for(var i=0;i<arr.length;i++){
+		if(arr[i]<=0) continue;
+		s+='<div id=dd style="top: '+(159+10-arr[i]*p100)+'" style="left: '+(i*2+31)+'">';
+		s+='<img src="/pics/stat/dt.gif" height='+arr[i]*p100+' width=2 alt="'+alts[i]+'"></div>';
+	}
+	document.write(s);
+}
+
+</script>
+
+
+<div id=allg style="visibility: hidden">
+
+<script>
+	draw_data([~data~],[~al~ts]);
+	draw_bottom_row([~hours~]);
+	draw_left_row([~count~]);
+	setTimeout('sh()',200);
+</script>
+
+</div>

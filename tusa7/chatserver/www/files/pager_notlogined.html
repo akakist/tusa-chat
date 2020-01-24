@@ -1,0 +1,129 @@
+<LINK href="/css/main.css" rel=stylesheet type=text/css>
+<title>Чат русских в Америке - отправка сообщения на пейджер</title>
+<script>
+if(navigator.appName == 'Netscape') document.write('<LINK href="/css/ns.css" rel=stylesheet type=text/css>');
+
+function openWin (url, name, w, h)
+{
+	var newWin = null;
+	newWin = window.open(url, name, 'toolbar=no,location=no,width='+w+',height='+h+',screenX=0,screenY=0,scrollbars=yes')
+	newWin.focus();
+	return;
+}
+
+function do_planet()
+{
+	f.h1.name='hostname';	f.h1.value='snpp.paging.tomsk.ru';
+	f.h2.name='senddate';	f.h2.value='0';
+	f.h3.name='repeat_count';	f.h3.value='1';
+	f.h4.name='repeat_time';	f.h4.value='5';
+	f.msg.name='message';
+	f.pn.name='pager';
+	f.action='http://www.paging.tomsk.ru/postoffice/sendpage.php3';
+    openWin('', 'answerWin', 350, 300)
+//    window.close();
+	return true;
+}
+
+function do_stamtelecom()
+{
+	f.h2.name='Min';	f.h2.value='01';
+	f.h3.name='Day';	f.h3.value='01';
+	f.h4.name='Month';	f.h4.value='01';
+	f.h5.name='Year';	f.h5.value='2000';
+	f.msg.name='TEXT_BODY';
+	f.pn.name='N_pager';
+	f.action='http://mtelecom.tomsk.ru/send_msg.phtml';
+    openWin('', 'answerWin', 300, 100);
+//    window.close();
+    return true;
+}
+
+function do_tcc()
+{
+	f.h1.name='COMMAND';	f.h1.value='SEND';
+	f.pn.name='sms_number';
+	f.msg.name='sms_text';
+	f.action='http://www.tcc.tomsk.ru/sms/sms.php';
+    openWin('', 'answerWin', 630, 250);
+//    window.close();
+    return true;
+}
+
+function do_sub()
+{
+	var f=document.f;
+	if(f.pn.value==""){
+		alert('Вы забыли ввести номер пагера...');
+		f.pn.focus();
+		return false;
+	}
+	if(f.msgbox.value==""){
+		alert('Вы забыли ввести сообщение...');
+		f.msgbox.focus();
+		return false;
+	}
+	f.msg.value=f.msgbox.value;
+	if(f.op.selectedIndex!=0){
+		f.msg.value+=' [~ip~]';
+	}
+	if(f.op.selectedIndex==0) return do_stamtelecom();
+	if(f.op.selectedIndex==1) return do_planet();
+	if(f.op.selectedIndex==2) return do_tcc();
+	return false;
+}
+
+
+</script>
+
+<body>
+
+<div style="position: absolute; visibility: hidden">
+<form name=SF_msg action="aaa">
+<input type=textfield>
+<input type=submit>
+</form>
+</div>
+<form method=POST name=f onSubmit="return do_sub();" target="answerWin">
+<input type=hidden name="msg" value="">
+<input type=hidden name="h1" value="">
+<input type=hidden name="h2" value="">
+<input type=hidden name="h3" value="">
+<input type=hidden name="h4" value="">
+<input type=hidden name="h5" value="">
+<TABLE class=border border=0 cellspacing=0 cellpadding=0 width=100%>
+<TR><TD align=center height=17 colspan=2 class=tb style="border-top: 0px">Отправка сообщения на пейджер.</TD></TR>
+<tr><td>
+
+<table border=0 cellspacing=1 cellpadding=1 width=100%>
+<tr><td><br></td></tr>
+<tr valign=top>
+<TD align=right nowrap><br>Номер абонента:&nbsp;</td><td><br><input type=textfield name="pn" value="" size=4 maxlength=20 style="width:100%"></td>
+<td align=left width=100% rowspan=2>Сообщение:<br><textarea style="width: 100%" rows=3 name=msgbox maxlength=1000></textarea></td>
+</TR>
+<tr valign=top>
+<td align=right nowrap>Станция:&nbsp;</td><td>
+<select name=op style="width:150">
+<option value=1>СТА Мобил Телеком (081)
+<option value=2>Планет (732323)
+<option value=3>Томская Сотовая GSM (055)
+</select>
+</TD>
+</tr>
+<TR>
+<TD colspan=3 align=center><br><input type=submit value="Отправить!">&nbsp;&nbsp;<input type=reset value="Очистить"></TD>
+</TR>
+<tr><td colspan=3>&nbsp;</td></tr>
+<tr><td colspan=3>
+
+<table border=0 cellspacing=0 cellpadding=0 width=100%>
+<tr><td>~bb3~</td><td align=center><input type=button value="Закрыть" onclick="window.close();"></td><td align=right>~bb4~</td></tr>
+</table>
+
+</td></tr>
+</TABLE>
+</form>
+</tr>
+</table>
+<br>
+<center>~bannert~</center>

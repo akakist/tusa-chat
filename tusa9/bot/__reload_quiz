@@ -1,0 +1,2 @@
+ killall quiz.exe  -9
+./quiz.exe  -d

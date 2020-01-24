@@ -1,0 +1,5 @@
+ -O0 
+	-DDEBUG 
+	-Wall  
+	-I/usr/include/mysql  -c   
+	-DLINUX  -ftemplate-depth-30    -D__OSCAR_SIGN_42 -D__OSCAR_DATALEN_16 -Wno-deprecated 

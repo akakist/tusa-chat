@@ -1,0 +1,74 @@
+body {margin-top: 0px; margin-left: 0px; margin-right: 0px; background-color: white; font-family: "tahoma"; font-size: 10pt}
+
+TABLE td.buttons { font-family: tahoma; background: url(/images/tusa-logo-2px.gif);}
+div.buttons {color: white; font-size: 12pt; font-weight: bold; position: relative; top: -2px; float: left; padding: 4px; margin-left: 10px; maring-right: 10px}
+a.buttons, a.buttons:link, a.buttons:visited, a.buttons:active {color: #eeeeee; text-decoration: none}
+a.buttons:hover {color: #eeeeee; text-decoration: underline}
+
+hr {size: 1px; border: 0px; border-top: 1px solid #dae1e8; width: 98%; height: 1px; color: #dae1e8; text-align: center}
+
+a, a:link, a:visited, a:active {color: #3b5998; text-decoration: none}
+a:hover {color: #3b5998; text-decoration: underline}
+
+
+p.index_text {font-size: 12pt; margin-top: 1em}
+p.index_text2 {font-size: 12pt;}
+ul.index_text {font-size: 12pt;}
+p.reg_header {font-size: 14pt; margin-top: 1em; color: #3b5998; font-weight: bold}
+
+.reg_form {width: 550px;}
+.reg_form p {margin-left: 10px}
+
+.reg_form label {color: #777777; font-weight: bold; float: left; width: 70px}
+.reg_form input {margin-left: 50px; width: 150px;}
+.reg_form select {margin-left: 50px; width: 155px}
+.reg_form small {font-size: 12px; color: #777777; padding-left: 10px}
+
+.profile_edit_form {width: 550px;}
+.profile_edit_form p {margin-left: 10px}
+
+.profile_edit_form label {color: #777777; font-weight: bold; float: left; width: 120px}
+.profile_edit_form input {margin-left: 50px; width: 150px;}
+.profile_edit_form select {margin-left: 50px; width: 155px}
+.profile_edit_form small {font-size: 12px; color: #777777; padding-left: 10px}
+
+
+input.login {font-family: tahoma; font-size: 12px; width: 160px; border: 1px solid #bdc7d8}
+input.enter {margin-left: 45px; width: 70px; text-align: center;}
+
+.main_menu {margin-top: 11px; text-align: left}
+.main_menu p {font-size: 14px; padding: 0px; margin-top: 0px; margin-bottom: 5px; margin-left: 10px}
+
+.profile_top {height: 25px; background-color: #f0f0f0; font-weight: bol; font-size: 15px}
+.profile {border: 1px solid #dae1e8; margin-top: 3px; height: 500px; width: 640px}
+.profile span {float: left; width: 160px; margin-left: 15px; color: #808080}
+.profile p {margin-top: 3px; margin-bottom: 3px}
+
+.profile_edit {border: 1px solid #dae1e8; margin-top: 3px;  width: 640px}
+
+.fio_header {margin-left: 15px; color: rgb(51, 51, 51); font-size: 12pt; font-weight: bold;}
+
+.profile div.main_menu_unsel {margin-left: 7px; background-color: #d8dfea; width: 96px; height: 25px; text-align: center; position: relative; float: left}
+.profile div.main_menu_sel {margin-left: 7px; width: 96px; height: 24px; border-bottom: 1px solid #ffffff; border-left: 1px solid #d8dfea; border-right: 1px solid #d8dfea; border-top: 1px solid #d8dfea;  background-color: white; text-align: center; position: relative; float: left}
+
+.profile_edit div.main_menu_unsel {margin-left: 13px; background-color: #d8dfea; width: 110px; height: 25px; text-align: center; position: relative; float: left}
+.profile_edit div.main_menu_sel {margin-left: 13px; width: 110px; height: 24px; border-bottom: 1px solid #ffffff; border-left: 1px solid #d8dfea; border-right: 1px solid #d8dfea; border-top: 1px solid #d8dfea;  background-color: white; text-align: center; position: relative; float: left}
+
+.profile_buttons {margin-left: 5px; width: 198px; height: 60px; text-align: center}
+.profile_buttons A:hover {text-decoration: none}
+.profile_buttons DIV {padding: 5px; float: left}
+.profile_buttons IMG {border: 0px;}
+
+.profile_main_content {border-left: 1px solid #d8dfea; border-right: 1px solid #d8dfea; border-bottom: 1px solid #d8dfea; margin-left: 5px;}
+.profile_main_content DIV {padding: 5px}
+
+.rate_gauge {margin-top: -18px; width: 100%; text-align: center}
+.rate_gauge A {display: block; width: 100%}
+.rate_gauge A:hover {text-decoration: none}
+
+.main_menu_unsel A {display: block; width: 100%; padding-top: 4px; padding-bottom: 5px; background-color: #d8dfea; color: #3b5998; font-weight: bold;}
+.main_menu_unsel A:hover {background-color: #627aad; color: white; text-decoration: none}
+
+.main_menu_sel A {display: block; width: 100%; padding-top: 4px; padding-bottom: 5px; background-color: white; color: #3b5998; font-weight: bold;}
+.main_menu_sel A:hover {text-decoration: none}
+

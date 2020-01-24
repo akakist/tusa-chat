@@ -1,0 +1,1 @@
+c2/chat_userinfo2_fotki.php

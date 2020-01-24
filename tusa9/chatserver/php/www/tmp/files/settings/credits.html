@@ -1,0 +1,341 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="PRAGMA" CONTENT="no-cache">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+<TITLE>Чат "Тусовка" - Настройки чата - Кредиты</TITLE>
+</head>
+
+<LINK href="/css/main.css" rel=stylesheet type=text/css>
+<script language="javascript" src="/css/mmove.js"> </script> 
+
+<script>
+<!--
+
+function swap_div(name)
+{
+	if(document.getElementById(name).style.display=='none')
+	{
+		document.getElementById(name).style.display='';
+	}
+	else
+	{
+		document.getElementById(name).style.display='none';
+	}
+	
+}
+function checkform()
+{
+	if(document.form1.cmd.value=='transaction'){
+		if(Number(document.form1.summa.value)<=0){
+			alert('Вы не ввели сумму перевода!');
+			document.form1.summa.focus();
+			return false;
+		}
+		if(document.form1.nick.value==''){
+			alert('Вы не ввели ник!');
+			document.form1.nick.focus();
+			return false;
+		}
+	}
+	return true;
+}
+
+function commit_perevod(id)
+{
+	if(!confirm('Завершить перевод?')) return false;
+	document.form1.cmd.value='commit_perevod';
+	document.form1.id.value=id;
+	document.form1.submit();
+	return false;
+}
+function remove_perevod(id)
+{
+	if(!confirm('Отменить перевод?')) return false;
+	document.form1.cmd.value='remove_perevod';
+	document.form1.id.value=id;
+	document.form1.submit();
+	return false;
+}
+function commit_zaem(id)
+{
+	if(!confirm('Завершить перевод?')) return false;
+	document.form1.cmd.value='commit_zaem';
+	document.form1.id.value=id;
+	document.form1.submit();
+	return false;
+}
+function remove_zaem(id)
+{
+	if(!confirm('Отменить перевод?')) return false;
+	document.form1.cmd.value='remove_zaem';
+	document.form1.id.value=id;
+	document.form1.submit();
+	return false;
+}
+
+function zajm_zabrat(id)
+{
+	if(!confirm('Забрать кредиты?')) return false;
+	document.form1.cmd.value='zajm_zabrat';
+	document.form1.id.value=id;
+	document.form1.submit();
+	return false;
+}
+function dolg_otdat(id)
+{
+	if(!confirm('Вернуть кредиты?')) return false;
+	document.form1.cmd.value='zajm_wernut';
+	document.form1.id.value=id;
+	document.form1.submit();
+	return false;
+}
+//-->
+</script>
+<body>
+<TABLE border=0 width=100% cellspacing=0 cellpadding=0>
+<TR>
+<TD width=120><a href="/"><img border=0 src="/pics/logo.gif"></a></TD>
+<TD class=top_line width=5>&nbsp;</TD>
+<TD class=top_line width=100% align=center>~bannert~</TD>
+<TD class=top_line width=5>&nbsp;</TD>
+</TR>
+<TR height=5><TD colspan=5></TD></TR>
+<TR valign=top>
+<TD>
+<table class=borderm border=0 width=120 valign=top cellspacing=0 cellpadding=0>
+<tr height=16><td class=blr align=center><b>Навигация:</b></td></tr>
+~menu~
+</table>
+</TD>
+<TD></TD>
+<TD>
+<table width=100% border=0 cellspacing=0 cellpadding=0>
+<tr><td class=border align=center><b>Настройки - кредиты</b></td></tr>
+<tr height=5><td></td></tr>
+<tr><td>
+<div align=justify valign=top>
+
+
+<FIELDSET>
+<LEGEND class=leg><big><b>Выберите категорию</b></big></LEGEND>
+<br>
+<input type=button value="Статусы" style="font-size: 10pt" onclick="location='settings_status'">
+<input type=button value="Чат" style="font-size: 10pt" onclick="location='settings_chat'">
+<input type=button value="Цвета" style="font-size: 10pt" onclick="location='settings_color'">
+<input class=bp type=button value="Кредиты" style="font-size: 10pt">
+<input type=button value="Привилегии" style="font-size: 10pt" onclick="location='settings_privs'">
+<br><br>
+</fieldset>
+<br>
+
+
+<FIELDSET>
+<LEGEND class=leg><big><b>Кредиты</b></big></LEGEND>
+<br><center><font class=yelmsg>~error~</font></center>
+<TABLE width="100%" border=0 cellspacing=0 cellpadding=3>
+<tr><td colspan=2>
+<br>
+Ваш номер счета: <b>~uid~</b> <br>
+Кредитов: <b>~credits~</b><p>
+На данной странице Вы можете осуществлять операции со своими кредитами.
+<p>
+<hr>
+
+
+
+<b>Пополнение при помощи мультикасс</b><p>
+Пополнение производится через мультикассы компании Комстар. Найдите на поле терминала "Отдых и развлечения", зайдите в раздел и выберите тусовку.<p>
+Введите Ваш номер счета <b>~uid~</b><p> и положите деньги. Стоимость 1кр - 0.5 коп. Кредиты зачисляются в течение 1 часа.
+
+<!--a href="#" onclick="document.getElementById('mcassa').style.display='';return false;">Посмотреть адреса мультикасс.</a><br-->
+<a href="#" onclick="swap_div('mcassa');return false;">Посмотреть адреса мультикасс.</a><br>
+<div id='mcassa' style="display: none">
+<table>
+<tr><td colspan=2><b>г. Томск</b></td></tr>
+<tr><td>1</td><td>	ул. Усова 25/1 м-н «Алиса» </td></tr>
+<tr><td>2</td><td>	п. Аэропорт, здание ОАО «Аэропорт Томск» </td></tr>
+<tr><td>3</td><td>	ул. Беринга 10 т. ц. «Манеж» </td></tr>
+<tr><td>4</td><td>	пл. Новособорная 2 м-н «Верхний» </td></tr>
+<tr><td>5</td><td>	пр. Фрунзе 119/5 стр. 10 р-нок «Губернаторский» </td></tr>
+<tr><td>6</td><td>	ул. Ивана черных 96 ОКБ </td></tr>
+<tr><td>7</td><td>	ул. Усова 4а19 корпус ТПУ </td></tr>
+<tr><td>8</td><td>	пр. Комсомольский 73 м-н «Триумф» </td></tr>
+<tr><td>9</td><td>	ул. Красноармейская 44 м-н «Холидей классик»  </td></tr>
+<tr><td>10</td><td>	пр. Ленина 105 м-н «Нижний» </td></tr>
+<tr><td>11</td><td>	ул. Пушкина 56 м-н «Продукты» </td></tr>
+<tr><td>12</td><td>	п. Солнечный ул. Клюева 20/1 м-н «Герцег» </td></tr>
+<tr><td>13</td><td>	ул. Герцена 72 Компания «СУ-13» </td></tr>
+<tr><td>14</td><td>	ул. Сибирская 64/1 м-н «Максим» </td></tr>
+<tr><td>15</td><td>	ул. Студенческая 8 м-н «Продукты»</td></tr>
+<tr><td>16</td><td>	пр. Мира 1а м-н «Карлуша»</td></tr>
+<tr><td>17</td><td>	пр. Ленина 1 Лагерый сад м-н «подорожник»</td></tr>
+<tr><td>18</td><td>	пр. Мира 19 салон «Комстар»</td></tr>
+<tr><td>19</td><td>	пр. Ленина 129 Салон «Нокия» (уличный)</td></tr>
+
+
+<tr><td colspan=2><b>г. Северск</b></td></tr>
+<tr><td>1</td><td>	пр. Коммунистический 151 м-н «Северский»</td></tr>
+<tr><td>2</td><td>	ул. Куйбышева 2а м-н «Снежинка»</td></tr>
+<tr><td>3</td><td>	ул. Курчатова 36 м-н «Северский»</td></tr>
+<tr><td>4</td><td>	пр. Коммунистический 57 м-н «ЦУМ»</td></tr>
+<tr><td>5</td><td>	ул. Леонтичука 6 м-н «Гастраном 9»</td></tr>
+<tr><td>6</td><td>	ул. Северная 6 м-н «Северский»</td></tr>
+<tr><td>7</td><td>	ул. Куйбышева 1 м-н «Два капитана»</td></tr>
+<tr><td>8</td><td>	ул. Победы 31 Салон сотовый связи «Комстар»</td></tr>
+<tr><td>9</td><td>	9. ул. Калинина 96-а м-н «продукты» </td></tr>
+<tr><td>10</td><td>	10. пр. Коммунистический 122 м-н «Руслан»</td></tr>
+<tr><td>11</td><td>	ул. Ленина 102 м-н «Северский»</td></tr>
+<tr><td>12</td><td>	12. ул. Победы 20 м-н «Два капитана»</td></tr>
+<tr><td>13</td><td>	ул. Маяковского 5 м-н «Продукты»</td></tr>
+<tr><td>14</td><td>	ул. Победы 31 салон «комстар», офис СЭЛС</td></tr>
+</table>
+</div>
+<p>
+<hr>
+<a name='cassa'><b>Пополнение при помощи SMS </b></a><p>
+Отправьте  текст<br>
+<b>devtusa ~uid~</b><p>
+На номера 1121, 1131, 1141, 1151, 1161, 1171, 1899, 3649, 4460, 5537. СМС являются платными. 
+Чем больше стоит СМС, тем меньше будет стоимость 1го кредита.
+Цена СМС зависит от номера и провайдера.<br>
+<!--a href="#" onclick="document.getElementById('sms').style.display=''; return false;">Цены для Томска указаны тут</a><br-->
+<a href="#" onclick="swap_div('sms'); return false;">Цены для Томска указаны тут</a><br>
+
+<div id='sms' style="display: none">
+
+<table><tr><td colspan=5>Томск</td></td>
+<tr><td>Номер</td><td>Оператор</td><td>Цена СМС(rur)</td><td>Кредитов</td><td>Цена 1кр (коп)</td></tr>
+<tr><td>1121</td><td>Билайн</td><td>3,5</td><td>162</td><td>2,16</td></tr>
+<tr><td>1121</td><td>Мегафон</td><td>3,54</td><td>108</td><td>3,27</td></tr>
+<tr><td>1121</td><td>МТС</td><td>3,39</td><td>162</td><td>2,09</td></tr>
+<tr><td>1131</td><td>Билайн</td><td>15</td><td>1404</td><td>1,06</td></tr>
+<tr><td>1131</td><td>Мегафон</td><td>11,8</td><td>1188</td><td>0,99</td></tr>
+<tr><td>1131</td><td>МТС</td><td>10,16</td><td>756</td><td>1,34</td></tr>
+<tr><td>1141</td><td>Билайн</td><td>28</td><td>2808</td><td>0,99</td></tr>
+<tr><td>1141</td><td>Мегафон</td><td>22,42</td><td>2106</td><td>1,06</td></tr>
+<tr><td>1141</td><td>МТС</td><td>20,32</td><td>1782</td><td>1,14</td></tr>
+<tr><td>1151</td><td>Билайн</td><td>40</td><td>4104</td><td>0,97</td></tr>
+<tr><td>1151</td><td>Мегафон</td><td>35,05</td><td>3348</td><td>1,04</td></tr>
+<tr><td>1151</td><td>МТС</td><td>33,52</td><td>3348</td><td>1,00</td></tr>
+<tr><td>1161</td><td>Билайн</td><td>111</td><td>11772</td><td>0,94</td></tr>
+<tr><td>1161</td><td>Мегафон</td><td>140,42</td><td>10692</td><td>1,31</td></tr>
+<tr><td>1161</td><td>МТС</td><td>101,26</td><td>10368</td><td>0,97</td></tr>
+<tr><td>1171</td><td>Билайн</td><td>170</td><td>17874</td><td>0,95</td></tr>
+<tr><td>1171</td><td>Мегафон</td><td>177</td><td>13554</td><td>1,30</td></tr>
+<tr><td>1171</td><td>МТС</td><td>186,26</td><td>19116</td><td>0,97</td></tr>
+<tr><td>1899</td><td>Билайн</td><td>70</td><td>7344</td><td>0,95</td></tr>
+<tr><td>1899</td><td>Мегафон</td><td>105,02</td><td>7992</td><td>1,31</td></tr>
+<tr><td>1899</td><td>МТС</td><td>67,73</td><td>6912</td><td>0,97</td></tr>
+<tr><td>3649</td><td>Билайн</td><td>300</td><td>31482</td><td>0,95</td></tr>
+<tr><td>3649</td><td>Мегафон</td><td>177</td><td>13554</td><td>1,30</td></tr>
+<tr><td>3649</td><td>МТС</td><td>304,79</td><td>31266</td><td>0,97</td></tr>
+<tr><td>4460</td><td>Билайн</td><td>300</td><td>32184</td><td>0,93</td></tr>
+<tr><td>4460</td><td>Мегафон</td><td>177</td><td>13554</td><td>1,30</td></tr>
+<tr><td>4460</td><td>МТС</td><td>304,79</td><td>31374</td><td>0,97</td></tr>
+<tr><td>5537</td><td>Билайн</td><td>170</td><td>18144</td><td>0,93</td></tr>
+<tr><td>5537</td><td>Мегафон</td><td>177</td><td>13554</td><td>1,30</td></tr>
+<tr><td>5537</td><td>МТС</td><td>186,26</td><td>19116</td><td>0,97</td></tr>
+</table>
+
+<p>
+ <a href=/html/tariff/sms-tariff-cp1251.html> Здесь перечислены приблизительно точные цены для все РФ, 
+а также какова сумма покупаемых кредитов</a>.<p>
+<b>Внимание</b>, <a href=/html/tariff/tariffs_service_11428.csv> здесь находится список SMS номеров для стран типа Казахстана</a>.
+</div>
+
+<p>
+
+<p>
+
+<hr>
+<p>
+<!--b>Пополнение при помощи пинкодов:</b><p-->
+<a href="#" onclick="swap_div('pin'); return false;"><b>Пополнение при помощи пинкодов:</b></a><p>
+
+
+<div id='pin' style="display: none">
+
+
+<FORM method="POST" name="form_pa">
+
+Введите пинкод и нажмите "Пополнить"
+<input type=hidden name="cmd" value="pincode_activate">
+<input input type=text name=v1 maxlength=4 size=4>-<input input type=text name=v2 maxlength=4 size=4>-<input input type=text name=v3 maxlength=4 size=4>
+<input type=submit value="Пополнить">
+<br>
+</form>
+
+
+<p>
+<hr>
+</div>
+<p>
+<hr>
+</p>
+<a href="#" onclick="swap_div('trans'); return false;"><b>Перевод</b></a><p>
+<!--big><b>Перевод</b></big><p-->
+
+<FORM method="POST" name="form1" onSubmit="return checkform();">
+<div id='trans' style="display: none">
+Для перевода другому человеку введите в поле ввода ник и нажмите <b>Перевести</b>. После этого подтвердите перевод нажав на <img src=/pics/granted.gif>
+<br><br>
+<input type=hidden name="cmd" value="">
+<input type=hidden name="id" value="0">
+Перевести <input type=text name='summa_perevod' value="0" maxlength=10 size=10> кредитов на ник 
+<input type=text name=nick_perevod value="" maxlength=16 size=20> 
+<input type=submit value="Перевести" onclick="document.form1.cmd.value='transaction_perevod';return true;">
+</div>
+~uncommitted_perevod~
+<!--br><br-->
+<p>
+<hr><p>
+<a href="#" onclick="swap_div('zaem'); return false;"><b>Одолжить</b></a><p>
+<!--big><b>Одолжить</b></big><p-->
+
+<div id='zaem' style="display: none">
+
+Чтобы одолжить кредиты другому человеку введите в поле ввода ник и нажмите <b>Занять</b>. После этого подтвердите перевод нажав на <img src=/pics/granted.gif>
+<br><br>
+Занять <input type=text name='summa_zaem' value="0" maxlength=10 size=10> кредитов на ник 
+<input type=text name=nick_zaem value="" maxlength=16 size=20> 
+<input type=submit value="Занять" onclick="document.form1.cmd.value='transaction_zaem';return true;">
+<br>
+~zajms~
+<br>
+~dolgs~
+<br><br>
+</div>
+~uncommitted_zajm~
+<!--br><br-->
+
+</form>
+<p>
+
+
+<!--br><br-->
+</td>
+</tr>
+</TABLE>
+
+</FIELDSET>
+
+<br><!--center>
+<input type=submit value="Изменить" class=b_l>
+</center-->
+
+
+
+</div>
+</td></tr>
+</table>
+
+</TD>
+<TD></TD>
+</TR>
+</TABLE>
+<hr>
+<table cellspacing=0 cellpadding=0 border=0 width=100%>
+<tr align=center><td>~bb1~</td><td>~bb2~</td><td>~bb3~</td><td>~bb4~</td></tr>
+</table>
+</body>
+</html>

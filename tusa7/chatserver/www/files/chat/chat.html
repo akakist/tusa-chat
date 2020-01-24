@@ -1,0 +1,677 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="PRAGMA" CONTENT="no-cache">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+<TITLE>Чат русских в Америке</TITLE>
+</head>
+
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+UsrList=new Array();
+
+stList=new Array();
+//ign=new Array();
+
+var srw=screen.width;
+var srh=screen.height;
+var uid=~uid~;
+var ex=0;
+var scr=1;
+var use_a_c=~acs~;
+var need_update=false;
+var update_c=0;
+var update_int=5000;
+//for status
+var connected=false;
+var timerid=0;
+var timerid2=0;
+var timer_update=0;
+var stchanged=false;
+var lstatus=0;
+var cstatus=0;
+var level=~level~;
+var isfocus=false;
+var has_inv=~has_inv~;
+
+var butt_size=60;
+var obutt_size=60;
+var console_size=30;
+var ccount=~ccount~;
+var in_ul=0;
+var invite_sound=~invite_sound~;
+var full_butt=~full_buttons~;
+var moderated=~moderated~;
+var contact_mode=~contact_mode~;
+var hide_female=~hide_female~;
+var hide_male=~hide_male~;
+
+var h_msg=new Array();
+
+var nav=navigator.appName == 'Netscape';
+
+if(nav) full_butt=0;
+
+function open_n(param)
+{
+    w=780;
+    h=500;
+    if(param!='undefined'){
+    	param='?'+param;
+    }else{
+    	param='';
+    }
+	nwin=open('/notes/frames'+param, 'notes', 'toolbar=0,status=0,resizable=1,scrollbars=1,left=10,top=10,width='+w+',height='+h);
+	nwin.focus();
+	return false;
+}
+
+function rc(l)
+{
+	if(!window.top.buttons || !window.top.buttons.document || !window.top.buttons.document.sf.channel) return;
+	r=window.top.buttons.rooms;
+	s=window.top.buttons.document.sf.channel;
+	for(var n=0; n<r.length; n++){
+		s.options[n].text=r[n]+' ('+l[n]+')';
+	}
+}
+
+/*function RebuildUserList()
+{
+	if(stList.length>0){
+		for(var sn in stList){
+			for(var n in UsrList){
+				if (UsrList[n].id==stList[sn].id){
+					UsrList[n].ipn=stList[sn].picn;
+					UsrList[n].sd=stList[sn].sdesc;
+				}	
+			}
+		}
+		stList=new Array();
+	}
+	need_update=false;
+	UpdateUsersFrame();
+	update_c=0;
+
+}*/
+function OnTimerUpdate()
+{
+	if(!need_update){return;}
+	if(in_ul && update_c<10){
+		update_c++;
+		clearTimeout(timer_update);
+		timer_update=setTimeout('OnTimerUpdate()',update_int);
+		return;
+	}	
+	if(stList.length>0){
+		for(var sn in stList){
+			for(var n in UsrList){
+				if (UsrList[n].id==stList[sn].id){
+					UsrList[n].ipn=stList[sn].picn;
+					UsrList[n].sd=stList[sn].sdesc;
+				}	
+			}
+		}
+		stList=new Array();
+	}
+	need_update=false;
+	UpdateUsersFrame();
+	update_c=0;
+}
+
+function chc(n)
+{
+	if(nav || !window.top.buttons || !window.top.buttons.document || !window.top.buttons.document.sf.channel) return;
+	window.top.buttons.sf.channel.selectedIndex=n;
+}
+
+function KickUser(n,nm)
+{
+	s=prompt(nm+' будет выставлен из чата за ?????? (Указать за что, например: "маты", только без слова "ЗА")','');
+	if(s==null)
+	{
+		return false;
+	}
+	w=window.top.buttons.document.sf;
+
+	w.id.value=n;
+	w.msg.value=s;
+	w.cmd.value='kick';
+	w.nick.value=nm;
+	w.submit();
+	return false;
+}
+
+function IgnoreUser(n,nm)
+{
+	w=window.top.buttons.document.sf;
+	w.id.value=n;
+	w.msg.value='';
+	w.cmd.value='ignore';
+	w.submit();
+	return false;
+}
+
+function ChangeStatus(idd,pn,sd)
+{
+	var s='i'+idd;
+	if(need_update || nav){
+		stList[stList.length]={id:idd,picn:pn,sdesc:sd};
+		return;
+	}
+	if(!nav && window.users.document.all[s]){
+		window.users.document.images[s].src='/pics/s/sp'+pn+'.gif';
+		window.users.document.images[s].alt=sd;
+	}
+	for(var n in UsrList){
+		if (UsrList[n].id==idd){
+			UsrList[n].ipn=pn;
+			UsrList[n].sd=sd;
+		}
+	}
+}
+
+function ChangeIgnore(ud,st)
+{
+	var nm='/pics/ign.gif';
+	var al='Игнорировать';
+	if(st==1){
+		nm='/pics/ignr.gif';
+		al='Игнорируемый';
+	}
+	for(var n in UsrList){
+		if (UsrList[n].id==ud){
+			UsrList[n].ign=st;
+			window.top.users.document.images['ig'+ud].src=nm;
+			window.top.users.document.images['ig'+ud].alt=al;
+		}
+	}
+/*	if(st==1){
+		ign[ign.length]={id:ud};
+	}else{
+	    nig=new Array();
+		for(var n in ign){
+			if(n.id!=ud) nig[nig.length]=n;
+		}
+		ign=nig;
+	}
+*/
+}
+
+function UpdateUsers(list)
+{
+	UsrList=new Array();
+	for(var i in list){
+		AddUser(list[i],1);
+	}
+}
+
+/*function UpdateIgnores(l)
+{
+	for(var n in l){
+		var q=l[n].id;
+		for(var z in UsrList){
+			if(UsrList[z].id==q){
+				UsrList[z].ign=1;
+			}
+		}
+	}
+	ign=l;
+}*/
+
+/*function is_ignored(id)
+{
+	for(var z in ign){
+		if(ign[z].id==id) return true;
+	}
+	return false;
+}*/
+
+function Answer(nick,prv)
+{
+	window.top.addmessage.document.forms[1].privbox.checked=(prv==1);
+	window.top.addmessage.document.forms[1].fornick.value=nick;
+	window.top.addmessage.document.forms[0].msgbox.focus();
+//	return false;
+}
+
+function AddUser(z,upd)
+{
+//    if(is_ignored(z.id)) z.ign=1;
+    if(z.v) z.nu="+"+z.nu;
+	var found,nu;
+	nu=0;
+	found=0;
+	UsrNew=new Array();
+	for(var i in UsrList){
+		lun=UsrList[i].nu;
+		nun=z.nu;
+		if (found==0){
+			if (z.nu<UsrList[i].nu){
+			    if (z.nu!=UsrList[i].nu){
+					UsrNew[nu]=z;
+					nu++;
+			    }
+				found=1;
+			}
+			else if (z.nu==UsrList[i].nu){
+				return;
+			}
+			UsrNew[nu]=UsrList[i];
+		}
+		else{
+			UsrNew[nu]=UsrList[i];
+		}
+		nu++;
+	}
+	if (found==0){
+		UsrNew[nu]=z;
+	}
+	UsrList=UsrNew;
+	need_update=true;
+	update_c++;
+	if(update_c<10){
+		update_int=2000*(UsrList.length/30);
+		clearTimeout(timer_update);
+		timer_update=setTimeout('OnTimerUpdate()',update_int);
+	}
+}
+
+function DeleteUser(nick)
+{
+	UsrNew=new Array();
+	for(var n in UsrList){
+		if(UsrList[n].n!=nick){
+			UsrNew[n]=UsrList[n];
+		}
+	}
+	UsrList=UsrNew;
+	need_update=true;
+	update_c++;
+	if(update_c<10){
+		update_int=2000*(UsrList.length/30);
+		clearTimeout(timer_update);
+		timer_update=setTimeout('OnTimerUpdate()',update_int);
+	}
+}
+
+function InviteUser(fn,u)
+{
+	if (u==''){return false;}
+	var z=prompt('Послание для '+fn+':','');
+	if (z==null){return false;}
+	w=window.top.buttons.document.sf;
+	w.id.value=u;
+	w.msg.value=z;
+	w.cmd.value='invite';
+	w.submit();
+	return false;
+}
+
+function ch_contact_mode()
+{
+	w=window.top.buttons.document.sf;
+	w.cmd.value='clmode';
+	w.on.value=1;
+	w.submit();
+	return false;
+}
+function ch_hide_female()
+{
+	w=window.top.buttons.document.sf;
+	w.cmd.value='fmmode';
+	w.on.value=1;
+	w.submit();
+	return false;
+}
+function ch_hide_male()
+{
+
+	w=window.top.buttons.document.sf;
+	w.cmd.value='mmmode';
+	w.on.value=1;
+	w.submit();
+	return false;
+}
+
+function set_state_contact_mode(val)
+{
+	if(val==0){
+		window.users.document.images['ct_mode'].src='/pics/c_up.gif';
+		window.users.document.images['ct_mode'].alt='Контакты';
+	}
+	else{
+		window.users.document.images['ct_mode'].src='/pics/c_down.gif';
+		window.users.document.images['ct_mode'].alt='Все';
+	}
+	return false;
+}
+function set_state_hide_female(val)
+{
+	if(val==0){
+		window.users.document.images['hfemale'].src='/pics/fm_up.gif';
+		window.users.document.images['hfemale'].alt='Девушки-';
+	}
+	else{
+		window.users.document.images['hfemale'].src='/pics/fm_down.gif';
+		window.users.document.images['hfemale'].alt='Девушки+';
+		hide_female=1;
+	}
+}
+
+function set_state_hide_male(val)
+{
+	if(val==0){
+
+		window.users.document.images['hmale'].src='/pics/mm_up.gif';
+		window.users.document.images['hmale'].alt='Парни-';
+	}
+	else{
+		window.users.document.images['hmale'].src='/pics/mm_down.gif';
+		window.users.document.images['hmale'].alt='Парни+';
+		hide_male=1;
+	}
+}
+
+
+function UpdateUsersFrame()
+{
+	ss='<html>\n'+
+	'<HEAD>\n'+
+	'<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">\n'+
+	'</HEAD>\n'+
+	'<LINK href="/css/main.css" rel=stylesheet type=text/css>\n';
+	if(nav) ss+='<LINK href="/css/ns.css" rel=stylesheet type=text/css>\n';
+
+	ss+='<style>\n'+
+	'img {width: 16; height:16; border: 0}'+
+	'body,td,  p, pre {background-color: #e8e8e8}'+
+	'</style>\n';
+
+//	ss+='<style>\n'+
+//	'img {width: 16; height:16; border: 0}'+
+//	'</style>\n';
+	if(nav){
+		ss+='<BODY bgcolor=#003570>\n';
+	}else{
+		ss+='<BODY OnMouseMove="parent.mm(1);" class=as onclick="window.top.messages.do_hide_menu()">\n';
+	}
+	clpic='/pics/c_up.gif';
+	clalt='Контакты';
+	if(contact_mode==1){
+	 clpic='/pics/c_down.gif';
+	 clalt='Все';
+	} 
+	fmpic='/pics/fm_up.gif';
+	fmalt='Девушки-';
+	if(hide_female==1){
+	 fmpic='/pics/fm_down.gif';
+	 fmalt='Девушки+';
+	}
+	mmpic='/pics/mm_up.gif';
+	mmalt='Парни-';
+	if(hide_male==1){
+	 mmpic='/pics/mm_down.gif';
+	 mmalt='Парни+';
+	} 
+	
+	ss+='<br><div style="margin-left: 2em"><center><table><tr valign=middle><td align=center>Присутствуют</td><td>'
+	    +'<a href="#" onclick="return parent.ch_contact_mode()"><img name=ct_mode src='+clpic+' alt='+clalt+'></a>'
+	    +'<a href="#" onclick="return parent.ch_hide_female()"><img name=hfemale src='+fmpic+' alt='+fmalt+'></a>'
+	    +'<a href="#" onclick="return parent.ch_hide_male()"><img name=hmale src='+mmpic+' alt='+mmalt+'></a>'
+	    +'</td></tr></table></center></div><br>\n'+
+	'<table width="100%" cellspacing="0" border="0" cellpadding="0">\n'+
+	'\n';
+	if(nav) window.top.users.document.open();
+	var cnt=0;
+	for(var i in UsrList){
+		u=UsrList[i];
+		admin=u.f & 4;
+		bday=u.f & 2;
+		ignor=u.f & 8;
+		if(ignor) u.ign=1;
+		leader=u.f & 16;
+		sadmin=u.f & 32;
+		unreg=u.f & 64;
+		nick=u.n;
+		if(u.v) nick='+'+nick;
+		cnt++;
+		ss+='<tr valign=middle>\n'+
+		'<td width="100%" align="right" valign="top">\n';
+
+		ss+='<a ';
+		if(bday==0) ss+=' style="'+u.c+'"';
+		ss+=' class=nick';
+		if(bday!=0){
+			ss+='b';
+		}
+		ss+=' href="javascript: parent.Answer(\''+u.n+'\');"><b>'+nick+'<\/b><\/a>&nbsp;</td>';
+		ss+='<td align=center valign=middle>';
+		if(u.id!=uid){
+			ss+="<a href=\"#\" onclick=\"return parent.InviteUser('"+u.n+"','"+u.id+"');\">";
+		}
+		ss+='<img border=0 name="i'+u.id+'" src="/pics/s/sp'+u.ipn+'.gif" alt=\''+u.sd+'\'>';
+		if(u.id!=uid){
+			ss+='</a>';
+		}
+		ss+='&nbsp;</td><td>';
+		if(unreg && level<6){
+		}else{
+			ss+='<a href="#" onclick="return parent.userinfoID(\''+u.id+'\');"><img border=0 src="/pics/uinfo'+u.g+'.gif" alt="Инфо о пользователе"></a>&nbsp;';
+		}
+		ss+='</td><td>';
+		if(full_butt){
+			if (admin!=0){
+				var ad='Админ';
+				if(u.g==2) ad='Админша';
+				ss+="<img border=0 src='/pics/admin"+u.ap+".gif' alt='"+ad+"' style='width:19; height:16; border:0'>";
+			}
+			else if(u.id!=uid){
+				//alert("uid "+u.id+" " +uid);
+				ss+="<a href=\"#\" OnClick=\"return parent.IgnoreUser('"+u.id+"');\">";
+				if (u.ign==1){
+					ss+="<img border=0 name='ig"+u.id+"' src='/pics/ignr.gif' alt='Игнорируемый'></a>";
+				}else{
+					ss+="<img border=0 name='ig"+u.id+"' src='/pics/ign.gif' alt='Игнорировать'></a>";
+				}
+			}
+			ss+='</td>';
+			if(level>=6){
+				ss+='<td>';
+				if(level>u.l && u.id!=uid){
+					ss+="&nbsp;<a href=\"#\" OnClick=\"return parent.KickUser('"+u.id+"','"+u.n+"');\"><img border=0 src='/pics/kick.gif' alt='Пинануть'></a>";
+				}
+				ss+='</td>';
+			}
+			ss+='</tr>';
+		}else{
+			ss+='</td></tr>';
+		}
+	}
+	ss+='</table>\n';
+	ss+='<div align=right><hr class=hr size=2 width=100%>';
+	ss+='Всего '+cnt+'</div></font></html>\n';
+	window.top.users.document.write(ss);
+	window.top.users.document.close();
+}
+
+uinfo=0;
+
+function userinfoID(uid)
+{
+	//r=Math.round(Math.random(123)*1000);
+	locat='userinfo?id='+uid;
+	if(!uinfo || uinfo.closed){
+		uinfo=open(locat,'uinfo','toolbar=0,status=0,resizable=1,scrollbars=1,width=505,height=435');
+	}
+	else{
+		uinfo.focus();
+		if(uinfo.location!=locat){
+			uinfo.location=locat;
+		}
+	}
+	return false;
+}
+function userinfoNI(nick)
+{
+	//r=Math.round(Math.random(123)*1000);
+	locat='userinfo?ni='+nick;
+	if(!uinfo || uinfo.closed){
+		uinfo=open(locat,'uinfo','toolbar=0,status=0,resizable=1,scrollbars=1,width=505,height=435');
+	}
+	else{
+		uinfo.focus();
+		if(uinfo.location!=locat){
+			uinfo.location=locat;
+		}
+	}
+	return false;
+}
+
+invitewin=0;
+
+function DoInvite(sid, who, nick, txt, tm)
+{
+	n='invite'+Math.round(Math.random(123)*1000);
+	invitewin=open('', n, 'toolbar=0,status=0,resizable=0,scrollbars=0,width=600,height=50');
+	s='<html> <title>Чат русских в Америке - '+tm+'</title>\n';
+	s+='<LINK rel=\"stylesheet\" type=\"text/css\" href=\"/css/main.css\">';
+	s+='<BODY>';
+	if(invite_sound){
+		s+='<bgsound src=/html/ringout.wav>\n';
+	}
+	s+='<table border=0 width=100%>\n';
+	s+='<tr><td>Пользователь <font class=nick><b>';
+	s+=who;
+	s+='</b></font> пытается привлечь внимание <font class=nick><b>'+nick+'</b></font>!\n'+
+	'</td></tr>\n';
+	if (txt!='' && txt!=null){
+		s+='<tr><td width=\"90%\" valign=\"top\">\n<font class=yelmsgnb>';
+		s+=txt;
+		s+='</font>\n</td><td valign=top><form name=frm>';
+		s+='<input name=repl type=button OnClick=\"window.close();window.opener.focus();window.opener.InviteUser(\''+who+'\',\''+sid+'\');\" value=\"Ответить\" class=b_l>';
+		s+='</form></td></tr>\n';
+	}
+	s+='</table></html>';
+	invitewin.document.write(s);
+	invitewin.document.close();
+}
+
+//autochange status support
+
+var nsec=300000;
+
+function ontm()
+{
+	if(isfocus){
+		clearTimeout(timerid2);
+		timerid2=0;
+	}
+	if(!stchanged && timerid2==0){
+		if(has_inv){
+			timerid2=setTimeout('ontm2(3)',nsec);
+		}else{
+			timerid2=setTimeout('ontm2(2)',nsec);
+		}
+	}	
+	isfocus=false;
+}
+
+function ontm2(n)
+{
+    timerid2=0;
+	if(stchanged || !connected || isfocus || (cstatus>1 && cstatus<6)){
+		return;
+	}
+	if(has_inv && cstatus==0) return;
+	if(!stchanged){
+		window.top.addmessage.set_status(n);
+		stchanged=true;
+		cn=0;
+	}
+}
+
+var cn=0;
+
+function mm(state)
+{
+    in_ul=state;
+    if(!use_a_c || nav){
+    	return;
+    }
+    cn++;
+    if(stchanged && connected && cn>2){
+    	stchanged=false;
+    	clearTimeout(timerid2);
+    	timerid2=0;
+		window.top.addmessage.set_status(lstatus);
+    }
+	isfocus=true;
+}
+
+if(use_a_c && !nav){
+	timerid=setInterval('ontm()',1000);
+}	
+
+//topic support
+var pagetitle = document.title;
+var topic='';
+function set_topic(t)
+{
+	if(nav) return;
+	var s='';
+	if(moderated) s='[+m] ';
+	if(t!=''){
+		document.title=pagetitle+" "+s+"- "+t;
+	}else{
+		document.title=pagetitle+" "+s;
+	}
+	topic=t;
+}
+
+var ul=240;
+if (srw==800) ul=200;
+if (srw==1024) ul=260;
+if (srw>1024) ul=280;
+//if (ccount==1) {butt_size=40; obutt_size=40;}
+//alert(con);
+var fcode=
+'<frameset cols="10,*" border=0 frameborder=no framespacing=0 marginwidth=0 marginheight=0 noresize>'+
+'<frame name=emp src="/EmptyFrame" scrolling=no marginwidth=0 marginheight=0 noresize>'+
+'<frameset rows="'+butt_size+',*,'+console_size+'" border=0 frameborder=no framespacing=0 name=rw>'+
+'<frame name="buttons" src="buttons" scrolling=no marginwidth=0 marginheight=0>'+
+'<frameset cols="*,'+ul+'" frameborder=no border=0 framespacing=1>'+
+'<frame name="messages" src="messages" scrolling=auto marginwidth=0 marginheight=0 frameborder=yes border=0>'+
+'<frame name="users" src="users" scrolling=auto marginwidth=0 marginheight=0 frameborder=no>'+
+'</frameset>'+
+'<frameset cols="*,0" frameborder="no" border=0 framespacing=0>'+
+'<frame name="addmessage" src="addmessage" scrolling=no marginwidth=0 marginheight=0>'+
+'<frame name="hidden" src="/EmptyFrame" scrolling=no marginwidth=0 marginheight=0 noresize>'+
+'</frameset>'+
+'</frameset>'+
+'</frameset>';
+
+/*var ul=240;
+if (srw==800) ul=200;
+if (srw==1024) ul=260;
+if (srw>1024) ul=280;
+if (ccount==1) {butt_size=40; obutt_size=40;}
+var fcode='<frameset rows="'+butt_size+',*,'+console_size+'" border=0 frameborder=no framespacing=0 name=rw>'+
+'<frame name="buttons" src="buttons" scrolling=no marginwidth=0 marginheight=0>'+
+'<frameset cols="*,'+ul+'" frameborder=no border=0 framespacing=1>'+
+'<frame name="messages" src="messages" scrolling=auto marginwidth=0 marginheight=0 frameborder=yes border=0>'+
+'<frame name="users" src="/EmptyFrame" scrolling=auto marginwidth=0 marginheight=0 frameborder=no>'+
+'</frameset>'+
+'<frameset cols="*,0" frameborder="no" border=0 framespacing=0>'+
+'<frame name="addmessage" src="addmessage" scrolling=no marginwidth=0 marginheight=0>'+
+'<frame name="hidden" src="/EmptyFrame" scrolling=no marginwidth=0 marginheight=0 noresize>'+
+'</frameset>'+
+'</frameset>';*/
+
+document.write(fcode);
+//-->
+</script>
+
+<noframes>
+Ваш браузер не поддерживает фреймы! Обновите свой браузер, тока пожалуйста Nescape Navigator не ставьте!
+</noframes>
+</HTML>

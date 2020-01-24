@@ -1,0 +1,1 @@
+c++ ./objD/chatserver.o -o chatserver.exe libchat.a  /usr/local/ssl/lib/libssl.a /usr/local/ssl/lib/libcrypto.a /usr/local/lib/mysql/libmysqlclient.a  -lpthread -lz /usr/lib/libgdbm.a   -lstlport 

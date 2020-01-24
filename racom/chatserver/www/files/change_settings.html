@@ -1,0 +1,226 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="PRAGMA" CONTENT="no-cache">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+<TITLE>Чат "Русская тусовка" - Настройки чата</TITLE>
+</head>
+
+<LINK href="/css/main.css" rel=stylesheet type=text/css>
+<script>
+<!--
+function checkform()
+{
+	return true;
+}
+
+function do_add()
+{
+	document.form1.new_s.value='yes';
+	document.form1.DATA.value='';
+	document.form1.submit();
+}
+
+var selwin=0;
+
+function do_select(z)
+{
+	url=unescape('/StPic?n='+z);
+	if(!selwin || selwin.closed)
+	{
+		selwin=open(url, 'SelPic', 'toolbar=0,status=0,resizable=0,scrollbars=0,width=600,height=300');
+	}
+	else
+	{
+		selwin.focus();
+		selwin.location=url;
+	}
+}
+
+function mOvr(src,tp)
+{
+	if(!tp) tp=0;
+	src.style.cursor='hand';
+	src.style.backgroundColor=document.styleSheets[0].rules[tp+1].style.backgroundColor;
+}
+function mOut(src,tp)
+{
+	if(!tp) tp=0;
+	src.style.cursor='default';
+	src.style.backgroundColor=document.styleSheets[0].rules[tp].style.backgroundColor;
+}
+function mClk(src) 
+{
+	if(event.srcElement.tagName=='TD') src.children.tags('A')[0].click();
+}
+//-->
+</script>
+<body>
+<TABLE border=0 width=100% cellspacing=0 cellpadding=0>
+<TR>
+<TD width=120><a href="/"><img border=0 src="/pics/logo.gif"></a></TD>
+<TD class=top_line width=5>&nbsp;</TD>
+<TD class=top_line width=100% align=center>~bannert~</TD>
+<TD class=top_line width=5>&nbsp;</TD>
+<!--<TD class=top_line width=140 align=center>~banner120~</TD>-->
+</TR>
+<TR height=5><TD colspan=5></TD></TR>
+<TR valign=top>
+<TD>
+<table class=borderm border=0 width=120 valign=top cellspacing=0 cellpadding=0>
+<tr height=16><td class=blr align=center><b>Навигация:</b></td></tr>
+~menu~
+</table>
+</TD>
+<TD></TD>
+<TD>
+<table width=100% border=0 cellspacing=0 cellpadding=0>
+<tr><td class=border align=center><b>Настройки чата</b></td></tr>
+<tr height=5><td></td></tr>
+<tr><td>
+<div align=justify valign=top>
+
+<FORM method="POST" name="form1" onSubmit="return checkform();">
+<input type=hidden name="DATA" value="YES">
+
+<center><font class=yelmsg>~error~</font></center>
+
+<FIELDSET>
+<LEGEND class=leg><big><b>Статусы</b></big></LEGEND>
+
+<TABLE border=0 cellspacing=3 cellpadding=3>
+<TR valign=top>
+<TD>Описание&nbsp;</TD><TD colspan=2>Картинка<br><br></TD><td align=center>Отключить функцию "позвать"<br> для этого статуса?</td>
+</TR>
+<tr>
+<td>~st3~</td><td><img src="/pics/s/sp1.gif" width=16 height=16></td><td></td><td align=center><input type=checkbox class=c_b disabled></td>
+</tr>
+<tr>
+<td nowrap>~st4~</td><td><img src="/pics/s/sp2.gif" width=16 height=16></td><td></td><td align=center><input type=checkbox class=c_b disabled></td>
+</tr>
+<tr>
+<td nowrap>~st5~</td><td><img src="/pics/s/sp3.gif" width=16 height=16></td><td></td><td align=center><input type=checkbox class=c_b disabled></td>
+</tr>
+<tr>
+<td>~st6~</td><td><img src="/pics/s/sp4.gif" width=16 height=16></td><td></td><td align=center><input type=checkbox class=c_b disabled></td>
+</tr>
+<tr>
+<td>~st7~</td><td><img src="/pics/s/sp5.gif" width=16 height=16></td><td></td><td align=center><input type=checkbox class=c_b disabled checked></td>
+</tr>
+<tr>
+<td>~st8~</td><td><img src="/pics/s/sp6.gif" width=16 height=16></td><td></td><td align=center><input type=checkbox class=c_b disabled></td>
+</tr>
+~userdef~
+</TABLE>
+
+<input type=hidden name="new_s" value="no"><br>
+<center>Если Вы сделали здесь изменения, то не забудьте нажать на кнопку <b>"Изменить"</b><br>
+<input type=button onclick="do_add();" value="Добавить статус" class=b_l></center><br>
+</FIELDSET>
+
+<br>
+
+<FIELDSET>
+<LEGEND class=leg><big><b>Настройки чата</b></big></LEGEND>
+<TABLE width="100%" border=0 cellspacing=0 cellpadding=3>
+<TR valign=middle>
+<TD align="right" width=125>Сообщений:</TD>
+<TD><INPUT TYPE="TEXT" MAXLENGTH=20 SIZE=20 NAME="lpp" VALUE="~lpp~"></TD>
+<TD>
+Количество предыдущих сообщений которые будут показаны при входе в чат. Число от 1 до 100.
+</TD>
+</TR>
+<TR valign=middle>
+<TD align="right" colspan=2>
+Сохранять сессию <INPUT TYPE=checkbox name="autologin" ~al~ class=c_b></TD>
+<TD>
+Если эта галочка стоит, то Вам не надо будет много раз набирать свой логин и пароль.
+</TD>
+</TR>
+<TR valign=middle>
+<TD align="right" colspan=2>
+Авто смена статуса <INPUT TYPE=checkbox name="autochange" ~ac~ class=c_b></TD>
+<TD>
+Если опция включена, то когда Вы не используете чат в течении 5 минут на Вас будет вешаться
+статус <img src="/pics/s/sp3.gif" alt="Отошел">.
+</TD>
+</TR>
+<TR valign=middle>
+<TD align="right" colspan=2>
+Участвовать в иерархии<INPUT TYPE=checkbox name="slevel" ~sl~ class=c_b></TD>
+<TD>
+Если галочка не стоит то Ваш уровень в чате никому не будет показываться, однако возможности данные уровнем у Вас останутся.
+</TD>
+</TR>
+<TR valign=middle>
+<TD align="right" colspan=2>
+Показывать все ники<INPUT TYPE=checkbox name="snicks" ~sn~ class=c_b></TD>
+<TD>
+У Вас в инфе будут показанны все Ваши ники.
+</TD>
+</TR>
+<TR valign=middle>
+<td align=left colspan=3>Приветствие:</td>
+</tr>
+<tr>
+<td align=left colspan=3>
+~greet~
+</td></tr>
+<TR valign=middle>
+<td align=left colspan=3>Прощание:</td>
+</tr>
+<tr>
+<td align=left colspan=3>
+~bye~
+</td></tr>
+<tr><td colspan=3 align=center>Здесь Вы можете указать текст приветствия и прощания. Если Вы хотите
+чтобы оно всегда было разное, то выберите "Случайное".</td></tr>
+</td>
+</TR>
+~ncolors~
+<tr><td colspan=3>
+Цветовая гамма сообщений: <select name=ncolor>
+~color_packs~
+</select>
+</td></tr>
+~encolors~
+</TABLE>
+</FIELDSET>
+<br>
+<FIELDSET>
+<LEGEND class=leg><big><b>Показывать при входе...</b></big></LEGEND>
+<TABLE width="100%" border=0 cellspacing=0 cellpadding=3>
+<TR valign=middle><td align=center colspan=2></td></tr>
+<tr><td><input type=checkbox name="showhints" class=c_b ~sh~>Полезные советы</td>
+<td><input type=checkbox name="showstat" class=c_b ~ss~>Статистику</td></tr>
+</tr>
+</table>
+</fieldset>
+
+<br><center>
+<input type=submit value="Изменить" class=b_l>
+</center>
+
+</form>
+
+
+</div>
+</td></tr>
+</table>
+
+</TD>
+<TD></TD>
+<!--<TD>
+<table class=border width=140 valign=top cellspacing=0 cellpadding=0>
+<tr><td class=blr align=center><b>Сейчас в чате:</b></td></tr>
+<tr><td><iframe src="/Users" class=ifu frameborder=0>~nusr~</iframe></td></tr>
+</table>
+</script>
+</TD>-->
+</TR>
+</TABLE>
+<hr>
+<table cellspacing=0 cellpadding=0 border=0 width=100%>
+<tr align=center><td>~bb1~</td><td>~bb2~</td><td>~bb3~</td><td>~bb4~</td></tr>
+</table>
+</body>
+</html>

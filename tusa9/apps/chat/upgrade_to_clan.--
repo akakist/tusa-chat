@@ -1,0 +1,54 @@
+-- MySQL dump 10.9
+--
+-- Host: localhost    Database: chat
+-- ------------------------------------------------------
+-- Server version	4.1.21
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `user_profiles`
+--
+
+DROP TABLE IF EXISTS `user_profiles`;
+CREATE TABLE `user_profiles` (
+  `refid` int(20) unsigned NOT NULL default '0',
+  `icq` text,
+  `city` text,
+  `info` text,
+  `homepage` text,
+  `tel` text,
+  `b_day` varchar(10) NOT NULL default '',
+  `b_mon` int(3) NOT NULL default '0',
+  `b_year` varchar(4) NOT NULL default '1980',
+  `fname` text,
+  `lname` text,
+  `email` text,
+  `reg_date` datetime default NULL,
+  `level` int(10) unsigned NOT NULL default '100',
+  `login` varchar(18) NOT NULL default '',
+  `pass` text,
+  `vote_balls` int(10) default NULL,
+  `db_privileges` int(10) NOT NULL default '0',
+  `upperlogin` varchar(20) NOT NULL default '',
+  `gender` char(1) NOT NULL default '0',
+  `has_clan` char(1) NOT NULL default '0',
+  PRIMARY KEY  (`refid`),
+  KEY `_login` (`login`),
+  KEY `_vb` (`vote_balls`),
+  KEY `_rd` (`reg_date`),
+  KEY `_dp` (`db_privileges`),
+  KEY `lv` (`level`)
+) ENGINE=MyISAM DEFAULT CHARSET=cp1251;
+
+--
+-- Dumping data for table `user_profiles`
+--
+

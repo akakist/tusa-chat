@@ -1,0 +1,1 @@
+-lssl -lcrypto /usr/local/lib/mysql/libmysqlclient.a   -lpthread -lz -static

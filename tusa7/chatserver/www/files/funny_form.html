@@ -1,0 +1,21 @@
+<script>
+function chk_af()
+{
+	if(document.af.txt.value==''){
+		alert('Вы забыли ввести '+document.af.tp.options[document.af.tp.selectedIndex].text+'...');
+		document.af.txt.focus();
+		return false;
+	}
+	return true;
+}
+</script>
+<form method=post action="/addfunny" name=af onsubmit="return chk_af()">
+Расскажите свой <select name=tp>
+<option value=1>Анекдот
+<option value=2>Историю
+</select>:<br><br>
+<textarea name=txt maxlength=10000 rows=5 cols=40></textarea>
+<br>
+Прислал: ~nicks~<br>
+<input type=submit value="Отправить">
+</form>

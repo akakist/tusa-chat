@@ -1,0 +1,34 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="PRAGMA" CONTENT="no-cache">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+<TITLE>Чат "Тусовка" - Ники</TITLE>
+</head>
+
+<LINK href="/css/main.css" rel=stylesheet type=text/css>
+<BODY>
+<form method="POST" name="nickform">
+<input type=hidden name=todo value=''>
+<TABLE class=border border=0 width=100% cellspacing=0>
+<TR><TD align=center colspan=2><font class=yelmsg><b>~error~</b></font></TD></TR>
+<TR><TD align=right>Показать</TD>
+<td>
+<SELECT name="filter" onchange="document.nickform.submit();return false;">
+    <OPTION value='all' ~N_ALL~>Все
+    <OPTION value='sell' ~N_SELL~>Продающиеся
+    <OPTION value='notsell' ~N_NOTFORSELL~>Не продающиеся
+</SELECT></td></TR>
+
+<TR><TD align=right>Ник:</TD><TD>~nicks~</TD></TR>
+<!--TR><TD colspan=2>&nbsp;<TD></TR-->
+<TR><TD align=right>Сменить ник:</TD><TD><input type=text name=nickname value='~nickname~'></TD></TR>
+<TR><TD align=right><INPUT TYPE=checkbox name="to_sale" ~ts~ class=c_b></TD><TD>Продается</TD></TR>
+<TR><TD align=right>Цена:</TD><TD><INPUT TYPE=text name="cost" value="~cost~" onchange='document.nickform.to_sale.checked=1;'></TD></TR>
+
+
+<TR><TD colspan=2 align=center><br><input type=submit value="Изменить!" onclick="document.nickform.todo.value='update'; document.nickform.submit();return false;"></TD>
+</TR>
+<!--tr><td colspan=2>&nbsp;</td></tr-->
+</TABLE>
+</form>
+

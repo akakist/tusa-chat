@@ -1,0 +1,170 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="PRAGMA" CONTENT="no-cache">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+<TITLE>Чат "Тусовка" - Консоль админа -> Голосование</TITLE>
+</head>
+
+<LINK rel="stylesheet" type="text/css" href="/css/main.css">
+<script>
+
+
+var lvl=~level~;
+function l_info(id)
+{
+	if(lvl<9){
+		alert('У Вас нет прав, чтобы посмотреть инфу о логине.');
+		return false;
+	}
+	l='/admin/logininfo.php?id='+id;
+	if(!ow || ow.closed){
+		ow=open(l,'owusr','toolbar=0,status=0,resizable=1,scrollbars=1,width=550,height=500');
+		ow.focus();
+	}
+	else{
+		ow.focus();
+		ow.location=l;
+	}
+	return false;
+}
+function fupdate(n)
+{
+	document.f.cmd.value=n;
+	document.f.submit();
+	return false;
+}
+
+function opwin(url,nm,w,h)
+{
+	nw=window.open(url,nm,'toolbar=0,status=0,scrollbars=1,width='+w+',height='+h+',resizable=1');
+	nw.focus();
+	return false;
+}
+
+function chk_form()
+{
+	if(document.f.add.value==""){
+		alert('Надо бы ввести ник...');
+		document.f.add.focus();
+		return false;
+	}
+	document.f.cmd.value="add";
+}
+
+function get_count()
+{
+	el=document.t.elements;
+	var all=0;
+	for (i=0;i<el.length;i++){
+		if (el[i].type!='text') continue;
+		if (el[i].name.substr(0,3)!='per') continue;
+		all++;
+	}
+	return all;
+}
+
+function get_sum()
+{
+	el=document.t.elements;
+	var all=0;
+	for (i=0;i<el.length;i++){
+		if (el[i].type!='hidden') continue;
+		if (el[i].name.substr(0,2)!='hb') continue;
+		all+=Number(el[i].value);
+	}
+	return all;
+}
+
+function do_recalc_perc()
+{
+	el=document.t.elements;
+	var sum=get_sum();
+	for (i=0;i<el.length;i++){
+		if (el[i].type!='hidden') continue;
+		if (el[i].name.substr(0,2)!='hb') continue;
+		var nmid=el[i].name.substr(2,el[i].name.length-2);
+		var n=Number(el[i].value);
+		var p=Math.round(n*100/sum);
+		document.t.elements['per'+nmid].value=p;
+	}
+}
+
+function reclc(id)
+{
+    var pr=Number(document.t.elements['per'+id].value);
+	if(pr>100 || pr<1){
+		alert('У одного человека может быть не более 100% и не менее 1% голосов!');
+		pr=1;
+	}
+	var sum=Number(get_sum());
+	var perc1=sum/100;
+	var last=Number(document.t.elements['hb'+id].value);
+	var rz=last-(pr*perc1);
+	document.t.elements['hb'+id].value=pr*perc1;
+	var decby=rz/(get_count()-1);
+	el=document.t.elements;
+	for (i=0;i<el.length;i++){
+		if (el[i].type!='hidden') continue;
+		if (el[i].name.substr(0,2)!='hb') continue;
+		var nmid=el[i].name.substr(2,el[i].name.length-2);
+		if (el[i].name!='hb'+id){
+			document.t.elements['hb'+nmid].value=Number(document.t.elements['hb'+nmid].value)+decby;
+		}
+	}
+    do_recalc_perc();
+	return true;
+}
+
+function save()
+{
+	el=document.t.elements;
+	for (i=0;i<el.length;i++){
+		if (el[i].type!='hidden') continue;
+		if (el[i].name.substr(0,2)!='hb') continue;
+		var nmid=el[i].name.substr(2,el[i].name.length-2);
+		if(document.t.elements['per'+nmid].value>100 || document.t.elements['per'+nmid].value<1){
+			alert('У одного человека может быть не более 100% и не менее 1% голосов!');
+			return false;
+		}
+	}
+	document.t.cmd.value='update';
+	document.t.submit();
+	return true;
+}
+
+</script>
+
+<style>
+.cc {border:0; background-color: #003060;}
+</style>
+<body>
+<big><big><center><b>Админство голосования</b></center></big></big><br>
+<center><font class=yelmsg>~msg~</font></center>
+<center>
+<form name=t method=POST>
+<input type=hidden name="cmd" value="">
+<table border=0 cellspacing=1 cellpadding=1 class=border>
+<tr align=center><td class=trdd>Логин</td><td class=trdd>%</td><td class=trdd></td></tr>
+~users~
+</table>
+<script>
+	do_recalc_perc();
+</script>
+<p>
+</form>
+
+<form name="f" method="POST" onsubmit="return chk_form()">
+<input type=hidden name="cmd" value="">
+<input type=hidden name="id" value="">
+
+<center><input type=button value="Сохранить изменения" onclick="return save();"></center><p>
+
+Ник: <input type=textfield name="add" maxlength=16 size=16>
+<input type=submit value="Добавить">
+
+<p><center>
+<input type=button value="Обновить" onclick="return fupdate('');">
+<input type=button value="Закрыть" onclick="window.close();">
+
+</form>
+<p>

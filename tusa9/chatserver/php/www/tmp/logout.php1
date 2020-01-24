@@ -1,0 +1,21 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="PRAGMA" CONTENT="no-cache">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+<TITLE>Чат "Тусовка"</TITLE>
+</head>
+
+<?
+    include 'inc/auth.php';
+    check_auth();
+    
+    if(isset($login))
+    {
+	remove_auth();
+	
+    }
+    
+?>
+    <script>
+    document.location.href="/";
+    </script>

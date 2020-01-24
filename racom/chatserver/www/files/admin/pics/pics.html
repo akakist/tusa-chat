@@ -1,0 +1,52 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="PRAGMA" CONTENT="no-cache">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+<TITLE>Чат русских в Америке - Консоль админа -> Картинки</TITLE>
+</head>
+
+<LINK rel="stylesheet" type="text/css" href="/css/main.css">
+
+<script>
+<!--
+if(navigator.appName == 'Netscape') document.write('<LINK href="/css/ns.css" rel=stylesheet type=text/css>');
+function fupdate(n)
+{
+	document.f.cmd.value=n;
+	document.f.submit();
+}
+function chpic(n)
+{
+	document.f.pn.value=n;
+	document.f.submit();
+}
+//-->
+</script>
+<body>
+<big><big><center><b>Админство картинок</b></center></big></big><br>
+<center><font class=yelmsg>~msg~</font></center>
+<form name="f" method="POST" enctype="multipart/form-data">
+<input type=hidden name="cmd" value="">
+<input type=hidden name="id" value="~id~">
+Показать картинку # <input type=textfield name="pn" value="~pn~" size=4 maxlength=4 class=tf>&nbsp;<input type=submit value="OK">&nbsp;&nbsp;&nbsp;
+<input type=button value="Предыдущая" onclick="chpic(~prev~);" class=b_l>
+<input type=button value="Следующая" onclick="chpic(~next~);" class=b_l>
+<br>
+<br>
+Описание: <input type=textfield name="descr" value="~descr~" class=tf size=50>&nbsp;<input type=button value="Изменить" onclick="fupdate('change');">
+<br><br>
+~pic~<br><br>
+<input type=button value="Удалить" onclick="fupdate('remove')"><br><br>
+Всего картинок: <b>~cnt~</b>
+<br><br>
+<input type=file name=pic size=40><input type=button value="Добавить" onclick="fupdate('add')">
+<br><br>
+<center>
+<input type=button value="Обновить" onclick="fupdate('');">
+<input type=button value="Закрыть" onclick="window.close();">
+</center>
+</form>
+<p>
+<table border=0 width="100%">
+<tr align=center><td>~bb3~</td><td>~bb4~</td></tr>
+</table>

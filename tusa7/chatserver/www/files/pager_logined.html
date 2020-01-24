@@ -1,0 +1,195 @@
+<LINK href="/css/main.css" rel=stylesheet type=text/css>
+<title>Чат русских в Америке - отправка сообщения на сотовый/пейджер</title>
+
+<script>
+if(navigator.appName == 'Netscape') document.write('<LINK href="/css/ns.css" rel=stylesheet type=text/css>');
+
+lcode=0;
+lmsglen=0;
+max_msg=134;
+
+function do_change()
+{
+	if (document.f.op.selectedIndex==0){
+		document.all['an'].innerHTML='Номер сотового:';
+		document.all['descr'].innerHTML='Укажите <b>полный</b> номер телефона, без префикса <b>+</b>, например 7902....';
+		if(document.f.pn.value=='') document.f.pn.value='790';
+		max_msg=110;
+	}else{
+		document.all['an'].innerHTML='Номер абонента:';
+		if(document.f.pn.value=='790') document.f.pn.value='';
+		document.all['descr'].innerHTML='';
+		max_msg=700;
+	}
+	do_show_msg_len();
+	document.f.pn.focus();
+	return false;
+}
+
+function do_show_msg_len()
+{
+	document.all['len'].innerHTML='Сообщение: (осталось '+Number(max_msg-document.f.msgbox.value.length-1)+' символов)';
+}
+
+function area_change(code)
+{
+	clen=document.f.msgbox.value.length;
+	if(clen>=max_msg && code!=8){return false;}
+	if(lmsglen != clen){
+		do_show_msg_len();
+	}
+	lcode=code;
+	return true;
+}
+
+function openWin (url, name, w, h)
+{
+	var newWin = null;
+	newWin = window.open(url, name, 'toolbar=no,location=no,width='+w+',height='+h+',screenX=0,screenY=0,scrollbars=yes')
+	newWin.focus();
+	return;
+}
+
+function do_planet()
+{
+	f.h1.name='hostname';	f.h1.value='snpp.paging.tomsk.ru';
+	f.h2.name='senddate';	f.h2.value='0';
+	f.h3.name='repeat_count';	f.h3.value='1';
+	f.h4.name='repeat_time';	f.h4.value='5';
+	f.msg.name='message';
+	f.pn.name='pager';
+	f.action='http://www.paging.tomsk.ru/postoffice/sendpage.php3';
+    openWin('', 'answerWin', 350, 300)
+//    window.close();
+	return true;
+}
+
+function do_stamtelecom()
+{
+	f.h2.name='Min';	f.h2.value='01';
+	f.h3.name='Day';	f.h3.value='01';
+	f.h4.name='Month';	f.h4.value='01';
+	f.h5.name='Year';	f.h5.value='2000';
+	f.msg.name='TEXT_BODY';
+	f.pn.name='N_pager';
+	f.action='http://mtelecom.tomsk.ru/send_msg.phtml';
+    openWin('', 'answerWin', 300, 100);
+//    window.close();
+    return true;
+}
+
+function do_tcc()
+{
+	f.h1.name='COMMAND';	f.h1.value='SEND';
+	f.pn.name='sms_number';
+	f.msg.name='sms_text';
+	f.action='http://www.tcc.tomsk.ru/sms/sms.php';
+	openWin('', 'answerWin', 630, 250);
+	return true;
+}
+
+function do_sms()
+{
+	f.h1.name='from';	f.h1.value=document.f.nick.options[document.f.nick.selectedIndex].text;
+	f.pn.name='phone';
+	f.msg.value=f.msgbox.value;
+	f.msg.name='sms';
+	f.action='/send_sms';
+	f.target='';
+	f.butt.disabled=true;
+//	openWin('', 'answerWin', 450, 150);
+	return true;
+}
+
+function do_sub()
+{
+	var f=document.f;
+	if(f.op.selectedIndex!=2){
+		if(f.pn.value==""){
+			alert('Вы забыли ввести номер пагера...');
+			f.pn.focus();
+			return false;
+		}
+	}else{
+		if(f.pn.value==""){
+			alert('Вы забыли ввести номер сотового...');
+			f.pn.focus();
+			return false;
+		}
+		if(f.pn.value.length<11){
+			alert('Вы ввели не полный номер сотового...');
+			f.pn.focus();
+			return false;
+		}
+	}
+	if(f.msgbox.value==""){
+		alert('Вы забыли ввести сообщение...');
+		f.msgbox.focus();
+		return false;
+	}
+	if(f.op.selectedIndex==0) return do_sms();
+	f.target='answerWin';
+	f.msg.value=f.msgbox.value;
+	f.msg.value+=' /'+f.nick.options[f.nick.selectedIndex].text;
+	if(f.op.selectedIndex==1) return do_stamtelecom();
+	if(f.op.selectedIndex==2) return do_planet();
+	if(f.op.selectedIndex==3) return do_tcc();
+	return false;
+}
+
+
+</script>
+
+<BODY>
+
+<form method=POST name=f onSubmit="return do_sub();" target="answerWin">
+<input type=hidden name="msg" value="">
+<input type=hidden name="h1" value="">
+<input type=hidden name="h2" value="">
+<input type=hidden name="h3" value="">
+<input type=hidden name="h4" value="">
+<input type=hidden name="h5" value="">
+<TABLE class=border border=0 cellspacing=0 cellpadding=0 width=100%>
+<TR><TD align=center height=17 colspan=2 class=tb style="border-top: 0px">Отправка сообщения на сотовый/пейджер.</TD></TR>
+<tr><td>
+
+<center><font class=yelmsgnb>~error~</font></center>
+<table border=0 cellspacing=1 cellpadding=1 width=100%>
+<tr><td colspan=3 align=center><div id=descr>Укажите <b>полный</b> номер телефона.</div></td></tr>
+<tr valign=top>
+<TD align=right nowrap><br><div id=an>Номер сотового:</div></td><td><br><input type=textfield name="pn" value="790" size=4 maxlength=20 style="width:100%"></td>
+<td align=left width=100% rowspan=3><div id=len>Сообщение:</div><textarea style="width: 100%" rows=4 name=msgbox maxlength=1000 onkeydown="return area_change(event.keyCode);"></textarea></td>
+</TR>
+<tr valign=top>
+<td align=right nowrap>Станция:&nbsp;</td><td>
+<select name=op style="width:160" onchange="return do_change();">
+<option value=3>SMS
+<option value=1>СТА Мобил Телеком (081)
+<option value=2>Планет (732323)
+<option value=4>Томская Сотовая GSM (055)
+</select>
+</TD>
+</tr>
+<tr valign=top>
+<td align=right>От:&nbsp;</td><td> ~nicks~</td>
+</tr>
+<TR>
+<TD colspan=3 align=center>Стоимость отправки одного SMS сообщения - 0.5 кредита<br><input name=butt type=submit value="Отправить!">&nbsp;&nbsp;<input type=reset value="Очистить"></TD>
+</TR>
+<tr><td colspan=3>&nbsp;</td></tr>
+<tr><td colspan=3>
+
+<table border=0 cellspacing=0 cellpadding=0 width=100%>
+<tr><td>~bb3~</td><td align=center><input type=button value="Закрыть" onclick="window.close();"></td><td align=right>~bb4~</td></tr>
+</table>
+
+</td></tr>
+</TABLE>
+</form>
+</tr>
+</table>
+<br>
+<center>~bannert~</center>
+<script>
+	do_show_msg_len();
+</script>

@@ -1,0 +1,6 @@
+  -O3 -Wno-deprecated 
+	-I/usr/local/include/stlport 
+	-Wall 
+	-I/usr/local/include/mysql  -c   
+	-I/usr/local/ssl/include  
+	-DLINUX  -ftemplate-depth-30  -D__NO_LICENSE	-DWITH_MUTEXES  -D__OSCAR_SIGN_17 -D__OSCAR_DATALEN_16 -pthread

@@ -1,0 +1,128 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="PRAGMA" CONTENT="no-cache">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+<TITLE>Russian America Chat. Чат русских в Америке</TITLE>
+</head>
+
+<LINK href="/css/main.css" rel=stylesheet type=text/css>
+<script>
+<!--
+function checkform()
+{
+	if(document.start.login.value=="")
+	{
+		alert("Вы забыли ввести свой логин...");
+		document.start.login.focus();
+		return false;
+	}
+	if(document.start.pass.value!='' && document.start.pass.value.length<3)
+	{
+		alert("Пароль должен быть не короче 3 символов...");
+		document.start.pass.focus();
+		return false;
+	}
+}
+
+function mOvr(src,tp)
+{
+	if(!tp) tp=0;
+	src.style.cursor='hand';
+	src.style.backgroundColor=document.styleSheets[0].rules[tp+1].style.backgroundColor;
+}
+function mOut(src,tp)
+{
+	if(!tp) tp=0;
+	src.style.cursor='default';
+	src.style.backgroundColor=document.styleSheets[0].rules[tp].style.backgroundColor;
+}
+function mClk(src) 
+{
+	if(event.srcElement.tagName=='TD') src.children.tags('A')[0].click();
+}
+//-->
+</script>
+<body>
+<TABLE border=0 width=100% cellspacing=0 cellpadding=0>
+~header~
+<TR height=5><TD colspan=5></TD></TR>
+<TR valign=top>
+<TD>
+<table class=borderm border=0 width=120 valign=top cellspacing=0 cellpadding=0>
+~navig~
+~menu~
+</table>
+</TD>
+<TD></TD>
+<TD>
+<table width=100% border=0 cellspacing=0 cellpadding=0>
+<tr><td class=borderz align=center><font class=htxtm>Ошибка входа</font></td></tr>
+<tr height=5><td></td></tr>
+<tr><td>
+<div align=justify valign=top>
+<center><B>Ваш ник не удовлетворяет правилам.</B></center><br>
+Ник может состоять из руских и латинских букв, а так же может содержать
+символы "_", "-", "=", "$", "*", "+", "`". В нике <b>нельзя</b> использовать пробелы. Ну и естественно
+нельзя использовать нецензурные слова :)<BR>
+</div>
+</td></tr>
+<tr height=10><td></td></tr>
+<tr><td align=center class=borderz><font class=htxtm>Вход</b></td></tr>
+<tr><td>
+<form action="/login" method=POST name="start" onSubmit="return checkform();">
+<input type=hidden name="scr" value="">
+<script>
+<!--
+s=screen;
+document.start.scr.value=s.width+'x'+s.height+'x'+s.colorDepth;
+//-->
+</script>
+<TABLE border=0 width=100%>
+<TR>
+<TD align=right width=50%>
+<TABLE border=0 cellPadding=1 cellSpacing=0>
+<TR><TD align=right>Логин:&nbsp;</TD>
+<TD><input type="textfield" name="login" value="~login~" maxlength=16 size=16>
+</TD></TR>
+<TR><TD align="right">Пароль:&nbsp;</TD><TD><input type="password" name="pass" maxlength=16 size=16>
+</TD></TR>
+</TABLE>
+</TD>
+<TD width=35%>&nbsp; <input type="submit" value="Войти"></TD>
+<script language="JavaScript">
+<!--
+if (document.start.login.value=='')
+{
+	document.start.login.focus();
+}else
+{
+	document.start.pass.focus();
+}
+//-->
+</script>
+</table>
+</form>
+</td></tr>
+</table>
+</TD>
+<TD></TD>
+<TD>
+~cusers~
+<script language="JavaScript">
+<!--
+if (document.start.login.value==''){
+	document.start.login.focus();
+}else {
+	document.start.pass.focus();
+}
+//-->
+</script>
+</TD>
+</TR>
+</TABLE>
+<hr>
+<table cellspacing=0 cellpadding=0 border=0 width=100%>
+<tr align=center><td>~bb1~</td><td>~bb2~</td><td>~bb3~</td><td>~bb4~</td></tr>
+</table>
+</body>
+</html>

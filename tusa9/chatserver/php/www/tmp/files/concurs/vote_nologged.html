@@ -1,0 +1,32 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="PRAGMA" CONTENT="no-cache">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+<TITLE>Чат "Тусовка" - Конкурс Красоты</TITLE>
+</head>
+
+<LINK rel="stylesheet" type="text/css" href="/css/main.css">
+<script language="JavaScript">
+locat="";
+function UserinfoID(uid)
+{
+	r=Math.round(Math.random(123)*1000);
+	locat='/chat_userinfo2/id/'+uid;
+	
+	open(locat,'uinfo'+r,'toolbar=0,status=0,resizable=1,scrollbars=1,width=1000,height=800');
+	return false;
+}
+
+</script>
+<BODY>
+<p>
+<center>
+	Вы выбрали участницу номер ~nomer~ ~nick~, однако вы не залогинились.<br>
+	Необходимо залогиниться и вернуться на главную страницу.
+	<p>
+	<a onclick="return UserinfoID(~uid~)"><img style="border: 1px solid black;" src='/cna/photos/~uid~/0/scale/450/11.jpg'></a>
+	<p>
+	Вы можете внести дополнительный голос, послав на номер 4445 СМС с кодом <b>HMGL ~nomer~</b><br><small> $0.6</small>.
+<p>
+<a href=# onclick="window.close()">Закрыть</a><br><br>
+</center>

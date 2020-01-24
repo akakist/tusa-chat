@@ -1,0 +1,3 @@
+#cd /root/chat/CHA/bot/bot-roulette
+killall -9 roulette.exe 
+./roulette.exe -d

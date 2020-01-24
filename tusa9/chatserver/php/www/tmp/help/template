@@ -1,0 +1,67 @@
+<?
+	session_start();
+	include "/www/htdocs/inc/db_conn.php";
+    if(!isset($_SESSION['login']))
+     {
+          include '/www/htdocs/inc/auth.php';
+          check_auth();
+     }
+     if(isset($_SESSION['login']))
+     {
+     	$login=$_SESSION['login'];
+	$uid=$_SESSION['uid'];
+     }
+  ?>
+<html>
+<head>
+  <meta http-equiv="PRAGMA" content="no-cache">
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+
+  <title>Чат "Тусовка"</title>
+  <link rel="stylesheet" type="text/css" href="/css/main.css">
+  <script language="javascript" src="/css/mmove.js" type="text/javascript">
+</script>
+</head>
+
+<body>
+
+  <table border="0" width="100%" cellspacing="0" cellpadding="0">
+  <?
+    include '/www/htdocs/diz/head_row.php';
+  ?>
+
+    <tr height="5">
+      <td colspan="5"></td>
+    </tr>
+
+    <tr valign="top">
+	<?
+	    include '/www/htdocs/diz/left_col.php';
+    	?>
+
+      <td></td>
+
+      <td>
+      <!--START-->
+      <!--END-->
+      </td>
+
+      <td></td>
+
+      <td>
+        <?
+            include '/www/htdocs/inc/user_list.php';
+        ?>
+      </td><!-- up to 22 may-->
+    </tr>
+  </table>
+
+  <p align="left"> </p>
+  <hr>
+
+    <?
+    include '/www/htdocs/diz/bottom_table.php';
+    ?>
+    
+</body>
+</html>

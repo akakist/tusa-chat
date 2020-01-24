@@ -1,0 +1,155 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="PRAGMA" CONTENT="no-cache">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+<TITLE>Чат русских в Америке - Настройки - статусы</TITLE>
+</head>
+
+<LINK href="/css/main.css" rel=stylesheet type=text/css>
+<script>
+<!--
+if(navigator.appName == 'Netscape') document.write('<LINK href="/css/ns.css" rel=stylesheet type=text/css>');
+function checkform()
+{
+	return true;
+}
+
+function do_add()
+{
+	document.form1.new_s.value='yes';
+	document.form1.DATA.value='';
+	document.form1.submit();
+}
+
+var selwin=0;
+
+function do_select(z)
+{
+	url=unescape('/StPic?n='+z);
+	if(!selwin || selwin.closed)
+	{
+		selwin=open(url, 'SelPic', 'toolbar=0,status=0,resizable=0,scrollbars=0,width=600,height=300');
+	}
+	else
+	{
+		selwin.focus();
+		selwin.location=url;
+	}
+}
+
+function mOvr(src,tp)
+{
+	if(!tp) tp=0;
+	src.style.cursor='hand';
+	src.style.backgroundColor=document.styleSheets[0].rules[tp+1].style.backgroundColor;
+}
+function mOut(src,tp)
+{
+	if(!tp) tp=0;
+	src.style.cursor='default';
+	src.style.backgroundColor=document.styleSheets[0].rules[tp].style.backgroundColor;
+}
+function mClk(src) 
+{
+	if(event.srcElement.tagName=='TD') src.children.tags('A')[0].click();
+}
+//-->
+</script>
+<body>
+<TABLE border=0 width=100% cellspacing=0 cellpadding=0>
+<TR>
+<TD width=120><a href="/"><img border=0 src="/pics/logo.gif"></a></TD>
+<TD class=top_line width=5>&nbsp;</TD>
+<TD class=top_line width=100% align=center>~bannert~</TD>
+<TD class=top_line width=5>&nbsp;</TD>
+</TR>
+<TR height=5><TD colspan=5></TD></TR>
+<TR valign=top>
+<TD>
+<table class=borderm border=0 width=120 valign=top cellspacing=0 cellpadding=0>
+<tr height=16><td class=blr align=center><b>Навигация:</b></td></tr>
+~menu~
+</table>
+</TD>
+<TD></TD>
+<TD>
+<table width=100% border=0 cellspacing=0 cellpadding=0>
+<tr><td class=border align=center><b>Настройки - статусы</b></td></tr>
+<tr height=5><td></td></tr>
+<tr><td>
+<div align=justify valign=top>
+
+<FORM method="POST" name="form1" onSubmit="return checkform();">
+<input type=hidden name="DATA" value="YES">
+
+<FIELDSET>
+<LEGEND class=leg><big><b>Выберите категорию</b></big></LEGEND>
+<br>
+<input class=bp type=button value="Статусы" style="font-size: 10pt">
+<input type=button value="Чат" style="font-size: 10pt" onclick="location='settings_chat'">
+<input type=button value="Цвета" style="font-size: 10pt" onclick="location='settings_color'">
+<input type=button value="Кредиты" style="font-size: 10pt" onclick="location='settings_credit'">
+<input type=button value="Привилегии" style="font-size: 10pt" onclick="location='settings_privs'">
+<br><br>
+</fieldset>
+<br>
+
+<FIELDSET>
+<LEGEND class=leg><big><b>Статусы</b></big></LEGEND>
+
+<center><font class=yelmsg>~error~</font></center>
+
+<TABLE border=0 cellspacing=3 cellpadding=3>
+<TR valign=top>
+<TD>Описание&nbsp;</TD><TD colspan=2>Картинка<br><br></TD><td align=center>Отключить функцию "позвать"<br> для этого статуса?</td>
+</TR>
+<tr>
+<td>~st3~</td><td><img src="/pics/s/sp1.gif" width=16 height=16></td><td></td><td align=center><input type=checkbox class=c_b disabled></td>
+</tr>
+<tr>
+<td nowrap>~st4~</td><td><img src="/pics/s/sp2.gif" width=16 height=16></td><td></td><td align=center><input type=checkbox class=c_b disabled></td>
+</tr>
+<tr>
+<td nowrap>~st5~</td><td><img src="/pics/s/sp3.gif" width=16 height=16></td><td></td><td align=center><input type=checkbox class=c_b disabled></td>
+</tr>
+<tr>
+<td>~st6~</td><td><img src="/pics/s/sp4.gif" width=16 height=16></td><td></td><td align=center><input type=checkbox class=c_b disabled></td>
+</tr>
+<tr>
+<td>~st7~</td><td><img src="/pics/s/sp5.gif" width=16 height=16></td><td></td><td align=center><input type=checkbox class=c_b disabled checked></td>
+</tr>
+<tr>
+<td>~st8~</td><td><img src="/pics/s/sp6.gif" width=16 height=16></td><td></td><td align=center><input type=checkbox class=c_b disabled></td>
+</tr>
+~userdef~
+</TABLE>
+
+<br>
+
+<center><input type=button onclick="do_add();" value="Добавить статус" class=b_l><br>
+
+<input type=hidden name="new_s" value="no"><br>
+
+Если Вы сделали здесь изменения, то не забудьте нажать на кнопку <b>"Изменить"</b><br>
+<br>
+<input type=submit value="Изменить" class=b_l>
+</center>
+
+</FIELDSET>
+
+</form>
+
+</div>
+</td></tr>
+</table>
+
+</TD>
+<TD></TD>
+</TR>
+</TABLE>
+<hr>
+<table cellspacing=0 cellpadding=0 border=0 width=100%>
+<tr align=center><td>~bb1~</td><td>~bb2~</td><td>~bb3~</td><td>~bb4~</td></tr>
+</table>
+</body>
+</html>

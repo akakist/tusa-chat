@@ -1,0 +1,1 @@
+cl  st_rsa_client.cpp /LD  /WX /G5 /Ox  /Ob2 /Gs0 /GF /Gy /nologo -DWIN32 -I. -ID:\01_h323\Libs_dynamic\openssl-0.9.7\openssl-0.9.7\include\  ws2_32.lib /EHsc lib\ssleay32.lib  lib\libeay32.lib gdi32.lib /link 

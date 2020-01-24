@@ -1,0 +1,1 @@
+-lssl -lcrypto -lmysqlclient   -lpthread -lz -lstlport 

@@ -1,0 +1,103 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="PRAGMA" CONTENT="no-cache">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+<TITLE>Russian America Chat. Чат русских в Америке</TITLE>
+</head>
+
+<script>
+<!--
+function mOvr(src,tp)
+{
+	if(!tp) tp=0;
+	src.style.cursor='hand';
+	src.style.backgroundColor=document.styleSheets[0].rules[tp+1].style.backgroundColor;
+}
+function mOut(src,tp)
+{
+	if(!tp) tp=0;
+	src.style.cursor='default';
+	src.style.backgroundColor=document.styleSheets[0].rules[tp].style.backgroundColor;
+}
+function mClk(src) 
+{
+	if(event.srcElement.tagName=='TD') src.children.tags('A')[0].click();
+}
+//-->
+</script>
+
+<LINK href="/css/main.css" rel=stylesheet type=text/css>
+<body>
+<TABLE border=0 width=100% cellspacing=0 cellpadding=0>
+~header~
+<TR height=5><TD colspan=5></TD></TR>
+<TR valign=top>
+<TD>
+<table class=borderm border=0 width=120 valign=top cellspacing=0 cellpadding=0>
+~navig~
+~menu~
+</table>
+</TD>
+<TD></TD>
+<TD>
+<table width=100% border=0 cellspacing=0 cellpadding=0>
+<tr><td class=borderz align=center><font class=htxtm>Здравствуйте, ~name~</font></td></tr>
+<tr height=5><td></td></tr>
+<tr><td>
+<div align=justify valign=top>
+<center>Рады видеть Вас в нашем чате ;)</center>
+
+Вы вошли без регистрации и Вам недоступны расширенные возможности чата, 
+как например, "Записки" или "Настройки чата". 
+Но мы все же настоятельно советуем Вам зарегистрироваться у нас. Возможно, 
+это будет началом Вашего виртуального будущего :)<br>
+Если Вы все же не желаете регистрироваться, 
+то выберите свой пол и комнату, в которой хотите общаться.<br>
+Кнопка "<a href="/logout">Выход</a>" предназначена для завершения сессии.
+Это Вам  понадобится, к примеру, если Вы захотите зайти под другим логином. 
+<br><br>
+<table class=borderz width=100% border=0 cellspacing=0 cellpadding=0>
+<tr><td class=borderz align=center><font class=htxtm>Вход</font></td></tr>
+<tr><td>
+
+<TABLE align=center border=0>
+<form action="/chat/enter" method=POST name="loginform">
+<TR height=5><TD></TD></TR>
+<TR><TD>
+<TABLE align=center border=0 cellPadding=1 cellSpacing=0>
+~schannel~<TR><TD align="right">Сидим в:&nbsp;</TD>
+<TD>~channels~</TD>
+</TR>~eschannel~
+<TR><TD align="right">Пол:&nbsp;</TD>
+<TD>~gender~</TD>
+</TR>
+
+</TABLE>
+</TD></TR>
+<TR><TD align=center>
+<input type=submit value="Войти в чат" class=button name="subbtn">
+<SCRIPT>
+<!--
+document.loginform.subbtn.focus();
+//-->
+</SCRIPT><br>
+</form>
+</TD></TR>
+</TABLE>
+</td></tr></table>
+</div>
+</td></tr>
+</table>
+</TD>
+<TD></TD>
+<TD>
+~cusers~
+</TD>
+</TR>
+</TABLE>
+<hr>
+<table cellspacing=0 cellpadding=0 border=0 width=100%>
+<tr align=center><td>~bb1~</td><td>~bb2~</td><td>~bb3~</td><td>~bb4~</td></tr>
+</table>
+</body>
+</html>

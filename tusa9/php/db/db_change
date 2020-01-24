@@ -1,0 +1,51 @@
+alter table tbl_users add column hide_name tinyint not null default 0;
+update tbl_users set hide_name=(hide_lname='1' or hide_fname='1');
+
+alter table tbl_users add column name text not null default '';
+update tbl_users set name=concat_ws(' ',fname,lname);
+
+
+alter table tbl_users 	
+			drop column b_day_show_mode,
+			drop column bought_quota,
+			drop column email,
+			drop column fname,
+			drop column lname,
+			drop column hide_email,
+			drop column hide_fname,
+			drop column hide_icq,
+			drop column hide_lname,
+			drop column hide_tel,
+			drop column homepage, 
+			drop column icq,
+			drop column setting_autologin,
+			drop column setting_lpp,
+			drop column setting_show_hints,
+			drop column setting_show_stat,
+			drop column tel,
+			drop column hide_city,
+			drop column primary_photo,
+			drop column foto_big;
+ 			
+alter table photos drop column url_thumb_big;
+alter table tbl_users 	add column has_main_foto tinyint not null default 0;
+update tbl_users set has_main_foto=1 where foto_thumb_big not like '/pics/noimage%';
+
+alter table nick	drop column ready_to_sale,
+			drop column cost;
+alter table moderators drop column clan;			
+
+alter table tbl_users add column php_session_id text not null default '';
+alter table tbl_users add unreged tinyint not null default 0;
+
+
+drop table bill_account;
+drop table bill_account_password;
+drop table bill_pincode;
+drop table bill_pincode_pack;
+drop table bill_privilege;
+drop table bill_user;
+drop table bill_wechsel;
+drop table user_status_old;
+drop table users_count2;  
+ 

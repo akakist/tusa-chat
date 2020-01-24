@@ -1,0 +1,55 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="PRAGMA" CONTENT="no-cache">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+<TITLE>Чат русских в Америке - Консоль админа -> Анекдоты</TITLE>
+</head>
+
+<LINK rel="stylesheet" type="text/css" href="/css/main.css">
+<script>
+<!--
+if(navigator.appName == 'Netscape') document.write('<LINK href="/css/ns.css" rel=stylesheet type=text/css>');
+function fupdate(n)
+{
+	document.f.cmd.value=n;
+	document.f.submit();
+}
+function ch(n)
+{
+	document.f.pn.value=n;
+	document.f.submit();
+}
+//-->
+</script>
+<body>
+<big><big><center><b>Админство анекдотов</b></center></big></big><br>
+<form name="f" method="POST">
+<input type=hidden name="id" value="~id~">
+<input type=hidden name="cmd" value="">
+Показать анекдот # <input type=textfield name="pn" value="~pn~" style="height: 18; width: 40;" maxlength=4 class=tf>&nbsp;<input type=submit value="OK">&nbsp;&nbsp;&nbsp;
+<input type=button value="Предыдущий" onclick="ch(~prev~);">
+<input type=button value="Следующий" onclick="ch(~next~);">
+<br>
+<br>
+<table border=0>
+<tr valign=top><td align="justify">
+<font color=#dfdfdf>~text~</font><br><br>
+<center>
+Статус: ~stat~<br>
+~adm~
+</center>
+</td>
+</tr>
+</table><br>
+Добавил(а) ~addby~, <i>~adddate~</i><br>
+Всего анекдотов: ~cnt~
+<br>
+<center>
+<input type=button value="Обновить" onclick="fupdate('');">
+<input type=button value="Закрыть" onclick="window.close();">
+</center>
+</form>
+<p>
+<table border=0 width="100%">
+<tr align=center><td>~bb3~</td><td>~bb4~</td></tr>
+</table>

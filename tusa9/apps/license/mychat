@@ -1,0 +1,10 @@
+application=tusachat
+host=mychat.kz
+host=mychat.kz.
+host=www.mychat.kz
+host=www.mychat.kz.
+host=tusa.
+host=tusa
+valid=always
+max_users=800
+port=all

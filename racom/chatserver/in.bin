@@ -1,0 +1,1173 @@
+POST /chat/setstatus HTTP/1.1
+Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, application/x-shockwave-flash, application/vnd.ms-excel, application/msword, */*
+Referer: http://10.10.1.1/chat/addmessage
+Accept-Language: ru
+Content-Type: application/x-www-form-urlencoded
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.40426; .NET CLR 1.0.3705; .NET CLR 1.1.4322)
+Host: 10.10.1.1
+Content-Length: 15
+Connection: Keep-Alive
+Cache-Control: no-cache
+Cookie: cid=CC7AB4D60C7A0CFF
+
+status=5&scr=onGET /pics/s/sp3.gif HTTP/1.1
+Accept: */*
+Referer: http://10.10.1.1/chat/
+Accept-Language: ru
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.40426; .NET CLR 1.0.3705; .NET CLR 1.1.4322)
+Host: 10.10.1.1
+Connection: Keep-Alive
+Cookie: cid=CC7AB4D60C7A0CFF
+
+POST /chat/setstatus HTTP/1.1
+Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, application/x-shockwave-flash, application/vnd.ms-excel, application/msword, */*
+Referer: http://10.10.1.1/chat/addmessage
+Accept-Language: ru
+Content-Type: application/x-www-form-urlencoded
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.40426; .NET CLR 1.0.3705; .NET CLR 1.1.4322)
+Host: 10.10.1.1
+Content-Length: 15
+Connection: Keep-Alive
+Cache-Control: no-cache
+Cookie: cid=CC7AB4D60C7A0CFF
+
+status=3&scr=onPOST /chat/cmd HTTP/1.1
+Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, application/x-shockwave-flash, application/vnd.ms-excel, application/msword, */*
+Referer: http://10.10.1.1/chat/buttons
+Accept-Language: ru
+Content-Type: application/x-www-form-urlencoded
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.40426; .NET CLR 1.0.3705; .NET CLR 1.1.4322)
+Host: 10.10.1.1
+Content-Length: 45
+Connection: Keep-Alive
+Cache-Control: no-cache
+Cookie: cid=CC7AB4D60C7A0CFF
+
+id=&msg=&cmd=clmode&on=0&nick=37144&channel=0GET /pics/c_up.gif HTTP/1.1
+Accept: */*
+Referer: http://10.10.1.1/chat/
+Accept-Language: ru
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.40426; .NET CLR 1.0.3705; .NET CLR 1.1.4322)
+Host: 10.10.1.1
+Connection: Keep-Alive
+Cookie: cid=CC7AB4D60C7A0CFF
+
+POST /chat/cmd HTTP/1.1
+Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, application/x-shockwave-flash, application/vnd.ms-excel, application/msword, */*
+Referer: http://10.10.1.1/chat/buttons
+Accept-Language: ru
+Content-Type: application/x-www-form-urlencoded
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.40426; .NET CLR 1.0.3705; .NET CLR 1.1.4322)
+Host: 10.10.1.1
+Content-Length: 45
+Connection: Keep-Alive
+Cache-Control: no-cache
+Cookie: cid=CC7AB4D60C7A0CFF
+
+id=&msg=&cmd=clmode&on=1&nick=37144&channel=0GET /Gallery HTTP/1.1
+Accept: */*
+Accept-Language: ru
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.40426; .NET CLR 1.0.3705; .NET CLR 1.1.4322)
+Host: 10.10.1.1
+Connection: Keep-Alive
+Cookie: cid=CC7AB4D60C7A0CFF
+
+GET /css/main.css HTTP/1.1
+Accept: */*
+Referer: http://10.10.1.1/Gallery
+Accept-Language: ru
+Accept-Encoding: gzip, deflate
+If-Modified-Since: Mon, 24 Jul 2000 06:00:00 GMT
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.40426; .NET CLR 1.0.3705; .NET CLR 1.1.4322)
+Host: 10.10.1.1
+Connection: Keep-Alive
+Cookie: cid=CC7AB4D60C7A0CFF
+
+GET /pics/logo.gif HTTP/1.1
+Accept: */*
+Referer: http://10.10.1.1/Gallery
+Accept-Language: ru
+Accept-Encoding: gzip, deflate
+If-Modified-Since: Mon, 24 Jul 2000 06:00:00 GMT
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.40426; .NET CLR 1.0.3705; .NET CLR 1.1.4322)
+Host: 10.10.1.1
+Connection: Keep-Alive
+Cookie: cid=CC7AB4D60C7A0CFF
+
+GET /Users HTTP/1.1
+Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, application/x-shockwave-flash, application/vnd.ms-excel, application/msword, */*
+Referer: http://10.10.1.1/Gallery
+Accept-Language: ru
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.40426; .NET CLR 1.0.3705; .NET CLR 1.1.4322)
+Host: 10.10.1.1
+Connection: Keep-Alive
+Cookie: cid=CC7AB4D60C7A0CFF
+
+GET /pics/top_line.gif HTTP/1.1
+Accept: */*
+Referer: http://10.10.1.1/Gallery
+Accept-Language: ru
+Accept-Encoding: gzip, deflate
+If-Modified-Since: Mon, 24 Jul 2000 06:00:00 GMT
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.40426; .NET CLR 1.0.3705; .NET CLR 1.1.4322)
+Host: 10.10.1.1
+Connection: Keep-Alive
+Cookie: cid=CC7AB4D60C7A0CFF
+
+GET /admin/ HTTP/1.1
+Accept: */*
+Accept-Language: ru
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.40426; .NET CLR 1.0.3705; .NET CLR 1.1.4322)
+Host: 10.10.1.1
+Connection: Keep-Alive
+Cookie: cid=CC7AB4D60C7A0CFF
+
+GET /css/main.css HTTP/1.1
+Accept: */*
+Referer: http://10.10.1.1/admin/
+Accept-Language: ru
+Accept-Encoding: gzip, deflate
+If-Modified-Since: Mon, 24 Jul 2000 06:00:00 GMT
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.40426; .NET CLR 1.0.3705; .NET CLR 1.1.4322)
+Host: 10.10.1.1
+Connection: Keep-Alive
+Cookie: cid=CC7AB4D60C7A0CFF
+
+GET /settings HTTP/1.1
+Accept: */*
+Accept-Language: ru
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.40426; .NET CLR 1.0.3705; .NET CLR 1.1.4322)
+Host: 10.10.1.1
+Connection: Keep-Alive
+Cookie: cid=CC7AB4D60C7A0CFF
+
+GET /css/main.css HTTP/1.1
+Accept: */*
+Referer: http://10.10.1.1/settings
+Accept-Language: ru
+Accept-Encoding: gzip, deflate
+If-Modified-Since: Mon, 24 Jul 2000 06:00:00 GMT
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.40426; .NET CLR 1.0.3705; .NET CLR 1.1.4322)
+Host: 10.10.1.1
+Connection: Keep-Alive
+Cookie: cid=CC7AB4D60C7A0CFF
+
+GET /pics/logo.gif HTTP/1.1
+Accept: */*
+Referer: http://10.10.1.1/settings
+Accept-Language: ru
+Accept-Encoding: gzip, deflate
+If-Modified-Since: Mon, 24 Jul 2000 06:00:00 GMT
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.40426; .NET CLR 1.0.3705; .NET CLR 1.1.4322)
+Host: 10.10.1.1
+Connection: Keep-Alive
+Cookie: cid=CC7AB4D60C7A0CFF
+
+GET /pics/s/sp1.gif HTTP/1.1
+Accept: */*
+Referer: http://10.10.1.1/settings
+Accept-Language: ru
+Accept-Encoding: gzip, deflate
+If-Modified-Since: Mon, 24 Jul 2000 06:00:00 GMT
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.40426; .NET CLR 1.0.3705; .NET CLR 1.1.4322)
+Host: 10.10.1.1
+Connection: Keep-Alive
+Cookie: cid=CC7AB4D60C7A0CFF
+
+GET /pics/s/sp2.gif HTTP/1.1
+Accept: */*
+Referer: http://10.10.1.1/settings
+Accept-Language: ru
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.40426; .NET CLR 1.0.3705; .NET CLR 1.1.4322)
+Host: 10.10.1.1
+Connection: Keep-Alive
+Cookie: cid=CC7AB4D60C7A0CFF
+
+GET /pics/top_line.gif HTTP/1.1
+Accept: */*
+Referer: http://10.10.1.1/settings
+Accept-Language: ru
+Accept-Encoding: gzip, deflate
+If-Modified-Since: Mon, 24 Jul 2000 06:00:00 GMT
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.40426; .NET CLR 1.0.3705; .NET CLR 1.1.4322)
+Host: 10.10.1.1
+Connection: Keep-Alive
+Cookie: cid=CC7AB4D60C7A0CFF
+
+GET /pics/s/sp3.gif HTTP/1.1
+Accept: */*
+Referer: http://10.10.1.1/settings
+Accept-Language: ru
+Accept-Encoding: gzip, deflate
+If-Modified-Since: Mon, 24 Jul 2000 06:00:00 GMT
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.40426; .NET CLR 1.0.3705; .NET CLR 1.1.4322)
+Host: 10.10.1.1
+Connection: Keep-Alive
+Cookie: cid=CC7AB4D60C7A0CFF
+
+GET /pics/s/sp4.gif HTTP/1.1
+Accept: */*
+Referer: http://10.10.1.1/settings
+Accept-Language: ru
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.40426; .NET CLR 1.0.3705; .NET CLR 1.1.4322)
+Host: 10.10.1.1
+Connection: Keep-Alive
+Cookie: cid=CC7AB4D60C7A0CFF
+
+GET /pics/s/sp5.gif HTTP/1.1
+Accept: */*
+Referer: http://10.10.1.1/settings
+Accept-Language: ru
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.40426; .NET CLR 1.0.3705; .NET CLR 1.1.4322)
+Host: 10.10.1.1
+Connection: Keep-Alive
+Cookie: cid=CC7AB4D60C7A0CFF
+
+GET /pics/s/sp6.gif HTTP/1.1
+Accept: */*
+Referer: http://10.10.1.1/settings
+Accept-Language: ru
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.40426; .NET CLR 1.0.3705; .NET CLR 1.1.4322)
+Host: 10.10.1.1
+Connection: Keep-Alive
+Cookie: cid=CC7AB4D60C7A0CFF
+
+GET /pics/s/sp11.gif HTTP/1.1
+Accept: */*
+Referer: http://10.10.1.1/settings
+Accept-Language: ru
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.40426; .NET CLR 1.0.3705; .NET CLR 1.1.4322)
+Host: 10.10.1.1
+Connection: Keep-Alive
+Cookie: cid=CC7AB4D60C7A0CFF
+
+GET /pics/del.gif HTTP/1.1
+Accept: */*
+Referer: http://10.10.1.1/settings
+Accept-Language: ru
+Accept-Encoding: gzip, deflate
+If-Modified-Since: Mon, 24 Jul 2000 06:00:00 GMT
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.40426; .NET CLR 1.0.3705; .NET CLR 1.1.4322)
+Host: 10.10.1.1
+Connection: Keep-Alive
+Cookie: cid=CC7AB4D60C7A0CFF
+
+GET /pics/s/sp7.gif HTTP/1.1
+Accept: */*
+Referer: http://10.10.1.1/settings
+Accept-Language: ru
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.40426; .NET CLR 1.0.3705; .NET CLR 1.1.4322)
+Host: 10.10.1.1
+Connection: Keep-Alive
+Cookie: cid=CC7AB4D60C7A0CFF
+
+GET /pics/s/sp9.gif HTTP/1.1
+Accept: */*
+Referer: http://10.10.1.1/settings
+Accept-Language: ru
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.40426; .NET CLR 1.0.3705; .NET CLR 1.1.4322)
+Host: 10.10.1.1
+Connection: Keep-Alive
+Cookie: cid=CC7AB4D60C7A0CFF
+
+GET /pics/s/sp44.gif HTTP/1.1
+Accept: */*
+Referer: http://10.10.1.1/settings
+Accept-Language: ru
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.40426; .NET CLR 1.0.3705; .NET CLR 1.1.4322)
+Host: 10.10.1.1
+Connection: Keep-Alive
+Cookie: cid=CC7AB4D60C7A0CFF
+
+GET /pics/s/sp32.gif HTTP/1.1
+Accept: */*
+Referer: http://10.10.1.1/settings
+Accept-Language: ru
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.40426; .NET CLR 1.0.3705; .NET CLR 1.1.4322)
+Host: 10.10.1.1
+Connection: Keep-Alive
+Cookie: cid=CC7AB4D60C7A0CFF
+
+GET /pics/s/sp68.gif HTTP/1.1
+Accept: */*
+Referer: http://10.10.1.1/settings
+Accept-Language: ru
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.40426; .NET CLR 1.0.3705; .NET CLR 1.1.4322)
+Host: 10.10.1.1
+Connection: Keep-Alive
+Cookie: cid=CC7AB4D60C7A0CFF
+
+GET /settings?mode=1 HTTP/1.1
+Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, application/x-shockwave-flash, application/vnd.ms-excel, application/msword, */*
+Accept-Language: ru
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.40426; .NET CLR 1.0.3705; .NET CLR 1.1.4322)
+Host: 10.10.1.1
+Connection: Keep-Alive
+Cookie: cid=CC7AB4D60C7A0CFF
+
+GET /settings?mode=2 HTTP/1.1
+Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, application/x-shockwave-flash, application/vnd.ms-excel, application/msword, */*
+Accept-Language: ru
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.40426; .NET CLR 1.0.3705; .NET CLR 1.1.4322)
+Host: 10.10.1.1
+Connection: Keep-Alive
+Cookie: cid=CC7AB4D60C7A0CFF
+
+GET / HTTP/1.1
+Accept: */*
+Referer: http://10.10.1.1/settings?mode=2
+Accept-Language: ru
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.40426; .NET CLR 1.0.3705; .NET CLR 1.1.4322)
+Host: 10.10.1.1
+Connection: Keep-Alive
+Cookie: cid=CC7AB4D60C7A0CFF
+
+GET /pics/cp/std.gif HTTP/1.1
+Accept: */*
+Referer: http://10.10.1.1/settings?mode=2
+Accept-Language: ru
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.40426; .NET CLR 1.0.3705; .NET CLR 1.1.4322)
+Host: 10.10.1.1
+Connection: Keep-Alive
+Cookie: cid=CC7AB4D60C7A0CFF
+
+GET /settings?mode=4 HTTP/1.1
+Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, application/x-shockwave-flash, application/vnd.ms-excel, application/msword, */*
+Accept-Language: ru
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.40426; .NET CLR 1.0.3705; .NET CLR 1.1.4322)
+Host: 10.10.1.1
+Connection: Keep-Alive
+Cookie: cid=CC7AB4D60C7A0CFF
+
+GET /pics/granted.gif HTTP/1.1
+Accept: */*
+Referer: http://10.10.1.1/settings?mode=4
+Accept-Language: ru
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.40426; .NET CLR 1.0.3705; .NET CLR 1.1.4322)
+Host: 10.10.1.1
+Connection: Keep-Alive
+Cookie: cid=CC7AB4D60C7A0CFF
+
+GET /settings?mode=5 HTTP/1.1
+Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, application/x-shockwave-flash, application/vnd.ms-excel, application/msword, */*
+Accept-Language: ru
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.40426; .NET CLR 1.0.3705; .NET CLR 1.1.4322)
+Host: 10.10.1.1
+Connection: Keep-Alive
+Cookie: cid=CC7AB4D60C7A0CFF
+
+GET /settings?mode=6 HTTP/1.1
+Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, application/x-shockwave-flash, application/vnd.ms-excel, application/msword, */*
+Accept-Language: ru
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.40426; .NET CLR 1.0.3705; .NET CLR 1.1.4322)
+Host: 10.10.1.1
+Connection: Keep-Alive
+Cookie: cid=CC7AB4D60C7A0CFF
+
+GET /relogin HTTP/1.1
+Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, application/x-shockwave-flash, application/vnd.ms-excel, application/msword, */*
+Accept-Language: ru
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.40426; .NET CLR 1.0.3705; .NET CLR 1.1.4322)
+Host: 10.10.1.1
+Connection: Keep-Alive
+Cookie: cid=CC7AB4D60C7A0CFF
+
+GET /pics/s/sp1000.gif HTTP/1.1
+Accept: */*
+Referer: http://10.10.1.1/relogin
+Accept-Language: ru
+Accept-Encoding: gzip, deflate
+If-Modified-Since: Mon, 24 Jul 2000 06:00:00 GMT
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.40426; .NET CLR 1.0.3705; .NET CLR 1.1.4322)
+Host: 10.10.1.1
+Connection: Keep-Alive
+Cookie: cid=CC7AB4D60C7A0CFF
+
+GET /Users HTTP/1.1
+Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, application/x-shockwave-flash, application/vnd.ms-excel, application/msword, */*
+Referer: http://10.10.1.1/relogin
+Accept-Language: ru
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.40426; .NET CLR 1.0.3705; .NET CLR 1.1.4322)
+Host: 10.10.1.1
+Connection: Keep-Alive
+Cookie: cid=CC7AB4D60C7A0CFF
+
+GET /login HTTP/1.1
+Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, application/x-shockwave-flash, application/vnd.ms-excel, application/msword, */*
+Referer: http://10.10.1.1/relogin
+Accept-Language: ru
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.40426; .NET CLR 1.0.3705; .NET CLR 1.1.4322)
+Host: 10.10.1.1
+Connection: Keep-Alive
+Cookie: cid=CC7AB4D60C7A0CFF
+
+GET /pics/close.gif HTTP/1.1
+Accept: */*
+Referer: http://10.10.1.1/login
+Accept-Language: ru
+Accept-Encoding: gzip, deflate
+If-Modified-Since: Mon, 24 Jul 2000 06:00:00 GMT
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.40426; .NET CLR 1.0.3705; .NET CLR 1.1.4322)
+Host: 10.10.1.1
+Connection: Keep-Alive
+Cookie: cid=CC7AB4D60C7A0CFF
+
+GET /Users HTTP/1.1
+Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, application/x-shockwave-flash, application/vnd.ms-excel, application/msword, */*
+Referer: http://10.10.1.1/login
+Accept-Language: ru
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.40426; .NET CLR 1.0.3705; .NET CLR 1.1.4322)
+Host: 10.10.1.1
+Connection: Keep-Alive
+Cookie: cid=CC7AB4D60C7A0CFF
+
+GET /pics/hint.gif HTTP/1.1
+Accept: */*
+Referer: http://10.10.1.1/login
+Accept-Language: ru
+Accept-Encoding: gzip, deflate
+If-Modified-Since: Mon, 24 Jul 2000 06:00:00 GMT
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.40426; .NET CLR 1.0.3705; .NET CLR 1.1.4322)
+Host: 10.10.1.1
+Connection: Keep-Alive
+Cookie: cid=CC7AB4D60C7A0CFF
+
+GET /pics/stat/spln.gif HTTP/1.1
+Accept: */*
+Referer: http://10.10.1.1/login
+Accept-Language: ru
+Accept-Encoding: gzip, deflate
+If-Modified-Since: Mon, 24 Jul 2000 06:00:00 GMT
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.40426; .NET CLR 1.0.3705; .NET CLR 1.1.4322)
+Host: 10.10.1.1
+Connection: Keep-Alive
+Cookie: cid=CC7AB4D60C7A0CFF
+
+GET /login HTTP/1.1
+Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, application/x-shockwave-flash, application/vnd.ms-excel, application/msword, */*
+Referer: http://10.10.1.1/login
+Accept-Language: ru
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.40426; .NET CLR 1.0.3705; .NET CLR 1.1.4322)
+Host: 10.10.1.1
+Connection: Keep-Alive
+Cookie: cid=CC7AB4D60C7A0CFF
+
+GET /pics/stat/spln.gif HTTP/1.1
+Accept: */*
+Referer: http://10.10.1.1/login
+Accept-Language: ru
+Accept-Encoding: gzip, deflate
+If-Modified-Since: Mon, 24 Jul 2000 06:00:00 GMT
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.40426; .NET CLR 1.0.3705; .NET CLR 1.1.4322)
+Host: 10.10.1.1
+Connection: Keep-Alive
+Cookie: cid=CC7AB4D60C7A0CFF
+
+POST /chat/setstatus HTTP/1.1
+Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, application/x-shockwave-flash, application/vnd.ms-excel, application/msword, */*
+Referer: http://10.10.1.1/chat/addmessage
+Accept-Language: ru
+Content-Type: application/x-www-form-urlencoded
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.40426; .NET CLR 1.0.3705; .NET CLR 1.1.4322)
+Host: 10.10.1.1
+Content-Length: 15
+Connection: Keep-Alive
+Cache-Control: no-cache
+Cookie: cid=CC7AB4D60C7A0CFF
+
+status=5&scr=onPOST /chat/setstatus HTTP/1.1
+Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, application/x-shockwave-flash, application/vnd.ms-excel, application/msword, */*
+Referer: http://10.10.1.1/chat/addmessage
+Accept-Language: ru
+Content-Type: application/x-www-form-urlencoded
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.40426; .NET CLR 1.0.3705; .NET CLR 1.1.4322)
+Host: 10.10.1.1
+Content-Length: 15
+Connection: Keep-Alive
+Cache-Control: no-cache
+Cookie: cid=CC7AB4D60C7A0CFF
+
+status=3&scr=onGET /chat/messages?r=689&c=5 HTTP/1.1
+Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, application/x-shockwave-flash, application/vnd.ms-excel, application/msword, */*
+Referer: http://10.10.1.1/chat/
+Accept-Language: ru
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.40426; .NET CLR 1.0.3705; .NET CLR 1.1.4322)
+Host: 10.10.1.1
+Connection: Keep-Alive
+Cookie: cid=CC7AB4D60C7A0CFF
+
+GET /pics/c_down.gif HTTP/1.1
+Accept: */*
+Referer: http://10.10.1.1/chat/
+Accept-Language: ru
+Accept-Encoding: gzip, deflate
+If-Modified-Since: Mon, 24 Jul 2000 06:00:00 GMT
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.40426; .NET CLR 1.0.3705; .NET CLR 1.1.4322)
+Host: 10.10.1.1
+Connection: Keep-Alive
+Cookie: cid=CC7AB4D60C7A0CFF
+
+GET /pics/uinfo1.gif HTTP/1.1
+Accept: */*
+Referer: http://10.10.1.1/chat/
+Accept-Language: ru
+Accept-Encoding: gzip, deflate
+If-Modified-Since: Mon, 24 Jul 2000 06:00:00 GMT
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.40426; .NET CLR 1.0.3705; .NET CLR 1.1.4322)
+Host: 10.10.1.1
+Connection: Keep-Alive
+Cookie: cid=CC7AB4D60C7A0CFF
+
+POST /chat/sendmessage HTTP/1.1
+Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, application/x-shockwave-flash, application/vnd.ms-excel, application/msword, */*
+Referer: http://10.10.1.1/chat/addmessage
+Accept-Language: ru
+Content-Type: application/x-www-form-urlencoded
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.40426; .NET CLR 1.0.3705; .NET CLR 1.1.4322)
+Host: 10.10.1.1
+Content-Length: 58
+Connection: Keep-Alive
+Cache-Control: no-cache
+Cookie: cid=CC7AB4D60C7A0CFF
+
+msg=%21reg&priv=&makeit=&fornick=%C2%F1%E5%EC&sys=&msgbox=GET /chat/messages?r=413&c=0 HTTP/1.1
+Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, application/x-shockwave-flash, application/vnd.ms-excel, application/msword, */*
+Referer: http://10.10.1.1/chat/
+Accept-Language: ru
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.40426; .NET CLR 1.0.3705; .NET CLR 1.1.4322)
+Host: 10.10.1.1
+Connection: Keep-Alive
+Cookie: cid=CC7AB4D60C7A0CFF
+
+POST /chat/setstatus HTTP/1.1
+Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, application/x-shockwave-flash, application/vnd.ms-excel, application/msword, */*
+Referer: http://10.10.1.1/chat/addmessage
+Accept-Language: ru
+Content-Type: application/x-www-form-urlencoded
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.40426; .NET CLR 1.0.3705; .NET CLR 1.1.4322)
+Host: 10.10.1.1
+Content-Length: 15
+Connection: Keep-Alive
+Cache-Control: no-cache
+Cookie: cid=CC7AB4D60C7A0CFF
+
+status=5&scr=onPOST /chat/setstatus HTTP/1.1
+Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, application/x-shockwave-flash, application/vnd.ms-excel, application/msword, */*
+Referer: http://10.10.1.1/chat/addmessage
+Accept-Language: ru
+Content-Type: application/x-www-form-urlencoded
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.40426; .NET CLR 1.0.3705; .NET CLR 1.1.4322)
+Host: 10.10.1.1
+Content-Length: 15
+Connection: Keep-Alive
+Cache-Control: no-cache
+Cookie: cid=CC7AB4D60C7A0CFF
+
+status=3&scr=onPOST /chat/setstatus HTTP/1.1
+Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, application/x-shockwave-flash, application/vnd.ms-excel, application/msword, */*
+Referer: http://10.10.1.1/chat/addmessage
+Accept-Language: ru
+Content-Type: application/x-www-form-urlencoded
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.40426; .NET CLR 1.0.3705; .NET CLR 1.1.4322)
+Host: 10.10.1.1
+Content-Length: 15
+Connection: Keep-Alive
+Cache-Control: no-cache
+Cookie: cid=CC7AB4D60C7A0CFF
+
+status=5&scr=onPOST /chat/setstatus HTTP/1.1
+Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, application/x-shockwave-flash, application/vnd.ms-excel, application/msword, */*
+Referer: http://10.10.1.1/chat/addmessage
+Accept-Language: ru
+Content-Type: application/x-www-form-urlencoded
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.40426; .NET CLR 1.0.3705; .NET CLR 1.1.4322)
+Host: 10.10.1.1
+Content-Length: 15
+Connection: Keep-Alive
+Cache-Control: no-cache
+Cookie: cid=CC7AB4D60C7A0CFF
+
+status=3&scr=onPOST /chat/setstatus HTTP/1.1
+Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, application/x-shockwave-flash, application/vnd.ms-excel, application/msword, */*
+Referer: http://10.10.1.1/chat/addmessage
+Accept-Language: ru
+Content-Type: application/x-www-form-urlencoded
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.40426; .NET CLR 1.0.3705; .NET CLR 1.1.4322)
+Host: 10.10.1.1
+Content-Length: 15
+Connection: Keep-Alive
+Cache-Control: no-cache
+Cookie: cid=CC7AB4D60C7A0CFF
+
+status=5&scr=onPOST /chat/setstatus HTTP/1.1
+Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, application/x-shockwave-flash, application/vnd.ms-excel, application/msword, */*
+Referer: http://10.10.1.1/chat/addmessage
+Accept-Language: ru
+Content-Type: application/x-www-form-urlencoded
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.40426; .NET CLR 1.0.3705; .NET CLR 1.1.4322)
+Host: 10.10.1.1
+Content-Length: 15
+Connection: Keep-Alive
+Cache-Control: no-cache
+Cookie: cid=CC7AB4D60C7A0CFF
+
+status=3&scr=onPOST /chat/setstatus HTTP/1.1
+Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, application/x-shockwave-flash, application/vnd.ms-excel, application/msword, */*
+Referer: http://10.10.1.1/chat/addmessage
+Accept-Language: ru
+Content-Type: application/x-www-form-urlencoded
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.40426; .NET CLR 1.0.3705; .NET CLR 1.1.4322)
+Host: 10.10.1.1
+Content-Length: 15
+Connection: Keep-Alive
+Cache-Control: no-cache
+Cookie: cid=CC7AB4D60C7A0CFF
+
+status=5&scr=onPOST /chat/setstatus HTTP/1.1
+Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, application/x-shockwave-flash, application/vnd.ms-excel, application/msword, */*
+Referer: http://10.10.1.1/chat/addmessage
+Accept-Language: ru
+Content-Type: application/x-www-form-urlencoded
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.40426; .NET CLR 1.0.3705; .NET CLR 1.1.4322)
+Host: 10.10.1.1
+Content-Length: 15
+Connection: Keep-Alive
+Cache-Control: no-cache
+Cookie: cid=CC7AB4D60C7A0CFF
+
+status=3&scr=onPOST /chat/setstatus HTTP/1.1
+Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, application/x-shockwave-flash, application/vnd.ms-excel, application/msword, */*
+Referer: http://10.10.1.1/chat/addmessage
+Accept-Language: ru
+Content-Type: application/x-www-form-urlencoded
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.40426; .NET CLR 1.0.3705; .NET CLR 1.1.4322)
+Host: 10.10.1.1
+Content-Length: 15
+Connection: Keep-Alive
+Cache-Control: no-cache
+Cookie: cid=CC7AB4D60C7A0CFF
+
+status=5&scr=onPOST /chat/setstatus HTTP/1.1
+Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, application/x-shockwave-flash, application/vnd.ms-excel, application/msword, */*
+Referer: http://10.10.1.1/chat/addmessage
+Accept-Language: ru
+Content-Type: application/x-www-form-urlencoded
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.40426; .NET CLR 1.0.3705; .NET CLR 1.1.4322)
+Host: 10.10.1.1
+Content-Length: 15
+Connection: Keep-Alive
+Cache-Control: no-cache
+Cookie: cid=CC7AB4D60C7A0CFF
+
+status=3&scr=onPOST /chat/setstatus HTTP/1.1
+Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, application/x-shockwave-flash, application/vnd.ms-excel, application/msword, */*
+Referer: http://10.10.1.1/chat/addmessage
+Accept-Language: ru
+Content-Type: application/x-www-form-urlencoded
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.40426; .NET CLR 1.0.3705; .NET CLR 1.1.4322)
+Host: 10.10.1.1
+Content-Length: 15
+Connection: Keep-Alive
+Cache-Control: no-cache
+Cookie: cid=CC7AB4D60C7A0CFF
+
+status=5&scr=onPOST /chat/setstatus HTTP/1.1
+Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, application/x-shockwave-flash, application/vnd.ms-excel, application/msword, */*
+Referer: http://10.10.1.1/chat/addmessage
+Accept-Language: ru
+Content-Type: application/x-www-form-urlencoded
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.40426; .NET CLR 1.0.3705; .NET CLR 1.1.4322)
+Host: 10.10.1.1
+Content-Length: 15
+Connection: Keep-Alive
+Cache-Control: no-cache
+Cookie: cid=CC7AB4D60C7A0CFF
+
+status=3&scr=onPOST /chat/setstatus HTTP/1.1
+Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, application/x-shockwave-flash, application/vnd.ms-excel, application/msword, */*
+Referer: http://10.10.1.1/chat/addmessage
+Accept-Language: ru
+Content-Type: application/x-www-form-urlencoded
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.40426; .NET CLR 1.0.3705; .NET CLR 1.1.4322)
+Host: 10.10.1.1
+Content-Length: 15
+Connection: Keep-Alive
+Cache-Control: no-cache
+Cookie: cid=CC7AB4D60C7A0CFF
+
+status=5&scr=onPOST /chat/setstatus HTTP/1.1
+Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, application/x-shockwave-flash, application/vnd.ms-excel, application/msword, */*
+Referer: http://10.10.1.1/chat/addmessage
+Accept-Language: ru
+Content-Type: application/x-www-form-urlencoded
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.40426; .NET CLR 1.0.3705; .NET CLR 1.1.4322)
+Host: 10.10.1.1
+Content-Length: 15
+Connection: Keep-Alive
+Cache-Control: no-cache
+Cookie: cid=CC7AB4D60C7A0CFF
+
+status=3&scr=onPOST /chat/setstatus HTTP/1.1
+Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, application/x-shockwave-flash, application/vnd.ms-excel, application/msword, */*
+Referer: http://10.10.1.1/chat/addmessage
+Accept-Language: ru
+Content-Type: application/x-www-form-urlencoded
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.40426; .NET CLR 1.0.3705; .NET CLR 1.1.4322)
+Host: 10.10.1.1
+Content-Length: 15
+Connection: Keep-Alive
+Cache-Control: no-cache
+Cookie: cid=CC7AB4D60C7A0CFF
+
+status=5&scr=onPOST /chat/setstatus HTTP/1.1
+Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, application/x-shockwave-flash, application/vnd.ms-excel, application/msword, */*
+Referer: http://10.10.1.1/chat/addmessage
+Accept-Language: ru
+Content-Type: application/x-www-form-urlencoded
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.40426; .NET CLR 1.0.3705; .NET CLR 1.1.4322)
+Host: 10.10.1.1
+Content-Length: 15
+Connection: Keep-Alive
+Cache-Control: no-cache
+Cookie: cid=CC7AB4D60C7A0CFF
+
+status=3&scr=onPOST /chat/setstatus HTTP/1.1
+Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, application/x-shockwave-flash, application/vnd.ms-excel, application/msword, */*
+Referer: http://10.10.1.1/chat/addmessage
+Accept-Language: ru
+Content-Type: application/x-www-form-urlencoded
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.40426; .NET CLR 1.0.3705; .NET CLR 1.1.4322)
+Host: 10.10.1.1
+Content-Length: 15
+Connection: Keep-Alive
+Cache-Control: no-cache
+Cookie: cid=CC7AB4D60C7A0CFF
+
+status=5&scr=onPOST /chat/setstatus HTTP/1.1
+Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, application/x-shockwave-flash, application/vnd.ms-excel, application/msword, */*
+Referer: http://10.10.1.1/chat/addmessage
+Accept-Language: ru
+Content-Type: application/x-www-form-urlencoded
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.40426; .NET CLR 1.0.3705; .NET CLR 1.1.4322)
+Host: 10.10.1.1
+Content-Length: 15
+Connection: Keep-Alive
+Cache-Control: no-cache
+Cookie: cid=CC7AB4D60C7A0CFF
+
+status=3&scr=onPOST /chat/setstatus HTTP/1.1
+Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, application/x-shockwave-flash, application/vnd.ms-excel, application/msword, */*
+Referer: http://10.10.1.1/chat/addmessage
+Accept-Language: ru
+Content-Type: application/x-www-form-urlencoded
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.40426; .NET CLR 1.0.3705; .NET CLR 1.1.4322)
+Host: 10.10.1.1
+Content-Length: 15
+Connection: Keep-Alive
+Cache-Control: no-cache
+Cookie: cid=CC7AB4D60C7A0CFF
+
+status=5&scr=onPOST /chat/setstatus HTTP/1.1
+Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, application/x-shockwave-flash, application/vnd.ms-excel, application/msword, */*
+Referer: http://10.10.1.1/chat/addmessage
+Accept-Language: ru
+Content-Type: application/x-www-form-urlencoded
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.40426; .NET CLR 1.0.3705; .NET CLR 1.1.4322)
+Host: 10.10.1.1
+Content-Length: 15
+Connection: Keep-Alive
+Cache-Control: no-cache
+Cookie: cid=CC7AB4D60C7A0CFF
+
+status=3&scr=onPOST /chat/setstatus HTTP/1.1
+Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, application/x-shockwave-flash, application/vnd.ms-excel, application/msword, */*
+Referer: http://10.10.1.1/chat/addmessage
+Accept-Language: ru
+Content-Type: application/x-www-form-urlencoded
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.40426; .NET CLR 1.0.3705; .NET CLR 1.1.4322)
+Host: 10.10.1.1
+Content-Length: 15
+Connection: Keep-Alive
+Cache-Control: no-cache
+Cookie: cid=CC7AB4D60C7A0CFF
+
+status=5&scr=onPOST /chat/setstatus HTTP/1.1
+Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, application/x-shockwave-flash, application/vnd.ms-excel, application/msword, */*
+Referer: http://10.10.1.1/chat/addmessage
+Accept-Language: ru
+Content-Type: application/x-www-form-urlencoded
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.40426; .NET CLR 1.0.3705; .NET CLR 1.1.4322)
+Host: 10.10.1.1
+Content-Length: 15
+Connection: Keep-Alive
+Cache-Control: no-cache
+Cookie: cid=CC7AB4D60C7A0CFF
+
+status=3&scr=onPOST /chat/setstatus HTTP/1.1
+Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, application/x-shockwave-flash, application/vnd.ms-excel, application/msword, */*
+Referer: http://10.10.1.1/chat/addmessage
+Accept-Language: ru
+Content-Type: application/x-www-form-urlencoded
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.40426; .NET CLR 1.0.3705; .NET CLR 1.1.4322)
+Host: 10.10.1.1
+Content-Length: 15
+Connection: Keep-Alive
+Cache-Control: no-cache
+Cookie: cid=CC7AB4D60C7A0CFF
+
+status=5&scr=onPOST /chat/setstatus HTTP/1.1
+Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, application/x-shockwave-flash, application/vnd.ms-excel, application/msword, */*
+Referer: http://10.10.1.1/chat/addmessage
+Accept-Language: ru
+Content-Type: application/x-www-form-urlencoded
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.40426; .NET CLR 1.0.3705; .NET CLR 1.1.4322)
+Host: 10.10.1.1
+Content-Length: 15
+Connection: Keep-Alive
+Cache-Control: no-cache
+Cookie: cid=CC7AB4D60C7A0CFF
+
+status=3&scr=onPOST /chat/setstatus HTTP/1.1
+Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, application/x-shockwave-flash, application/vnd.ms-excel, application/msword, */*
+Referer: http://10.10.1.1/chat/addmessage
+Accept-Language: ru
+Content-Type: application/x-www-form-urlencoded
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.40426; .NET CLR 1.0.3705; .NET CLR 1.1.4322)
+Host: 10.10.1.1
+Content-Length: 15
+Connection: Keep-Alive
+Cache-Control: no-cache
+Cookie: cid=CC7AB4D60C7A0CFF
+
+status=5&scr=onPOST /chat/setstatus HTTP/1.1
+Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, application/x-shockwave-flash, application/vnd.ms-excel, application/msword, */*
+Referer: http://10.10.1.1/chat/addmessage
+Accept-Language: ru
+Content-Type: application/x-www-form-urlencoded
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.40426; .NET CLR 1.0.3705; .NET CLR 1.1.4322)
+Host: 10.10.1.1
+Content-Length: 15
+Connection: Keep-Alive
+Cache-Control: no-cache
+Cookie: cid=CC7AB4D60C7A0CFF
+
+status=3&scr=onPOST /chat/setstatus HTTP/1.1
+Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, application/x-shockwave-flash, application/vnd.ms-excel, application/msword, */*
+Referer: http://10.10.1.1/chat/addmessage
+Accept-Language: ru
+Content-Type: application/x-www-form-urlencoded
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.40426; .NET CLR 1.0.3705; .NET CLR 1.1.4322)
+Host: 10.10.1.1
+Content-Length: 15
+Connection: Keep-Alive
+Cache-Control: no-cache
+Cookie: cid=CC7AB4D60C7A0CFF
+
+status=5&scr=onPOST /chat/setstatus HTTP/1.1
+Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, application/x-shockwave-flash, application/vnd.ms-excel, application/msword, */*
+Referer: http://10.10.1.1/chat/addmessage
+Accept-Language: ru
+Content-Type: application/x-www-form-urlencoded
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.40426; .NET CLR 1.0.3705; .NET CLR 1.1.4322)
+Host: 10.10.1.1
+Content-Length: 15
+Connection: Keep-Alive
+Cache-Control: no-cache
+Cookie: cid=CC7AB4D60C7A0CFF
+
+status=3&scr=onPOST /chat/setstatus HTTP/1.1
+Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, application/x-shockwave-flash, application/vnd.ms-excel, application/msword, */*
+Referer: http://10.10.1.1/chat/addmessage
+Accept-Language: ru
+Content-Type: application/x-www-form-urlencoded
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.40426; .NET CLR 1.0.3705; .NET CLR 1.1.4322)
+Host: 10.10.1.1
+Content-Length: 15
+Connection: Keep-Alive
+Cache-Control: no-cache
+Cookie: cid=CC7AB4D60C7A0CFF
+
+status=5&scr=onPOST /chat/setstatus HTTP/1.1
+Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, application/x-shockwave-flash, application/vnd.ms-excel, application/msword, */*
+Referer: http://10.10.1.1/chat/addmessage
+Accept-Language: ru
+Content-Type: application/x-www-form-urlencoded
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.40426; .NET CLR 1.0.3705; .NET CLR 1.1.4322)
+Host: 10.10.1.1
+Content-Length: 15
+Connection: Keep-Alive
+Cache-Control: no-cache
+Cookie: cid=CC7AB4D60C7A0CFF
+
+status=3&scr=onPOST /chat/setstatus HTTP/1.1
+Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, application/x-shockwave-flash, application/vnd.ms-excel, application/msword, */*
+Referer: http://10.10.1.1/chat/addmessage
+Accept-Language: ru
+Content-Type: application/x-www-form-urlencoded
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.40426; .NET CLR 1.0.3705; .NET CLR 1.1.4322)
+Host: 10.10.1.1
+Content-Length: 15
+Connection: Keep-Alive
+Cache-Control: no-cache
+Cookie: cid=CC7AB4D60C7A0CFF
+
+status=5&scr=onPOST /chat/setstatus HTTP/1.1
+Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, application/x-shockwave-flash, application/vnd.ms-excel, application/msword, */*
+Referer: http://10.10.1.1/chat/addmessage
+Accept-Language: ru
+Content-Type: application/x-www-form-urlencoded
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.40426; .NET CLR 1.0.3705; .NET CLR 1.1.4322)
+Host: 10.10.1.1
+Content-Length: 15
+Connection: Keep-Alive
+Cache-Control: no-cache
+Cookie: cid=CC7AB4D60C7A0CFF
+
+status=3&scr=onPOST /chat/setstatus HTTP/1.1
+Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, application/x-shockwave-flash, application/vnd.ms-excel, application/msword, */*
+Referer: http://10.10.1.1/chat/addmessage
+Accept-Language: ru
+Content-Type: application/x-www-form-urlencoded
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.40426; .NET CLR 1.0.3705; .NET CLR 1.1.4322)
+Host: 10.10.1.1
+Content-Length: 15
+Connection: Keep-Alive
+Cache-Control: no-cache
+Cookie: cid=CC7AB4D60C7A0CFF
+
+status=5&scr=onPOST /chat/setstatus HTTP/1.1
+Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, application/x-shockwave-flash, application/vnd.ms-excel, application/msword, */*
+Referer: http://10.10.1.1/chat/addmessage
+Accept-Language: ru
+Content-Type: application/x-www-form-urlencoded
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.40426; .NET CLR 1.0.3705; .NET CLR 1.1.4322)
+Host: 10.10.1.1
+Content-Length: 15
+Connection: Keep-Alive
+Cache-Control: no-cache
+Cookie: cid=CC7AB4D60C7A0CFF
+
+status=3&scr=onPOST /chat/setstatus HTTP/1.1
+Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, application/x-shockwave-flash, application/vnd.ms-excel, application/msword, */*
+Referer: http://10.10.1.1/chat/addmessage
+Accept-Language: ru
+Content-Type: application/x-www-form-urlencoded
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.40426; .NET CLR 1.0.3705; .NET CLR 1.1.4322)
+Host: 10.10.1.1
+Content-Length: 15
+Connection: Keep-Alive
+Cache-Control: no-cache
+Cookie: cid=CC7AB4D60C7A0CFF
+
+status=5&scr=onGET /chat/messages?r=413&c=0 HTTP/1.1
+Accept: */*
+Referer: http://10.10.1.1/chat/
+Accept-Language: ru
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.40426; .NET CLR 1.0.3705; .NET CLR 1.1.4322)
+Host: 10.10.1.1
+Connection: Keep-Alive
+Cookie: cid=CC7AB4D60C7A0CFF
+
+GET /css/main.css HTTP/1.1
+Accept: */*
+Referer: http://10.10.1.1/chat/messages?r=413&c=0
+Accept-Language: ru
+Accept-Encoding: gzip, deflate
+If-Modified-Since: Mon, 24 Jul 2000 06:00:00 GMT
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.40426; .NET CLR 1.0.3705; .NET CLR 1.1.4322)
+Host: 10.10.1.1
+Connection: Keep-Alive
+Cookie: cid=CC7AB4D60C7A0CFF
+
+POST /chat/setstatus HTTP/1.1
+Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, application/x-shockwave-flash, application/vnd.ms-excel, application/msword, */*
+Referer: http://10.10.1.1/chat/addmessage
+Accept-Language: ru
+Content-Type: application/x-www-form-urlencoded
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.40426; .NET CLR 1.0.3705; .NET CLR 1.1.4322)
+Host: 10.10.1.1
+Content-Length: 15
+Connection: Keep-Alive
+Cache-Control: no-cache
+Cookie: cid=CC7AB4D60C7A0CFF
+
+status=3&scr=onPOST /chat/setstatus HTTP/1.1
+Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, application/x-shockwave-flash, application/vnd.ms-excel, application/msword, */*
+Referer: http://10.10.1.1/chat/addmessage
+Accept-Language: ru
+Content-Type: application/x-www-form-urlencoded
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.40426; .NET CLR 1.0.3705; .NET CLR 1.1.4322)
+Host: 10.10.1.1
+Content-Length: 15
+Connection: Keep-Alive
+Cache-Control: no-cache
+Cookie: cid=CC7AB4D60C7A0CFF
+
+status=5&scr=onPOST /chat/setstatus HTTP/1.1
+Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, application/x-shockwave-flash, application/vnd.ms-excel, application/msword, */*
+Referer: http://10.10.1.1/chat/addmessage
+Accept-Language: ru
+Content-Type: application/x-www-form-urlencoded
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.40426; .NET CLR 1.0.3705; .NET CLR 1.1.4322)
+Host: 10.10.1.1
+Content-Length: 15
+Connection: Keep-Alive
+Cache-Control: no-cache
+Cookie: cid=CC7AB4D60C7A0CFF
+
+status=3&scr=onPOST /chat/setstatus HTTP/1.1
+Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, application/x-shockwave-flash, application/vnd.ms-excel, application/msword, */*
+Referer: http://10.10.1.1/chat/addmessage
+Accept-Language: ru
+Content-Type: application/x-www-form-urlencoded
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.40426; .NET CLR 1.0.3705; .NET CLR 1.1.4322)
+Host: 10.10.1.1
+Content-Length: 15
+Connection: Keep-Alive
+Cache-Control: no-cache
+Cookie: cid=CC7AB4D60C7A0CFF
+
+status=5&scr=onPOST /chat/setstatus HTTP/1.1
+Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, application/x-shockwave-flash, application/vnd.ms-excel, application/msword, */*
+Referer: http://10.10.1.1/chat/addmessage
+Accept-Language: ru
+Content-Type: application/x-www-form-urlencoded
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.40426; .NET CLR 1.0.3705; .NET CLR 1.1.4322)
+Host: 10.10.1.1
+Content-Length: 15
+Connection: Keep-Alive
+Cache-Control: no-cache
+Cookie: cid=CC7AB4D60C7A0CFF
+
+status=3&scr=onPOST /chat/setstatus HTTP/1.1
+Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, application/x-shockwave-flash, application/vnd.ms-excel, application/msword, */*
+Referer: http://10.10.1.1/chat/addmessage
+Accept-Language: ru
+Content-Type: application/x-www-form-urlencoded
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.40426; .NET CLR 1.0.3705; .NET CLR 1.1.4322)
+Host: 10.10.1.1
+Content-Length: 15
+Connection: Keep-Alive
+Cache-Control: no-cache
+Cookie: cid=CC7AB4D60C7A0CFF
+
+status=5&scr=onPOST /chat/setstatus HTTP/1.1
+Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, application/x-shockwave-flash, application/vnd.ms-excel, application/msword, */*
+Referer: http://10.10.1.1/chat/addmessage
+Accept-Language: ru
+Content-Type: application/x-www-form-urlencoded
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.40426; .NET CLR 1.0.3705; .NET CLR 1.1.4322)
+Host: 10.10.1.1
+Content-Length: 15
+Connection: Keep-Alive
+Cache-Control: no-cache
+Cookie: cid=CC7AB4D60C7A0CFF
+
+status=3&scr=onPOST /chat/setstatus HTTP/1.1
+Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, application/x-shockwave-flash, application/vnd.ms-excel, application/msword, */*
+Referer: http://10.10.1.1/chat/addmessage
+Accept-Language: ru
+Content-Type: application/x-www-form-urlencoded
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.40426; .NET CLR 1.0.3705; .NET CLR 1.1.4322)
+Host: 10.10.1.1
+Content-Length: 15
+Connection: Keep-Alive
+Cache-Control: no-cache
+Cookie: cid=CC7AB4D60C7A0CFF
+
+status=5&scr=onPOST /chat/setstatus HTTP/1.1
+Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, application/x-shockwave-flash, application/vnd.ms-excel, application/msword, */*
+Referer: http://10.10.1.1/chat/addmessage
+Accept-Language: ru
+Content-Type: application/x-www-form-urlencoded
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.40426; .NET CLR 1.0.3705; .NET CLR 1.1.4322)
+Host: 10.10.1.1
+Content-Length: 15
+Connection: Keep-Alive
+Cache-Control: no-cache
+Cookie: cid=CC7AB4D60C7A0CFF
+
+status=3&scr=on

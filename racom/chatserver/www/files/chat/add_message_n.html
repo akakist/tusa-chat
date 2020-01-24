@@ -1,0 +1,123 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="PRAGMA" CONTENT="no-cache">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+<TITLE>addmessage_n</TITLE>
+</head>
+
+<script>
+<!--
+
+var nav=navigator.appName == 'Netscape';
+
+window.captureEvents(Event.KEYPRESS);
+window.onkeypress= onk;
+
+function onk(e) {
+	if (e.which==13){
+		DoSend();
+		return false;
+	}
+}
+
+function DoSend()
+{
+    parent.mm(0);
+	var d=document.SendForm;
+	if (d.msg.value=='')
+	{
+		d.msg.focus();
+		return false;
+	}
+	d.msg.focus();
+	d.msg.select();
+	d.submit();
+//	d.msg.value="";
+	d.makeit.checked=false;
+~s_script~	d.sys.checked=false;~es_script~
+	return true;
+}
+
+function ChSt()
+{
+    parent.mm(0);
+    parent.cstatus=document.StatusForm.status.selectedIndex;
+	document.SendForm.msg.focus();
+	document.StatusForm.submit();
+}
+
+function set_status(n)
+{
+//    alert(n);
+	parent.lstatus=parent.cstatus;
+	document.StatusForm.status.selectedIndex=n;
+	parent.cstatus=n;
+	document.StatusForm.submit();
+}
+
+function DoAll()
+{
+	document.forms[0].fornick.value='Всем';
+	document.forms[0].priv.checked=false;
+	document.forms[0].makeit.checked=false;
+	document.SendForm.msg.focus();
+	return false;
+}
+
+function ch_scroll()
+{
+	if(document.StatusForm.scr.checked)
+	{
+		parent.scr=1;
+	}
+	else
+	{
+		parent.scr=0;
+        }
+        document.SendForm.msg.focus();
+}
+//-->
+</script>
+<LINK href="/css/main.css" rel=stylesheet type=text/css>
+<style>
+body,td,  p, pre,.ccb {background-color: #e8e8e8}
+</style>
+<BODY OnMouseMove="parent.mm(0);">
+
+<TABLE vspace=0 border=0 cellspacing=0 cellpadding=0 height="100%">
+<TR valign=center>
+<TD align=center nowrap>
+<FORM method="POST" action="sendmessage" name="SendForm" target="hidden">
+<script>
+<!--
+z=screen.width;
+s=37;
+	if(z<800){s=15;}
+	if(z==800){s=20;}
+	if(z==1024){s=40;}
+	if(z>=1280){s=60;}
+document.write('<input type="text" size="'+s+'" maxlength="~msglen~" name="msg" value="">');
+//-->
+</script>
+<input type="submit" value="OK" onclick="DoSend();return false;">
+<input type="text" size="5" maxlength="16" name="fornick" value="Всем">
+<B><a href="#" target="hidden" onMouseOver="window.status=''; return true;" onClick="return DoAll();">Всем</a></B>
+<input type="checkbox" class=ccb name="priv" onClick="document.forms[0].msg.focus(); return true;">Личное&nbsp;
+<input type="checkbox" class=ccb name="makeit" onClick="document.forms[0].msg.focus(); return true;">Действие&nbsp;
+<input type="checkbox" class=ccb name="sys" onclick="document.forms[0].msg.focus();return true;">Системное
+</FORM>
+</td><td valign=top>
+<FORM method="POST" action="setstatus" name="StatusForm" target="hidden">
+&nbsp;
+<select name="status" OnChange="ChSt();">
+~status~
+</select>
+<script>
+	parent.cstatus=document.StatusForm.status.selectedIndex;
+</script>
+<input type="checkbox" class=ccb name="scr" OnClick="ch_scroll(); return true;" checked>Скроллинг
+</TD>
+</FORM>
+</TR></TABLE>
+</BODY>
+</HTML>

@@ -1,0 +1,88 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="PRAGMA" CONTENT="no-cache">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+<TITLE>buttons</TITLE>
+</head>
+
+<LINK href="/css/main.css" rel=stylesheet type=text/css>
+
+<script>
+<!--
+function o_l(url)
+{
+	r=Math.round(Math.random(123)*1000);
+	n=window.open(url,'wind'+r,'toolbar=1,menubar=1,status=1,location=1,status=1,resizable=1,scrollbars=1,personalbar=1,directories=1');
+	return false;
+}
+rooms=new Array();
+~rooms~
+function ch_room()
+{
+	r=Math.round(Math.random(123)*1000);
+	window.top.messages.location='messages?r='+r+'&c='+document.sf.channel.selectedIndex;
+	window.top.addmessage.document.SendForm.msgbox.focus();
+}
+function ch_nick()
+{
+	document.sf.id.value=document.sf.nick.options[document.sf.nick.selectedIndex].value;
+	document.sf.cmd.value='nick';
+	document.sf.submit();
+	window.top.addmessage.document.SendForm.msgbox.focus();
+}
+function exit_chat()
+{
+    parent.ex=1;
+	window.top.location='exit';
+	return false;
+}
+//-->
+</script>
+
+<LINK href="/css/main.css" rel=stylesheet type=text/css>
+
+<style>
+a:link, a:hover, a:visited {font-size: 8pt;}
+.bsel {width: 14em}
+.bb {font-size: 5pt; font-face: arial; font-weight: bold;}
+body,td,  p, pre {background-color: #e8e8e8}
+</style>
+
+
+<BODY OnMouseMove="parent.mm(0);" leftmargin=0 topmargin=0>
+
+<FORM method="POST" action="cmd" name="sf" target="hidden">
+<input type=hidden name="id" value="">
+<input type=hidden name="msg" value="">
+<input type=hidden name="cmd" value="">
+
+<table border=0 cellpadding=0 cellspacing=0 width=100% height=100%>
+<tr>
+<td align=left width=100%>
+<A target=_blank OnClick="return o_l('/');" href="/"><B>Главная</b></A>&nbsp;|
+<A target=_blank OnClick="return o_l('/forum');" href="/forum"><B>Форум</b></A>&nbsp;|
+<A target=_blank OnClick="return o_l('/html/help.html');" href="/html/help.html"><B>Помощь</b></A><br>
+<a href="exit" target="_top" OnClick="return exit_chat();"><b>Выход</b></a>
+</td>
+<td align=center><a target=_blank href=http://www.russianamerica.com><img src=http://www.russianamerica.com/images/banner/88x31.gif border=1></a>&nbsp;&nbsp;&nbsp;</td>
+
+<td align=right valign=middle>
+
+<table width=100% border=0 cellspacing=0 cellpadding=0>
+<tr>
+<td align=right nowrap valign=middle>Ник:&nbsp;</td>
+<td nowrap valign=middle>~nick~</td>
+<tr>
+~schannel~
+<td align=right nowrap valign=middle>Сидим в:&nbsp;</td>
+<td nowrap valign=middle><table cellpadding=0 cellspacing=0 border=0><tr><td nowrap valign=middle>~channel~</td><td> <input type=button value=">>" onclick="ch_room();" title="Перейти в комнату" class=bb></td></tr></table></td>
+~eschannel~
+</tr>
+</table>
+
+
+</table>
+
+</form>
+</BODY>
+</HTML>

@@ -1,0 +1,6 @@
+ulimit -n 114092
+ulimit -c 10000000
+
+killall -9 chatserver.exe
+killall -9 B.2003
+./chatserver.exe 

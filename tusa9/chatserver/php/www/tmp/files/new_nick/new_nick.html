@@ -1,0 +1,65 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="PRAGMA" CONTENT="no-cache">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+<TITLE>Чат "Тусовка" - Новый ник</TITLE>
+</head>
+
+<LINK href="/css/main.css" rel=stylesheet type=text/css>
+<script language="JavaScript">
+<!--
+function checkfields()
+{
+	if( document.nickform.nick.value == "" )
+	{
+		window.alert( "Вы забыли ввести ник..." );
+		document.nickform.nick.focus();
+		return false;
+	}
+}
+//-->
+</script>
+<BODY>
+<TABLE class=border border=0 cellspacing=0 cellpadding=5 width=100%>
+<TR><TD align=center height=17 colspan=2 class=tb style="border-top: 0px"><b>Новый ник</b></TD></TR>
+<TR><TD align=center colspan=2><font class=yelmsg>~msg~</font></TD></TR>
+<tr><td colspan=2>&nbsp;</td></tr>
+
+<form method="POST" name="nickform" onSubmit="return checkfields();">
+<TR valign=top>
+    <TD align=right>Введите ник:&nbsp;</TD>
+    <TD><input type=textfield name="nick" value="~nick~" size=16 maxlength=16></TD>
+</TR>
+<TR>
+    <TD colspan=2 align=center><br><input type=submit value="Забить!"></TD>
+</TR>
+</form>
+
+<tr><td colspan=2>&nbsp;</td></tr>
+~similar_nicks~
+
+</tr>
+<TR valign=top>
+    <TD colspan=2> Правила регистрации нового ника.<p>
+	<ul>
+	<li>Вы можете бесплатно зарегистрировать не забитый ник. <br>
+	<li>В случае если вы им не пользовались свыше 1 месяца, любой пользователь может забрать его у вас. <br>
+	<li>Вы можете зарезервировать ник для себя и запретить передачу его другому пользователю. 
+	    Стоимость блокировки составляет 1 кредит на 1 месяц и 2 кредита на 3 месяца. <br>
+	<li>Вы должны заблаговременно продлевать блокировку, пока ник еще заблокирован.
+	    Стоимость продления блока ника для уже заблокированного ника составляет 0.7 кредита на месяц.<br>
+	<li>Вы можете купить незаблокированный ник если его владелец не пользовался им более месяца.<br>
+	<li>Вы можете выставить ник на продажу поставив свою цену. Поставив на продажу вы лишаетесь возможности использовать
+	этот ник. Вы можете снять ник с продажи и снова использовать его. Другой пользователь, покупает у вас ник, не 
+	спрашивая вашего согласия, с момента покупки ник переходит во владение к купившему.
+	</ul>
+	
+    </TD>
+</TR>
+
+</TABLE>
+<script language="JavaScript">
+<!--
+	document.nickform.nick.focus();
+//-->
+</script>

@@ -1,0 +1,99 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="PRAGMA" CONTENT="no-cache">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+<TITLE>buttons_n</TITLE>
+</head>
+
+<LINK href="/css/main.css" rel=stylesheet type=text/css>
+
+<script>
+<!--
+function o_l(url)
+{
+	r=Math.round(Math.random(123)*1000);
+	n=window.open(url,'wind'+r,'toolbar=1,menubar=1,status=1,location=1,status=1,resizable=1,scrollbars=1,personalbar=1,directories=1');
+	return false;
+}
+rooms=new Array();
+~rooms~
+function ch_nick()
+{
+	document.sf.id.value=document.sf.nick.options[document.sf.nick.selectedIndex].value;
+	document.sf.cmd.value='nick';
+	document.sf.submit();
+	window.top.addmessage.document.SendForm.msgbox.focus();
+}
+function ch_room()
+{
+	r=Math.round(Math.random(123)*1000);
+	window.top.messages.location='messages?r='+r+'&c='+document.sf.channel.selectedIndex;
+	window.top.addmessage.document.SendForm.msgbox.focus();
+}
+function exit_chat()
+{
+    parent.ex=1;
+	window.top.location='exit';
+	return false;
+}
+
+//-->
+</script>
+
+<LINK href="/css/main.css" rel=stylesheet type=text/css>
+
+<style>
+a:link, a:hover, a:visited {font-size: 8pt;}
+.bsel {width: 14em}
+body,td,  p, pre {background-color: #e8e8e8}
+</style>
+
+<BODY OnMouseMove="parent.mm(0);">
+<FORM method="POST" action="cmd" name="sf" target="hidden">
+<input type=hidden name="id" value="">
+<input type=hidden name="msg" value="">
+<input type=hidden name="cmd" value="">
+
+<TABLE width=100% height=100% cellpadding=0 cellspacing=0 border=0>
+<TR><TD colspan=2>
+<table  align=left border=0>
+<tr><td>
+<A target=_blank OnClick="return o_l('/');" href="/" OnMouseOver="window.status='Главная страничка';return true;" OnMouseOut="window.status=''"><B>Главная</b></A>&nbsp;|
+<A target=_blank OnClick="return o_l('/forum');" href="/forum" OnMouseOver="window.status='Форум';return true;" OnMouseOut="window.status=''"><B>Форум</b></A>&nbsp;|
+<A target=_blank OnClick="return o_l('/html/help.html');" href="/html/help.html" OnMouseOver="window.status='Помощь';return true;" OnMouseOut="window.status=''"><B>Помощь</b></A>
+</td></tr>
+</table>
+</TD></TR>
+
+<TR height=100%>
+<TD>
+<table border=0 height=100% valign=top cellspacing=3 cellpadding=2>
+<tr valign=bottom><td>
+<a href="exit" target="_top" OnMouseOver="window.status='Выход из чата';return true;" OnMouseOut="window.status=''" OnClick="return exit_chat();"><b>Покинуть Чат</b></a>&nbsp;|
+<a href="/settings" target="_blank" OnClick="return o_l('/settings');"><b>Настройки</b></a>&nbsp;|
+<a href="/ChangeInfo" target="_blank" OnClick="return o_l('/ChangeInfo');"><b>Инфо</b></a>&nbsp;|
+<a href="#" target="_blank" OnClick="return parent.open_n('');"><b>Записки</b></a>
+~adm~
+&nbsp;|&nbsp;<a onclick="n=window.open('/admin/','admpage','toolbar=0,status=0,scrollbars=0,width=450,height=500'); n.focus(); return false;" target=_blank href="/admin/"><b>Админство</b></a>
+~eadm~
+</td></tr>
+</table>
+</TD>
+<TD align=right>
+<table cellpadding=0 cellspacing=2 border=0>
+<tr valign=middle>
+<td align=right>Ник:&nbsp;</td>
+<td>~nick~<input type=button value=">>" onclick="ch_nick();" title="Сменить ник"></td>
+</tr>
+<tr valign=middle>
+<td align=right>Сидим в:&nbsp;</TD>
+<td>~channel~<input type=button value=">>" onclick="ch_room();"></td></tr>
+</table>
+<TD width=5>&nbsp;</TD>
+</TD>
+</TR>
+</TABLE>
+
+</form>
+</BODY>
+</HTML>

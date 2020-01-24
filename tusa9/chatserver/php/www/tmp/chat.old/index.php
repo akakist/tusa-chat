@@ -1,0 +1,641 @@
+<?
+	session_start();
+	include "inc/conf.php";
+	include "inc/db_conn.php";
+	check_conn();
+	if(!isset($_SESSION['uid']))
+	{
+		header("Location: /c2/");die;
+	}
+	$uid=$_SESSION['uid'];
+	$login=$_SESSION['login'];
+
+      list($setting_autochange,$level,$bought_invisibility,$setting_invite_sound,$setting_full_buttons,$last_channel,$ul_mode_contacts_only,$ul_mode_hide_female,$ul_mode_hide_male)=
+      mysql_select1row("select setting_autochange,level,bought_invisibility,setting_invite_sound,setting_full_buttons,last_channel,ul_mode_contacts_only,ul_mode_hide_female,ul_mode_hide_male from tbl_users where id=$uid");
+      $has_inv=mysql_select1("select invisibility from levels where id=$level")+$bought_invisibility;
+      if(!$last_channel)$last_channel=1;
+      $moderated=mysql_select1("select moderated from channels where id=$last_channel");
+      if(!$moderated)$moderated=0;
+      $ua=mysql_escape_string($_SERVER["HTTP_USER_AGENT"]);
+      mysql_query("update tbl_users set user_agent='$ua' where id=$uid") or die(mysql_error());
+?>
+
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="PRAGMA" CONTENT="no-cache">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+<TITLE>Чат "Тусовка"</TITLE>
+</head>
+
+
+<script>
+UsrList=new Array();
+
+stList=new Array();
+
+var srw=screen.width;
+var srh=screen.height;
+var uid=<?=$uid?>;
+var ex=0;
+var scr=1;
+var use_a_c=<?=$setting_autochange?>;
+var need_update=false;
+var update_c=0;
+var update_int=5000;
+//for status
+var connected=false;
+var timerid=0;
+var timerid2=0;
+var timer_update=0;
+var stchanged=false;
+var lstatus=0;
+var cstatus=0;
+var level=<?=$level/100?>;
+var isfocus=false;
+var has_inv=<?=$has_inv?>;
+
+var butt_size=60;
+var obutt_size=60;
+var console_size=50;
+var ccount=<?echo mysql_select1("select count(*) from channels");?>;
+var in_ul=0;
+var invite_sound=<?=$setting_invite_sound?>;
+var full_butt=<?=$setting_full_buttons?>;
+var moderated=<?=$moderated?>;
+var contact_mode=<?=$ul_mode_contacts_only?>;
+var hide_female=<?=$ul_mode_hide_female?>;
+var hide_male=<?=$ul_mode_hide_male?>;
+
+var h_msg=new Array();
+
+
+
+
+
+
+function rc(l)
+{
+	if(!window.top.buttons || !window.top.buttons.document || !window.top.buttons.document.sf.channel) return;
+	r=window.top.buttons.rooms;
+	s=window.top.buttons.document.sf.channel;
+	for(var n=0; n<r.length; n++){
+		s.options[n].text=r[n]+' ('+l[n]+')';
+	}
+}
+
+function OnTimerUpdate()
+{
+	if(!need_update){return;}
+	if(in_ul && update_c<10){
+		update_c++;
+		clearTimeout(timer_update);
+		timer_update=setTimeout('OnTimerUpdate()',update_int);
+		return;
+	}	
+	if(stList.length>0){
+		for(var sn in stList){
+			for(var n in UsrList){
+				if (UsrList[n].id==stList[sn].id){
+					UsrList[n].ipn=stList[sn].picn;
+					UsrList[n].sd=stList[sn].sdesc;
+				}	
+			}
+		}
+		stList=new Array();
+	}
+	need_update=false;
+	UpdateUsersFrame();
+	update_c=0;
+}
+
+function chc(n)
+{
+	if(!window.top.buttons || !window.top.buttons.document || !window.top.buttons.document.sf.channel) return;
+	window.top.buttons.sf.channel.selectedIndex=n;
+}
+
+function KickUser(n,nm)
+{
+	s=prompt(nm+' будет выставлен из чата за ?????? (Указать за что, например: "маты", только без слова "ЗА")','');
+	if(s==null)
+	{
+		return false;
+	}
+	w=window.top.buttons.document.sf;
+
+	w.id.value=n;
+	w.msg.value=s;
+	w.cmd.value='kick';
+	w.nick.value=nm;
+	w.submit();
+	return false;
+}
+
+function IgnoreUser(n,nm)
+{
+	w=window.top.buttons.document.sf;
+	w.id.value=n;
+	w.msg.value='';
+	w.cmd.value='ignore';
+	w.submit();
+	return false;
+}
+
+function ChangeStatus(idd,pn,sd)
+{
+	var s='i'+idd;
+	if(need_update ){
+		stList[stList.length]={id:idd,picn:pn,sdesc:sd};
+		return;
+	}
+	if(window.users.document.getElementById(s)){
+		window.users.document.getElementById(s).src='/pics/s/sp'+pn+'.gif';
+		window.users.document.getElementById(s).alt=sd;
+	}
+	for(var n in UsrList){
+		if (UsrList[n].id==idd){
+			UsrList[n].ipn=pn;
+			UsrList[n].sd=sd;
+		}
+	}
+}
+
+function ChangeIgnore(ud,st)
+{
+	for(var n in UsrList){
+		if (UsrList[n].id==ud){
+		
+	        var nm="";
+	        var al="";
+	    	var nm='/pics/ign.gif';
+	    	var al='Игнорировать';
+	    	if(st==1){
+			
+			if(full_butt==1) nm='/pics/ignr.gif';
+			else  nm='/pics/uinfo'+UsrList[n].g+'ig.gif';
+			al='Игнорируемый';
+		}
+		else
+		{
+			if(full_butt==1)   nm='/pics/ign.gif';
+			else  nm='/pics/uinfo'+UsrList[n].g+'.gif'; 
+			al='Игнорировать';
+	
+		}
+		UsrList[n].ign=st;
+		//window.top.messages.document.write(imid + " ddd "+st);
+		    if(full_butt==1)
+		    {
+			var imid='ig';
+			imid+=ud;
+			window.top.users.document.getElementById(imid).src=nm;
+			window.top.users.document.getElementById(imid).alt=al;
+		    }
+		    else
+		    {
+			var imid='inf';
+			imid+=ud;
+			window.top.users.document.getElementById(imid).src=nm;
+
+		    
+		    }
+		}
+	}
+}
+
+function UpdateUsers(list)
+{
+	UsrList=new Array();
+	for(var i in list){
+		AddUser(list[i],1);
+	}
+}
+function ClearUsers()
+{
+	UsrList=new Array();
+}
+
+
+
+function Answer(nick,prv)
+{
+	window.top.addmessage.document.forms[1].privbox.checked=(prv==1);
+	window.top.addmessage.document.forms[1].fornick.value=nick;
+	window.top.addmessage.document.forms[0].msgbox.focus();
+//	return false;
+}
+
+function FindIDByNick(nick)
+{
+	var found=0;
+	for(var n in UsrList){
+		if(UsrList[n].n==nick){
+			found=UsrNew[n].id;
+		}
+	}
+	return found;
+}
+function AddUser(z,upd)
+{
+//    if(is_ignored(z.id)) z.ign=1;
+    if(z.v) z.nu="+"+z.nu;
+	var found,nu;
+	nu=0;
+	found=0;
+	UsrNew=new Array();
+	for(var i in UsrList){
+		lun=UsrList[i].nu;
+		nun=z.nu;
+		if (found==0){
+			if (z.nu<UsrList[i].nu){
+			    if (z.nu!=UsrList[i].nu){
+					UsrNew[nu]=z;
+					nu++;
+			    }
+				found=1;
+			}
+			else if (z.nu==UsrList[i].nu){
+				return;
+			}
+			UsrNew[nu]=UsrList[i];
+		}
+		else{
+			UsrNew[nu]=UsrList[i];
+		}
+		nu++;
+	}
+	if (found==0){
+		UsrNew[nu]=z;
+	}
+	UsrList=UsrNew;
+	need_update=true;
+	update_c++;
+	if(update_c<10){
+		update_int=2000*(UsrList.length/30);
+		clearTimeout(timer_update);
+		timer_update=setTimeout('OnTimerUpdate()',update_int);
+	}
+}
+
+function DeleteUser(nick)
+{
+	UsrNew=new Array();
+	for(var n in UsrList){
+		if(UsrList[n].n!=nick){
+			UsrNew[n]=UsrList[n];
+		}
+	}
+	UsrList=UsrNew;
+	need_update=true;
+	update_c++;
+	if(update_c<10){
+		update_int=2000*(UsrList.length/30);
+		clearTimeout(timer_update);
+		timer_update=setTimeout('OnTimerUpdate()',update_int);
+	}
+}
+
+function InviteUser(fn,u)
+{
+	if (u==''){return false;}
+	var z=prompt('Послание для '+fn+':','');
+	if (z==null){return false;}
+	w=window.top.buttons.document.sf;
+	w.id.value=u;
+	w.msg.value=z;
+	w.cmd.value='invite';
+	w.submit();
+	return false;
+}
+
+function ch_contact_mode()
+{
+	w=window.top.buttons.document.sf;
+	w.cmd.value='clmode';
+	w.on.value=1;
+	w.submit();
+	return false;
+}
+function ch_hide_female()
+{
+	w=window.top.buttons.document.sf;
+	w.cmd.value='fmmode';
+	w.on.value=1;
+	w.submit();
+	return false;
+}
+function ch_hide_male()
+{
+
+	w=window.top.buttons.document.sf;
+	w.cmd.value='mmmode';
+	w.on.value=1;
+	w.submit();
+	return false;
+}
+
+function set_state_contact_mode(val)
+{
+	if(val==0){
+		window.users.document.getElementById('ct_mode').src='/pics/c_up.gif';
+		window.users.document.getElementById('ct_mode').alt='Контакты';
+	}
+	else{
+		window.users.document.getElementById('ct_mode').src='/pics/c_down.gif';
+		window.users.document.getElementById('ct_mode').alt='Все';
+	}
+	return false;
+}
+function set_state_hide_female(val)
+{
+	if(val==0){
+		window.users.document.getElementById('hfemale').src='/pics/fm_up.gif';
+		window.users.document.getElementById('hfemale').alt='Девушки-';
+	}
+	else{
+		window.users.document.getElementById('hfemale').src='/pics/fm_down.gif';
+		window.users.document.getElementById('hfemale').alt='Девушки+';
+		hide_female=1;
+	}
+}
+
+function set_state_hide_male(val)
+{
+	if(val==0){
+
+		window.users.document.getElementById('hmale').src='/pics/mm_up.gif';
+		window.users.document.getElementById('hmale').alt='Парни-';
+	}
+	else{
+		window.users.document.getElementById('hmale').src='/pics/mm_down.gif';
+		window.users.document.getElementById('hmale').alt='Парни+';
+		hide_male=1;
+	}
+}
+
+
+function UpdateUsersFrame()
+{
+	ss='<html>\n'+
+	'<HEAD>\n'+
+	'<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">\n'+
+	'</HEAD>\n'+
+	'<LINK href="/css/main.css" rel=stylesheet type=text/css>\n'+
+	'<LINK rel="stylesheet" type="text/css" href="/css/cpack.css">\n'; 
+	ss+='<style>\n'+
+	'img {width: 16; height:16; border: 0}'+
+	'</style>\n';
+	ss+='<BODY OnMouseMove="parent.mm(1);" class=as onclick="window.top.messages.do_hide_menu()">\n';
+	clpic='/pics/c_up.gif';
+	clalt='Контакты';
+	if(contact_mode==1){
+	 clpic='/pics/c_down.gif';
+	 clalt='Все';
+	} 
+	fmpic='/pics/fm_up.gif';
+	fmalt='Девушки-';
+	if(hide_female==1){
+	 fmpic='/pics/fm_down.gif';
+	 fmalt='Девушки+';
+	}
+	mmpic='/pics/mm_up.gif';
+	mmalt='Парни-';
+	if(hide_male==1){
+	 mmpic='/pics/mm_down.gif';
+	 mmalt='Парни+';
+	} 
+	
+	ss+='<br><div style="margin-left: 2em"><center><table><tr valign=middle><td align=center>Присутствуют</td><td>'
+	    +'<a href="#" onclick="return parent.ch_contact_mode()"><img name=ct_mode src='+clpic+' alt='+clalt+'></a>'
+	    +'<a href="#" onclick="return parent.ch_hide_female()"><img name=hfemale src='+fmpic+' alt='+fmalt+'></a>'
+	    +'<a href="#" onclick="return parent.ch_hide_male()"><img name=hmale src='+mmpic+' alt='+mmalt+'></a>'
+	    +'</td></tr></table></center></div><br>\n'+
+	'<table width="100%" cellspacing="0" border="0" cellpadding="0">\n'+
+	'\n';
+	var cnt=0;
+	for(var i in UsrList){
+		u=UsrList[i];
+		admin=u.f & 4;
+		bday=u.f & 2;
+		ignor=u.f & 8;
+		if(ignor) u.ign=1;
+		leader=u.f & 16;
+		sadmin=u.f & 32;
+		unreg=u.f & 64;
+		nick=u.n;
+		if(u.v) nick='+'+nick;
+		cnt++;
+		ss+='<tr valign=middle>\n'+
+		'<td width="100%" align="right" valign="top">\n';
+
+		ss+='<a ';
+		
+		
+
+		ss+='<a class=nick';
+		if(bday!=0){
+			ss+='b';
+		}
+		ss+=' style="'+u.c+'"';
+
+		
+		ss+=' href="javascript: parent.Answer(\''+u.n+'\');"><b>'+nick+'<\/b><\/a>&nbsp;</td>';
+		ss+='<td align=center valign=middle>';
+		if(u.id!=uid){
+			ss+="<a href=\"#\" onclick=\"return parent.InviteUser('"+u.n+"','"+u.id+"');\">";
+		}
+		ss+='<img border=0 name="i'+u.id+'" src="/pics/s/sp'+u.ipn+'.gif" alt=\''+u.sd+'\'>';
+		if(u.id!=uid){
+			ss+='</a>';
+		}
+		ss+='&nbsp;</td><td>';
+		if(unreg && level<6){
+		}else{
+			
+			var isig="";
+			if(full_butt!=1 && u.ign==1)isig="ig";
+			ss+='<a href="#" onclick="return parent.UserinfoID(\''+u.id+'\');"><img border=0 name=\'inf'+u.id+'\' src="/pics/uinfo'+u.g+isig+'.gif" alt="Инфо о пользователе"></a>&nbsp;';
+		}
+		ss+='</td><td>';
+		if(full_butt){
+			if (admin!=0){
+				var ad='Админ';
+				if(u.g==2) ad='Админша';
+				ss+="<img border=0 src='/pics/admin"+u.ap+".gif' alt='"+ad+"' style='width:19; height:16; border:0'>";
+			}
+			else if(u.id!=uid){
+				ss+="<a href=\"#\" OnClick=\"return parent.IgnoreUser('"+u.id+"');\">";
+				if (u.ign==1){
+					ss+="<img border=0 name='ig"+u.id+"' src='/pics/ignr.gif' alt='Игнорируемый'></a>";
+				}else{
+					ss+="<img border=0 name='ig"+u.id+"' src='/pics/ign.gif' alt='Игнорировать'></a>";
+				}
+			}
+			ss+='</td>';
+			if(level>=6){
+				ss+='<td>';
+				if(level>u.l && u.id!=uid){
+					ss+="&nbsp;<a href=\"#\" OnClick=\"return parent.KickUser('"+u.id+"','"+u.n+"');\"><img border=0 src='/pics/kick.gif' alt='Пинануть'></a>";
+				}
+				ss+='</td>';
+			}
+			ss+='</tr>';
+		}else{
+			ss+='</td></tr>';
+		}
+	}
+	ss+='</table>\n';
+	ss+='<div align=right><hr class=hr size=2 width=100%>';
+	ss+='Всего '+cnt+'</div></font></html>\n';
+	window.top.users.document.write(ss);
+	window.top.users.document.close();
+}
+
+uinfo=0;
+
+locat="";
+function UserinfoID(uid)
+{
+	r=Math.round(Math.random(123)*1000);
+	locat='/c2/chat_userinfo2.php?id='+uid;
+	
+	open(locat,'uinfo'+r,'toolbar=0,status=0,resizable=1,scrollbars=1,width=1000,height=800');
+	return false;
+}
+function userinfoNI(nick)
+{
+	r=Math.round(Math.random(123)*1000);
+	{
+		locat='/c2/chat_userinfo2.php?ni='+escape(nick);
+		open(locat,'uinfo'+r,'toolbar=0,status=0,resizable=1,scrollbars=1,width=1000,height=800');
+	}
+	return false;
+}
+
+invitewin=0;
+
+function DoInvite(sid, who, nick, txt, tm)
+{
+	n='invite'+Math.round(Math.random(123)*1000);
+	invitewin=open('', n, 'toolbar=0,status=0,resizable=0,scrollbars=0,width=600,height=50');
+	s='<html> <title>Чат \"Тусовка\" - '+tm+'</title>\n';
+	s+='<LINK rel=\"stylesheet\" type=\"text/css\" href=\"/css/main.css\">';
+	s+='<BODY>';
+	if(invite_sound){
+		s+='<bgsound src=/html/ringout.wav>\n';
+	}
+	s+='<table border=0 width=100%>\n';
+	s+='<tr><td>Пользователь <font class=nick><b>';
+	s+=who;
+	s+='</b></font> пытается привлечь внимание <font class=nick><b>'+nick+'</b></font>!\n'+
+	'</td></tr>\n';
+	if (txt!='' && txt!=null){
+		s+='<tr><td width=\"90%\" valign=\"top\">\n<font class=yelmsgnb>';
+		s+=txt;
+		s+='</font>\n</td><td valign=top><form name=frm>';
+		s+='<input name=repl type=button OnClick=\"window.close();window.opener.focus();window.opener.InviteUser(\''+who+'\',\''+sid+'\');\" value=\"Ответить\" class=b_l>';
+		s+='</form></td></tr>\n';
+	}
+	s+='</table></html>';
+	invitewin.document.write(s);
+	invitewin.document.close();
+}
+
+//autochange status support
+
+var nsec=300000;
+
+function ontm()
+{
+	if(isfocus){
+		clearTimeout(timerid2);
+		timerid2=0;
+	}
+	if(!stchanged && timerid2==0){
+		if(has_inv){
+			timerid2=setTimeout('ontm2(3)',nsec);
+		}else{
+			timerid2=setTimeout('ontm2(2)',nsec);
+		}
+	}	
+	isfocus=false;
+}
+
+function ontm2(n)
+{
+    timerid2=0;
+	if(stchanged || !connected || isfocus || (cstatus>1 && cstatus<6)){
+		return;
+	}
+	if(has_inv && cstatus==0) return;
+	if(!stchanged){
+		window.top.addmessage.set_status(n);
+		stchanged=true;
+		cn=0;
+	}
+}
+
+var cn=0;
+
+function mm(state)
+{
+    in_ul=state;
+    if(!use_a_c /*|| nav*/){
+    	return;
+    }
+    cn++;
+    if(stchanged && connected && cn>2){
+    	stchanged=false;
+    	clearTimeout(timerid2);
+    	timerid2=0;
+		window.top.addmessage.set_status(lstatus);
+    }
+	isfocus=true;
+}
+
+if(use_a_c){
+	timerid=setInterval('ontm()',1000);
+}	
+
+//topic support
+var pagetitle = document.title;
+var topic='';
+function set_topic(t)
+{
+	var s='';
+	if(moderated) s='[+m] ';
+	if(t!=''){
+		document.title=pagetitle+" "+s+"- "+t;
+	}else{
+		document.title=pagetitle+" "+s;
+	}
+	topic=t;
+}
+
+var ul=240;
+if (srw==800) ul=200;
+if (srw==1024) ul=260;
+if (srw>1024) ul=280;
+if (ccount==1) {butt_size=40; obutt_size=40;}
+var fcode='<frameset rows="'+butt_size+',*,'+console_size+'" border=0 frameborder=no framespacing=0 name=rw>'+
+'<frame name="buttons" src="buttons.php" scrolling=no marginwidth=0 marginheight=0>'+
+'<frameset cols="*,'+ul+'" frameborder=no border=0 framespacing=1>'+
+'<frame name="messages" src="/chat.tse/messages.tse" scrolling=auto marginwidth=0 marginheight=0 frameborder=yes border=0>'+
+'<frame name="users" src="emptyframe.php" scrolling=auto marginwidth=0 marginheight=0 frameborder=no>'+
+'</frameset>'+
+'<frameset cols="*,0" frameborder="no" border=0 framespacing=0>'+
+'<frame name="addmessage" src="addmessage.php" scrolling=no marginwidth=0 marginheight=0>'+
+'<frame name="hidden" src="emptyframe.php" scrolling=no marginwidth=0 marginheight=0 noresize>'+
+'</frameset>'+
+'</frameset>';
+
+document.write(fcode);
+
+</script>
+
+
+
+<noframes>
+Ваш браузер не поддерживает фреймы! Обновите свой браузер, тока пожалуйста Nescape Navigator не ставьте!
+</noframes>
+</HTML>

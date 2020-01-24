@@ -1,0 +1,154 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="PRAGMA" CONTENT="no-cache">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+<TITLE>Russian America Chat. Чат русских в Америке</TITLE>
+</head>
+
+<LINK href="/css/main.css" rel=stylesheet type=text/css>
+<script>
+js2=false;
+</script>
+<script language="JavaScript1.2">
+js2=true;
+</script>
+<script>
+<!--
+function chk_f()
+{
+	if(document.f.msg.value==""){
+		alert('Вы не ввели сообщение...');
+		document.f.msg.focus();
+		return false;
+	}
+	document.f.smt.disabled=true;
+	return true;
+}
+
+uinfo=0;
+function ui(ni)
+{
+	locat='/auserinfo?n='+ni;
+	uinfo=open(locat,'fuinfo','toolbar=0,status=0,resizable=1,scrollbars=1,width=505,height=415');
+	uinfo.focus();
+	return false;
+}
+function mOvr(src,tp)
+{
+	if(!tp) tp=0;
+	src.style.cursor='hand';
+	src.style.backgroundColor=document.styleSheets[0].rules[tp+1].style.backgroundColor;
+}
+function mOut(src,tp)
+{
+	if(!tp) tp=0;
+	src.style.cursor='default';
+	src.style.backgroundColor=document.styleSheets[0].rules[tp].style.backgroundColor;
+}
+function mClk(src) 
+{
+	if(event.srcElement.tagName=='TD') src.children.tags('A')[0].click();
+}
+function opwin(l,w,h)
+{
+	ow=open(l,'fed','toolbar=0,status=0,resizable=1,scrollbars=1,width='+w+',height='+h);
+	ow.focus();
+	return false;
+}
+function d_r(n)
+{
+	if(js2){
+		s=document.all['b'+n].innerHTML;
+		re=/<BR>/g;		s=s.replace(re,'\r\n');
+		re=/<\/A>/g;	s=s.replace(re,'');
+		re=/<\/FONT>/g;	s=s.replace(re,'');
+		re=/<[A,F].{1,}>/g;
+		s=s.replace(re,'');
+		re=/&lt;/g;		s=s.replace(re,'<');
+		re=/&gt;/g;		s=s.replace(re,'>');
+		arr=s.split('\r\n');
+		var os='';
+		if(arr.length>1){
+			for(i=0;i<arr.length-1;i++){
+				os+='>'+arr[i]+'\r\n';
+			}	
+		}else{
+			os='>'+arr[i];
+		}
+        document.f.msg.value=os;
+	}
+	ms=document.all['s'+n].value;
+	if(ms.substr(0,3)!='Re:'){
+		document.f.subj.value='Re: '+ms;
+	}else{
+		document.f.subj.value=ms;
+	}
+	document.location="#add";
+//	setTimeout('document.f.msg.focus()',500);
+	return false;
+}
+//-->
+</script>
+<body>
+<TABLE border=0 width=100% cellspacing=0 cellpadding=0>
+<TR>
+~header2~
+</TR>
+<TR height=5><TD colspan=5></TD></TR>
+<TR valign=top>
+<TD>
+<table class=borderm border=0 width=120 valign=top cellspacing=0 cellpadding=0>
+~navig~
+~menu~
+</table>
+</TD>
+<TD></TD>
+<TD>
+<table width=100% border=0 cellspacing=0 cellpadding=0>
+<tr><td class=borderz align=center><font class=htxtm>Форум</font></td></tr>
+<tr height=5><td></td></tr>
+<tr><td>
+
+<center><big><b><a href="/forum">Форум</a> -> <a href="/forum?t=~tid~">~theme~</a></b></big></center>
+<br>
+<table cellspacing=1 cellpadding=0 border=0 width="100%">
+<tr>
+<td align=left>~next~<a href="/forum?t=~tid~&l=~mnext~">След. сообщения</a>~enext~</td>
+<td align=right>~prev~<a href="/forum?t=~tid~&l=~mprev~">Пред. сообщения</a>~eprev~</a><br></td>
+</tr>
+<tr><td colspan=2 align=center><a href="#add">Добавить сообщение</a></td></tr>
+</table>
+<br>
+<form name=ff>
+~messages~
+</form>
+<div align=center><a href="#top">Вверх страницы</a></div>
+
+<a name="add"></a>
+Добавить сообщение:<br>
+<form method=post name=f onsubmit="return chk_f()">
+<input type=hidden name="addmsg" value="1">
+<input type=hidden name="tid" value="~tid~">
+От:<br>
+~fromnick~
+<br>
+Тема:<br>
+<input class=ta type=textfield name="subj" maxlength=100><br>
+<textarea class=ta rows=8 cols=40 maxlength=10000 name="msg"></textarea><br>
+<input type=submit value="Добавить сообщение" name=smt>
+</form>
+~remove~<div align=right><a href="/forum?t=~tid~&rmth=1" onclick="return confirm('Точно удалить тему?')">Удалить тему</a>~eremove~
+
+</td></tr>
+</table>
+
+</TD>
+<TD></TD>
+</TR>
+</TABLE>
+<hr>
+<table cellspacing=0 cellpadding=0 border=0 width=100%>
+<tr align=center><td>~bb1~</td><td>~bb2~</td><td>~bb3~</td><td>~bb4~</td></tr>
+</table>
+</body>
+</html>

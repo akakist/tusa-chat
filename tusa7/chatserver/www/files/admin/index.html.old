@@ -1,0 +1,130 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="PRAGMA" CONTENT="no-cache">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+<TITLE>Чат "Тусовка" - Консоль админа</TITLE>
+</head>
+
+<LINK rel="stylesheet" type="text/css" href="/css/main.css">
+<BODY>
+<script>
+<!--
+var lv=~level~;
+
+function opwin(url,nm,sx,sy)
+{
+	nw=window.open(url,nm,'toolbar=0,status=0,scrollbars=1,width='+sx+',height='+sy+',resizable=1');
+	nw.focus();
+}
+
+function opwinstd(url,nm)
+{
+	opwin(url,nm,750,500);
+}
+
+function do_ban_ip()
+{
+	if(lv<7){
+		alert('У вас недостаточно прав!');
+		return;
+	}
+	opwinstd('/admin/ipban','ipban');
+}
+
+function do_ban_login()
+{
+	if(lv<7){
+		alert('У вас недостаточно прав!');
+		return;
+	}
+	opwinstd('/admin/loginban','loginban');
+}
+
+function do_ban_nick()
+{
+	if(lv<7){
+		alert('У вас недостаточно прав!');
+        return;
+	}
+	opwinstd('/admin/nickban','nickban');
+}
+
+function do_list()
+{
+	if(lv<6){
+		alert('У вас недостаточно прав!');
+		return;
+	}
+	y=(screen.height*9)/10;
+	opwin('/admin/userlist','userlist',630,y);
+}
+
+function do_settings()
+{
+	opwin('/admin/settings','settings',600,500);
+}
+
+function do_logs()
+{
+	opwinstd('/admin/logs','logs');
+}
+
+//-->
+</script>
+<style>
+input {width: 100;}
+</style>
+<form>
+<big><big><center><b>Консоль админа</b></center></big></big>
+<DIV align="justify">
+Уважаемые администраторы (и прочие люди), надеюсь что вам не надо напоминать серьезность ваших действий.
+Среди тех, против кого Вы примените свою "силу" могут оказаться очень серьёзные и уважаемые люди! Также, стоит
+лояльнее относится к тем, кто в чате постоянный гость. Постарайтесь ему просто всё объяснить!<br>
+В любом случае, имейте ввиду, что ведутся все логи и за каждое свое действие Вы будете отвечать.
+<br><br>
+
+<table align=center border=0>
+<tr>
+<td><input type=button value="Бан по IP" onclick="do_ban_ip();"></td>
+<td><input type=button value="Бан логинов" onclick="do_ban_login();"></td>
+<td><input type=button value="Бан ников" onclick="do_ban_nick();"></td>
+</tr>
+<tr>
+<td>~logs~<input type=button value="Логи" onclick="do_logs();">~elogs~</td>
+<td align=center><input type=button value="Список юзеров" onclick="do_list();"></td>
+<td>~settings~<input type=button value="Настройки" onclick="do_settings();">~esettings~</td>
+</tr>
+<tr>
+<td>~funnyadm~<input type=button value="Истории" onclick="opwinstd('/admin/histories','histwin');">~efunnyadm~</td>
+<td>~funnyadm~<input type=button value="Анекдоты" onclick="opwinstd('/admin/anekdots','anekwin');">~efunnyadm~</td>
+<td>~funnyadm~<input type=button value="Картинки" onclick="opwinstd('/admin/pictures','picwin');">~efunnyadm~</td>
+</tr>
+<tr>
+<td>~accounts~<input type=button value="Учетные записи" onclick="opwin('/admin/accounts','accwin',600,400);">~eaccounts~</td>
+<td>~voteadm~<input type=button value="Голосование" onclick="opwin('/admin/vote','voteawin',600,400);">~evoteadm~</td>
+<td>~privsadm~<input type=button value="Привилегии" onclick="opwin('/admin/privileges','privswin',470,500);">~eprivsadm~</td>
+</tr>
+<tr>
+<td>~hintsadm~<input type=button value="Советы" onclick="opwin('/admin/hints','hintswin',600,400);">~ehintsadm~</td>
+<td>~newsadm~<input type=button value="Новости" onclick="opwin('/admin/news','newswin',600,400);">~enewsadm~</td>
+<td>~levelupadm~<input type=button value="Повышения" onclick="opwin('/admin/levelup','newswin',600,400);">~elevelupadm~</td>
+</tr>
+<tr>
+<td>~advertizer~<input type=button value="Рекламодатель" onclick="opwin('/admin/advertizer/','advwin',600,400);">~eadvertizer~</td>
+<td>~advertizeradm~<input type=button value="Админ рекламы" onclick="opwin('/admin/advertizer_admin/','advadmwin',600,400);">~eadvertizeradm~</td>
+</tr>
+</form>
+</table>
+</div>
+<br>
+~adm~<form action="/admin/logininfo" target="owusr" onsubmit="opwin('about:blank','owusr',550,500)" method=get>
+Инфо о логине: <input type=textfield name="login" style="height: 19"><input type=submit value="OK" style="width: 2em">
+</form>~eadm~
+Подробнее об администрировании читать <a href=# onclick="return opwin('/html/help/admin/index.html','ahelp',650,580)">тут</a>.<br>
+<p>
+<center><input type=button value="Закрыть" onclick="window.close();">
+</center>
+<p>
+<table border=0 width="100%">
+<tr align=center><td>~bb3~</td><td>~bb4~</td></tr>
+</table>

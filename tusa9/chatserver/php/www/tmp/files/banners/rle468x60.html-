@@ -1,0 +1,10 @@
+<script>
+var rnd=Math.random()*10000;
+var bc='<iframe src=http://www.linkexchange.ru/cgi-bin/erle.cgi?60961?'+rnd;
+	bc+=' frameborder=0 vspace=0 hspace=0 width=468 height=60 ';
+	bc+='marginwidth=0 marginheight=0 scrolling=no>';
+	bc+='<a href=http://www.linkexchange.ru/users/060961/goto.map target=_top> ';
+	bc+='<img src=http://www.linkexchange.ru/cgi-bin/rle.cgi?60961?'+rnd;
+	bc+=' alt="RLE Banner Network" border=0 height=60 width=468></a></iframe>';
+document.write(bc);
+</script>

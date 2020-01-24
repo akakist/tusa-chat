@@ -1,0 +1,23 @@
+cmake_minimum_required(VERSION 3.6)
+
+include_directories(core core_web stdafx /usr/local/include)
+link_directories( /usr/local/lib)
+
+SET(PROJECT_BASE_DIR ~/tusa7)
+SET(PLUGIN_TARGET_DIR ${PROJECT_BASE_DIR}/plugin)
+SET(BIN_TARGET_DIR ${PROJECT_BASE_DIR}/bin)
+SET(LIB_TARGET_DIR ${PROJECT_BASE_DIR}/lib)
+SET(LOG_TARGET_DIR ${PROJECT_BASE_DIR}/log)
+SET(DATA_TARGET_DIR ${PROJECT_BASE_DIR}/data)
+SET(CONFIG_TARGET_DIR ${PROJECT_BASE_DIR}/conf)
+SET(CACHE_TARGET_DIR ${PROJECT_BASE_DIR}/cache)
+
+add_definitions(-DWITH_MUTEXES -D__WITH_FILES_CONF__ -DWITH_SENDERS -D_NO_PROXY)
+
+ADD_SUBDIRECTORY(bot)
+ADD_SUBDIRECTORY(chatserver)
+ADD_SUBDIRECTORY(core)
+ADD_SUBDIRECTORY(core_web)
+#ADD_SUBDIRECTORY(ra-chat)
+
+

@@ -1,0 +1,59 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="PRAGMA" CONTENT="no-cache">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+<TITLE>Чат "Тусовка"</TITLE>
+</head>
+
+<LINK rel="stylesheet" type="text/css" href="/css/main.css">
+<script>
+<!--
+if(navigator.appName == 'Netscape') document.write('<LINK href="/css/ns.css" rel=stylesheet type=text/css>');
+function fupdate(n)
+{
+	document.f.cmd.value=n;
+	document.f.submit();
+}
+function do_hint(id)
+{
+	nw=window.open('?id='+id,'news1win','toolbar=0,status=0,scrollbars=1,width=500,height=250,resizable=1');
+	nw.focus();
+	return false;
+}
+//-->
+</script>
+
+<style>
+ body {color: #dddddd; background-image: none; background-color: #4D5356; margin-left: 5px; margin-right: 5px; margin-top: 5px}
+ td,big {color: #dddddd}
+</style>
+
+
+<body>
+<big><big><center><b>Админство новостей</b></center></big></big><br>
+<form name="f" method="POST" action="/admin/news">
+<input type=hidden name="cmd" value="add">
+<table border=0 cellspacing=1 cellpadding=1>
+<tr><td>Новости</td><td>Дата</td><td></td>
+</tr>
+~news~
+</table>
+<p>
+Добавить новость:<br>
+
+~addnews~
+
+
+<input type=submit value="Добавить">
+
+<br>
+<br>
+<center>
+<input type=button value="Обновить" onclick="fupdate('');">
+<input type=button value="Закрыть" onclick="window.close();">
+</center>
+</form>
+<p>
+<table border=0 width="100%">
+<tr align=center><td>~bb3~</td><td>~bb4~</td></tr>
+</table>

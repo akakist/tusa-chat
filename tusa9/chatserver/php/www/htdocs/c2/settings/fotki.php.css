@@ -1,0 +1,12 @@
+td
+{
+	margin:1px;
+	padding: 1px;
+	text-align: right;
+}
+td.r
+{
+	margin:1px;
+	padding: 1px;
+	text-align: left;
+}

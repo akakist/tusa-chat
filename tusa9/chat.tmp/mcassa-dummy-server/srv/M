@@ -1,0 +1,1 @@
+c++ mcassa_server.cpp  -lcrypto -o mcassa_server.exe

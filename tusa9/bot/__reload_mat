@@ -1,0 +1,2 @@
+ killall mat.exe  -9
+./mat.exe  -d

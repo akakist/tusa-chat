@@ -1,0 +1,99 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="PRAGMA" CONTENT="no-cache">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+<TITLE>buttons</TITLE>
+</head>
+
+<LINK href="/css/main.css" rel=stylesheet type=text/css>
+
+<script>
+<!--
+
+function o_l(url)
+{
+	r=Math.round(Math.random(123)*1000);
+	n=window.open(url,'wind'+r,'toolbar=1,menubar=1,status=1,location=1,status=1,resizable=1,scrollbars=1,personalbar=1,directories=1');
+	return false;
+}
+rooms=new Array();
+~rooms~
+function ch_room()
+{
+	r=Math.round(Math.random(123)*1000);
+	window.top.messages.location='/chat/messages.tse?r='+r+'&c='+document.sf.channel.value;//.selectedIndex;
+	window.top.addmessage.document.SendForm.msgbox.focus();
+}
+function ch_nick()
+{
+	document.sf.id.value=document.sf.nick.options[document.sf.nick.selectedIndex].value;
+	document.sf.cmd.value='nick';
+	document.sf.submit();
+	window.top.addmessage.document.SendForm.msgbox.focus();
+}
+function exit_chat()
+{
+	parent.ex=1;
+	window.top.location='exit';
+	return false;
+}
+//-->
+</script>
+
+<style>
+a:link, a:hover, a:visited {font-size: 8pt;}
+</style>
+
+<BODY OnMouseMove="parent.mm(0);" leftmargin=4 topmargin=1 onclick="window.top.messages.do_hide_menu()">
+
+<FORM method="POST" action="cmd" name="sf" target="hidden">
+<input type=hidden name="id" value="">
+<input type=hidden name="msg" value="">
+<input type=hidden name="cmd" value="">
+<input type=hidden name="on" value="">
+
+<table border=0 cellpadding=0 cellspacing=0 width=100% height=100%>
+<tr>
+
+<td align=left valign=top rowspan=2>
+<IMG SRC="/pics/cc/panel_adm.gif" WIDTH=117 HEIGHT=60 BORDER=0 USEMAP="#panel_Map">
+<MAP NAME="panel_Map">
+
+<AREA SHAPE="rect" ALT="Форум" COORDS="51,2,70,20" HREF="/Forum" target=_new>
+<AREA SHAPE="rect" ALT="Помошь" COORDS="26,2,43,20" HREF="/html/help.html" target=_new>
+<AREA SHAPE="rect" ALT="Главная страница" COORDS="3,2,19,20" HREF="/" target=_new>
+~adm~<AREA SHAPE="rect" ALT="Консоль админа" COORDS="81,39,97,58" HREF="#" onclick="n=window.open('/admin/','admpage','toolbar=0,status=0,scrollbars=0,width=450,height=500'); n.focus(); return false;">~eadm~
+<AREA SHAPE="rect" ALT="Записки" COORDS="51,40,69,58" HREF="#" onclick="return parent.open_n('');">
+<AREA SHAPE="rect" ALT="Настройки чата" COORDS="28,40,44,58" HREF="/settings_status" target=_new>
+<AREA SHAPE="rect" ALT="Сменить инфу" COORDS="3,40,18,57" HREF="/changeinfo" target=_new>
+<AREA SHAPE="rect" ALT="Покинуть чат" COORDS="1,23,115,36" HREF="exit" target=_top>
+<AREA SHAPE="rect" ALT="Галерея" COORDS="80,2,95,20" HREF="#" onclick="return o_l('/gallery')"> 
+
+</MAP>
+</td>
+
+<td rowspan=2 align=center valign=center width=20%>
+</td>
+
+
+<td rowspan=2 align=center valign=center width=70%>
+<a  onclick="return o_l('/settings_credit#cassa')" href="#"><b>КУПИТЬ КРЕДИТЫ</b> Внимание, организована продажа кредитов через мультикассы по 0.5 коп</a>
+&nbsp;&nbsp;&nbsp;
+</td>
+
+
+<td align=right valign=bottom colspan=2>
+<FONT class=gr>Ник:&nbsp;</FONT></td><td nowrap valign=bottom>~nick~ <input type=button value=">>" onclick="ch_nick();" title="Сменить ник"></td>
+</tr>
+
+<tr>
+<td align=left valign=top>
+</td>
+~schannel~
+<td align=right nowrap><FONT class=gr>Тусуемся в:&nbsp;</FONT></td><td nowrap>~channel~ <input type=button value=">>" onclick="ch_room();" title="Перейти в комнату"></td>
+~eschannel~</tr>
+</table>
+
+</form>
+</BODY>
+</HTML>

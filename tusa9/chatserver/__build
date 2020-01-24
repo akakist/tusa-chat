@@ -1,0 +1,6 @@
+
+
+cd core1      ; make $1 -j1; cd ..
+cd core-web1  ; make $1 -j1; cd ..
+#cd lib-cs     ; make $1 -j1; cd ..
+ make $1 -j1; cd ..

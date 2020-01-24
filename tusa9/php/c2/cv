@@ -1,0 +1,11 @@
+#!/usr/bin/perl
+
+@r=`ls *.html`;
+foreach(@r)
+{
+    chomp;
+    #print "$_\n";
+    $f=$_;
+    print("iconv  -f=cp1251 -t=utf8 $f --output /tmp/$f\n");
+    print("cp /tmp/$f $f\n");
+}

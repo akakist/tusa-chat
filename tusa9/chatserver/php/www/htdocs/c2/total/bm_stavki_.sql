@@ -1,0 +1,1 @@
+select * from bm_stavki

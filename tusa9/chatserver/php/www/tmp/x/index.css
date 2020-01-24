@@ -1,0 +1,70 @@
+body{
+	font-family: Verdana;
+	font-size: 12px;
+	background: #003570;
+	color: #dcdcdc;
+	padding: 4px;
+}
+input, textarea{
+	border: 1px solid black;
+	background: #004590;
+	font-size: 11px;
+	color: #dcdcdc;
+}
+
+#buttons{
+	background-image: url('/img/top_line.gif');
+	background-repeat: repeat-x;
+	width: 100%;
+	height: 60px;
+	padding-bottom: 5px;
+	overflow: hidden;
+}
+
+#chatcontent{
+	width: 100%;
+	float: left;
+	margin-right: -205px;
+}
+
+#chatcontent #left{
+	width: 0px;
+	float: left;
+	background-color: #006020;
+}
+
+#chatcontent #messages{
+	margin-left: 2px;
+	margin-right: 205px;
+	background-color: #f02020;
+	overflow:auto;
+	height: 300px;
+
+
+}
+
+#users{
+	float: right;
+	width: 205px;
+	background-color: #0020f0;
+	height: 300px;
+	overflow:auto;
+
+}
+	
+#addmessage{
+	margin-top: 30px;
+	padding: 5px;
+	height: 60px;
+	border: 1px solid #bfbfbf;
+	--text-align: center;
+	--overflow:auto;
+}
+.c_b {background: #003570; border: 0px;color:#dddddd;}
+
+.gr {color: #00c045}
+
+.nick, .nick:link, a.nick:visited {color: #80A0F0; text-decoration: none;}
+.nick:hover,a.nick:hover {text-decoration: underline;}
+.nickb:link, a.nickb:visited {color: #EA97D1;}
+.nickb:hover,a.nickb:hover {text-decoration: underline;}

@@ -1,0 +1,102 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="PRAGMA" CONTENT="no-cache">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+<TITLE>Чат "Тусовка" - Консоль админа</TITLE>
+</head>
+
+<LINK rel="stylesheet" type="text/css" href="/css/main.css">
+<script>
+<!--
+var lv=~level~;
+
+function opwin(url,nm,sx,sy)
+{
+	nw=window.open(url,nm,'toolbar=0,status=0,scrollbars=1,width='+sx+',height='+sy+',resizable=1');
+	nw.focus();
+}
+function opwin1(url,nm,sx,sy)
+{
+	nw=window.open(url,nm);
+	nw.focus();
+}
+
+function opwinstd(url,nm)
+{
+	opwin(url,nm,750,500);
+}
+
+function do_ban_ip()
+{
+	if(lv<7){
+		alert('У вас недостаточно прав!');
+		return;
+	}
+	opwinstd('/admin/ipban','ipban');
+}
+
+function do_ban_login()
+{
+	if(lv<7){
+		alert('У вас недостаточно прав!');
+		return;
+	}
+	opwinstd('/admin/loginban','loginban');
+}
+
+function do_ban_nick()
+{
+	if(lv<7){
+		alert('У вас недостаточно прав!');
+        return;
+	}
+	opwinstd('/admin/nickban','nickban');
+}
+
+function do_list()
+{
+	if(lv<6){
+		alert('У вас недостаточно прав!');
+		return;
+	}
+	y=(screen.height*9)/10;
+	opwin('/admin/userlist','userlist',630,y);
+}
+
+function do_settings()
+{
+	opwin('/admin/settings','settings',600,500);
+}
+
+function do_logs()
+{
+	opwinstd('/admin/logs','logs');
+}
+
+//-->
+</script>
+<body>
+<style>
+input {width: 100;}
+</style>
+<form>
+<big><big><center><b>Консоль админа</b></center></big></big>
+<DIV align="justify">
+Уважаемые администраторы (и прочие люди), надеюсь что вам не надо напоминать серьезность ваших действий.
+Среди тех, против кого Вы примените свою "силу" могут оказаться очень серьёзные и уважаемые люди! Также, стоит
+лояльнее относится к тем, кто в чате постоянный гость. Постарайтесь ему просто всё объяснить!<br>
+В любом случае, имейте ввиду, что ведутся все логи и за каждое свое действие Вы будете отвечать.
+<br><br>
+<center>
+<input type=button value="Список юзеров" onclick="do_list();">~mnu~
+</center>
+</div>
+<br>
+~logininfo~
+
+Подробнее об администрировании читать <a href=# onclick="return opwin('/html/help/admin/index.html','ahelp',650,580)">тут</a>.<br>
+
+<p>
+<center><input type=button value="Закрыть" onclick="window.close();">
+</center>
+<p>

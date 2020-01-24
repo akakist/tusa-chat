@@ -1,0 +1,52 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="PRAGMA" CONTENT="no-cache">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+<TITLE>users</TITLE>
+</head>
+
+<LINK href="/css/main.css" rel=stylesheet type=text/css>
+<script>
+function CC(nm)
+{
+	var st=document.all['at'+nm].style;
+	if(st.display=="none"){
+		st.display="block";
+	}
+	else{
+		st.display="none";
+	}
+	return false;
+}
+var op=false;
+function set_op(s)
+{
+	for(i=0;i<document.all.length;i++){
+//		alert(document.all(i).tagName);
+		var it=document.all(i);
+		if(it.tagName=='DIV' && it.id.substr(0,2)=='at'){
+			it.style.display=s;
+		}
+	}
+}
+function do_all()
+{
+//    return true;
+	if(op){
+		op=false;
+		set_op('none');
+	}else{
+		op=true;
+		set_op('block');
+	}
+	return false;
+}
+</script>
+
+<BODY onLoad="setTimeout('document.location.reload()',120000)" class=fusr oncontextmenu="return do_all();">
+
+~users~
+
+<hr width="100%" size=2 class=hr>
+<div align=right class=fusr>Всего: <b>~cnt~</b></div>
+</html>

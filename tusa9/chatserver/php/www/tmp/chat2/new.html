@@ -1,0 +1,200 @@
+
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="PRAGMA" CONTENT="no-cache">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+<TITLE>Чат "Тусовка"</TITLE>
+<LINK href="main2.css" rel=stylesheet type=text/css>
+</HEAD>
+
+<script type="text/javascript" src="jquery.pack.js"></script>
+<style>
+#buttons
+{
+	background-color: #ffaa00;  
+	border: 1px solid black;  
+	margin:0;
+	height:60px;
+}
+#messages
+{
+	border: 1px solid black; 
+	border-collapse: collapse; 
+	background-color:#333300; 
+	padding:4px;
+	overflow:auto;
+	margin-right:200px;
+	height:500px;
+
+}
+#users
+{
+	float:right;
+
+        width: 200px;
+
+	border: 1px solid black; 
+	border-collapse: collapse; 
+	background-color:#00ff00;
+	overflow:auto 
+
+}
+#console
+{
+	border: 1px solid black; 
+	border-collapse: collapse;
+	background-color:#ff00ff; 
+	clear:both;
+}
+#message_sloy
+{
+	float:left;
+	width:5px;
+}
+#wrapper{
+        width: 100%;
+        overflow: hidden;
+}
+
+
+</style>
+<script>
+var butt_size=60;
+var console_size=50;
+var userlist_width=200;
+var timer_update=0;
+
+function resize()
+{
+var sw=document.body.clientWidth;
+var sh=document.body.clientHeight;
+$('#buttons').css('height'	,butt_size);
+$('#buttons').css('width'	,sw);
+$('#buttons').css('left'	,0);
+$('#buttons').css('top'		,0);
+
+$('#messages').css('width',sw-userlist_width);
+$('#messages').css('height',sh-butt_size-console_size);
+$('#messages').css('left',0);
+$('#messages').css('top',butt_size);
+
+$('#users').css('width',userlist_width-10);
+$('#users').css('height',sh-butt_size-console_size);
+$('#users').css('left',sw-userlist_width+10);
+$('#users').css('top',butt_size);
+
+$('#console').css('width',sw);
+$('#console').css('height',console_size);
+$('#console').css('left',0);
+$('#console').css('top',sh-console_size);
+
+
+return true;
+
+}
+var scroller=0;
+var s=0;
+function scroll()
+{
+//	alert("scroll");
+	clearTimeout(scroller);
+//	scrollHeight
+	document.getElementById('messages').scrollTop=document.getElementById('messages').scrollHeight;
+	if(s%90==0)document.getElementById('messages').innerHTML=document.getElementById('messages').innerHTML+"dfgsdfg <br>";
+	s+=30;
+	scroller=setTimeout('scroll()',1000);
+}
+function res()
+{
+	resize();
+//		clearTimeout(timer_update);
+//		timer_update=setTimeout('resize()',1000);
+}
+</script>
+
+<body style='margin:0; padding:0;' onresize="
+	return res();
+	" onload="
+	scroller=setTimeout('scroll()',100);
+	return res();
+	">
+<div id='wrapper'>
+<div id="content">
+
+<div id='buttons'  style=''>
+buttons
+buttonsbuttonsbuttons
+buttons
+buttonsbuttonsbuttons
+buttons
+buttonsbuttonsbuttons
+buttons
+buttonsbuttonsbuttons
+buttons
+buttonsbuttonsbuttons
+buttons
+buttonsbuttonsbuttons
+buttons
+buttonsbuttonsbuttons
+buttons
+buttonsbuttonsbuttons
+buttons
+buttonsbuttonsbuttons
+
+</div>
+<div id='message_sloy'>
+</div>
+<div id='messages' style=''>messages
+messages messagesmessages messages  messages messages messages messages messages messages 
+messages messagesmessages messages  messages messages messages messages messages messages 
+messages messagesmessages messages  messages messages messages messages messages messages 
+messages messagesmessages messages  messages messages messages messages messages messages 
+messages messagesmessages messages  messages messages messages messages messages messages 
+messages messagesmessages messages  messages messages messages messages messages messages 
+messages messagesmessages messages  messages messages messages messages messages messages 
+messages messagesmessages messages  messages messages messages messages messages messages 
+messages messagesmessages messages  messages messages messages messages messages messages 
+messages messagesmessages messages  messages messages messages messages messages messages 
+messages messagesmessages messages  messages messages messages messages messages messages 
+messages messagesmessages messages  messages messages messages messages messages messages 
+messages messagesmessages messages  messages messages messages messages messages messages 
+messages messagesmessages messages  messages messages messages messages messages messages 
+messages messagesmessages messages  messages messages messages messages messages messages 
+messages messagesmessages messages  messages messages messages messages messages messages 
+messages messagesmessages messages  messages messages messages messages messages messages 
+messages messagesmessages messages  messages messages messages messages messages messages 
+messages messagesmessages messages  messages messages messages messages messages messages 
+messages messagesmessages messages  messages messages messages messages messages messages 
+messages messagesmessages messages  messages messages messages messages messages messages 
+messages messagesmessages messages  messages messages messages messages messages messages 
+messages messagesmessages messages  messages messages messages messages messages messages 
+messages messagesmessages messages  messages messages messages messages messages messages 
+messages messagesmessages messages  messages messages messages messages messages messages 
+messages messagesmessages messages  messages messages messages messages messages messages 
+messages messagesmessages messages  messages messages messages messages messages messages 
+messages messagesmessages messages  messages messages messages messages messages messages 
+messages messagesmessages messages  messages messages messages messages messages messages 
+messages messagesmessages messages  messages messages messages messages messages messages 
+messages messagesmessages messages  messages messages messages messages messages messages 
+messages messagesmessages messages  messages messages messages messages messages messages 
+messages messagesmessages messages  messages messages messages messages messages messages 
+messages messagesmessages messages  messages messages messages messages messages messages 
+messages messagesmessages messages  messages messages messages messages messages messages 
+messages messagesmessages messages  messages messages messages messages messages messages 
+messages messagesmessages messages  messages messages messages messages messages messages 
+messages messagesmessages messages  messages messages messages messages messages messages 
+messages messagesmessages messages  messages messages messages messages messages messages 
+messages messagesmessages messages  messages messages messages messages messages messages 
+messages messagesmessages messages  messages messages messages messages messages messages 
+messages messagesmessages messages  messages messages messages messages messages messages 
+messages messagesmessages messages  messages messages messages messages messages messages 
+messages messagesmessages messages  messages messages messages messages messages messages 
+messages messagesmessages messages  messages messages messages messages messages messages 
+</div>
+<div id='users'  style=''>users</div>
+<div id='console'  style=''>console</div>
+
+</div>
+</div>
+<iframe src="1.html" style='position: absolute; left:-100;top:-100:width:2;height:2;' frameborder=0>~nusr~</iframe>
+</body>

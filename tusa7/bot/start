@@ -1,0 +1,15 @@
+cd ./bot-girl
+./girl.exe -d
+cd ..
+cd ./bot-mafia-new
+./mafia.exe -d
+cd ..
+cd ./bot-mat
+./mat.exe -d
+cd ..
+cd ./bot-quiz-oscar
+./quiz.exe -d
+cd ..
+cd ./bot-roulette
+./roulette.exe -d
+cd ..

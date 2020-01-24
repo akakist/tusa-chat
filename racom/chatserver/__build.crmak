@@ -1,0 +1,5 @@
+cd core1      ; crmak __c.i>Makefile; cd ..
+cd core_web1  ; crmak __c.i>Makefile; cd ..
+cd lib_cs     ; crmak __c.i>Makefile; cd ..
+
+crmak __c.i>Makefile 

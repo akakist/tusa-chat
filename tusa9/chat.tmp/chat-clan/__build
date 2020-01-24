@@ -1,0 +1,5 @@
+
+cd core1        ; make $1 -j2; cd ..
+cd core_web1   ; make $1 -j2; cd ..
+#cd client     ; make $1 -j2; cd ..
+make $1 -j2

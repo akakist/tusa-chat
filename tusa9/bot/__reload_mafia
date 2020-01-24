@@ -1,0 +1,3 @@
+killall mafia.exe -9
+./mafia.exe -d
+

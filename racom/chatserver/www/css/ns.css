@@ -1,0 +1,88 @@
+.tb {border-top: 1px solid #A0A0A0; border-bottom: 1px solid #A0A0A0; background-color: #F5EBF5}
+.tbb {border-top: 1px solid #A0A0A0; border-bottom: 1px solid #A0A0A0; background-color: #EFEFFA}
+#hm {display: block}
+#hs {display: block}
+.lb {border-bottom: 1px solid #000000; background-color: #F5EBF5}
+.lb_ovr {border-bottom: 1px solid #000000; background-color: #FFF8FF}
+.lb_c {background-color: #FFF8FF}
+
+
+
+.bp {border: 1px solid #000000; background-color: #E7C7E7; font-family: Sans Serif; color: #000000; font-size: 10px}
+
+.ifu {width:140; height:160}
+.t {border-top: 1px solid #A0A0A0; background-color: #F5EBF5}
+.trd {background-color: #F5EBF5}
+.t_ovr {border-top: 1px solid #A0A0A0; background-color: #EFEFFA}
+.tt {background-color: #F5EBF5}
+.tdrk {background-color: #FFF8FF}
+.trdd {background-color: #F5EBF5}
+
+
+.border {border: 1px solid #A0A0A0; background-color: #9B9BDB}
+.borderz {border: 1px solid #A0A0A0; border-top: 0px; background-image: url(/pics/top_border.gif); background-color: #9B9BDB; height: 21}
+.borderm {border: 1px solid #A0A0A0; border-bottom: 0px; background-color: #EFEFFA}
+.b {border-bottom: 1px solid #A0A0A0; background-color: #003060}
+.blr {border-bottom: 1px solid #A0A0A0; background-color: #004590; background-image: url(/pics/left_hdr.gif)}
+body,td,  p, pre {
+	FONT-FAMILY: Tahoma, Verdana, Arial, Helvetica, sans-serif; font-size: 12px; color: #000000; background-color: #ffffff;
+}
+
+.htxt {font-weight: bold; color: white; font-size: 13px}
+.htxtm {font-weight: bold; color: #333333; font-size: 13px}
+
+.leg {font-family: Verdana, Arial;color: #000000;}
+
+.ab:link, .ab:visited, .ab:hover {font-family: Aial; text-decoration: none; color: #000066; font-weight: bold; font-size: 11px;}
+
+
+A:link, a:visited, a:active {COLOR: #000066; TEXT-DECORATION: underline}
+A:hover {COLOR: #0000ff; TEXT-DECORATION: underline}
+
+.nick, A.nick:link,a.nick:active,a.nick:visited {FONT-SIZE: 13px; FONT-FAMILY: Verdana, Arial; TEXT-DECORATION: none; color: #a00000}
+a.nick:hover {COLOR: #eb6501; FONT-FAMILY: Verdana, Arial; TEXT-DECORATION: underline; color: #a00000}
+
+.aw:link, .aw:hover, .aw:visited {color: #008000;}
+.wh {color: #dcdcdc}
+
+input {FONT-WEIGHT: bold; BACKGROUND: #f5ebf5; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; font-size: 10px}
+select {FONT-WEIGHT: bold; BACKGROUND: #f5ebf5; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; font-size: 10px}
+.sl {width: 150}
+.c_b {background-color: #ffffff; border: 0px;}
+textarea {FONT-WEIGHT: bold; BACKGROUND: #f5ebf5; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif}
+.uf {font-family: Verdana, Arial; font-size: 9pt; color: #dcdcdc;}
+
+.yelmsg {color: #000066; font-weight: bold;}
+.yelmsgnb {color: #000066}
+.infd {color: darkblue}
+.infn {color: darkblue}
+.pprr {color: #008300}
+.gr {color: #00c045}
+.rd {color: #aa0000}
+.dark {color: #acacac}
+
+.mpt {border: 1px solid #A0A0A0; width: 100%}
+.mpst {border: 1px solid #A0A0A0; width: 100%}
+
+.ta {width: 400; font-family:Arial; font-size: 9pt;}
+
+.vyes {color: #00a000}
+.vno {color: #CE3655}
+.vnf {color: #bcbcbc}
+
+.fusr {font-size: 8.5pt; color: #000000; background-color: #EFEFFA;}
+.fusr_u {font-family: Verdana, Arial; font-size: 8.5pt; margin-left: 0.5em; color: #000000; background-color: #EFEFFA}
+.fusrc {font-family: Verdana, Arial; font-size: 8.5pt; color: #dcdcdc; background-color: #003060}
+
+.lab:link, .lab:visited, .lab:hover {font-family: Aial; text-decoration: none; color=#000000; font-size: 12px;}
+.tc_b {background: #F5EBF5; border: 0px;}
+.h {color: #ffcc30; font-weight: bold;}
+
+.forumq {color: #989898}
+
+#bigbutt {visibility: visible; position: absolute; top: 0}
+#smallbutt {visibility: hidden; position: absolute; top: 0}
+#addpanel {visibility: hidden}
+
+.top_line {	background-image : url(/pics/top_line.gif);}
+.nb_f {margin-left: 1em}

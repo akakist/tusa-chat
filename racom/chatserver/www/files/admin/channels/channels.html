@@ -1,0 +1,73 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="PRAGMA" CONTENT="no-cache">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+<TITLE>Чат русских в Америке - Консоль админа -> Настройки -> Комнаты</TITLE>
+</head>
+
+<LINK rel="stylesheet" type="text/css" href="/css/main.css">
+<style>
+.ci {background-color: #003060; border: 0}
+</style>
+<script>
+if(navigator.appName == 'Netscape') document.write('<LINK href="/css/ns.css" rel=stylesheet type=text/css>');
+function fupdate(n)
+{
+	document.f.cmd.value=n;
+	document.f.submit();
+	return false;
+}
+
+function opwin(url,nm,w,h)
+{
+	nw=window.open(url,nm,'toolbar=0,status=0,scrollbars=1,width='+w+',height='+h+',resizable=1');
+	nw.focus();
+	return false;
+}
+function do_del(id)
+{
+	document.f.id.value=id;
+	document.f.cmd.value='del';
+	document.f.submit();
+	return false;
+}
+function do_change(id)
+{
+	document.f.id.value=id;
+	document.f.cmd.value='change';
+	document.f.submit();
+	return false;
+}
+
+</script>
+<body>
+<big><big><center><b>Админство комнат</b></center></big></big><br>
+<center><font class=yelmsg>~msg~</font></center>
+<form name="f" method="POST">
+<input type=hidden name="cmd" value="">
+<input type=hidden name="id" value="">
+<input type=hidden name="msg" value="">
+
+<table cellspacing=1 cellpadding=1 class=border>
+<tr><td class=trdd><small>ID</td><td class=trdd><small>Название</td><td class=trdd><small>Цензура?</td><td class=trdd><small>Лог?</td><td class=trdd><small>Кидает в..</td><td class=trdd align=center><small>Без<br>статистики?</td><td class=trdd><small>Расширенный?</td><td class=trdd><small>Read level</td><td class=trdd><small>Write level</td><td class=trdd><small>Irc Name</td><td class=trdd>&nbsp;</td></tr>
+~channels~
+</table>
+
+
+<p>
+
+<b>Добавить комнату:</b><br>
+~addchannel~
+<input type=checkbox name=addcensored class=c_b> с цензурой <input type=checkbox name=addsave class=c_b> сохранять сообщения<br>
+<input type=button value="Добавить" onclick="return fupdate('addchannel');">
+<p>
+
+<center>
+<input type=button value="Обновить" onclick="return fupdate('');">
+<input type=button value="Закрыть" onclick="window.close();">
+<p>
+<table border=0 width="100%">
+<tr align=center><td>~bb3~</td><td>~bb4~</td></tr>
+</table>
+
+</form>

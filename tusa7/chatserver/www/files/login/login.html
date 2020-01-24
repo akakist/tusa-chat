@@ -1,0 +1,241 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="PRAGMA" CONTENT="no-cache">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+<TITLE>Russian America Chat. Чат русских в Америке</TITLE>
+</head>
+
+<script>
+<!--
+
+
+var uf=0;
+function do_f(id)
+{
+	var r=Math.random();
+	locat='/userphotos?id='+id;
+	sx=screen.width/3*2;
+	sy=screen.height/5*4;
+	if(!uf || uf.closed){
+		uf=open(locat,'uf','toolbar=0,status=0,resizable=1,scrollbars=1,width='+sx+',height='+sy);
+		uf.focus();
+	}
+	else{
+		uf.focus();
+		uf.location=locat;
+	}	
+//	return true;
+}
+var uni=0;
+function do_nicks(id)
+{
+	var r=Math.random();
+	locat='/settings_nicks';
+	sx=400;//screen.width/3*2;
+	sy=200;//screen.height/5*4;
+	if(!uni || uni.closed){
+		uni=open(locat,'uni','toolbar=0,status=0,resizable=1,scrollbars=1,width='+sx+',height='+sy);
+		uni.focus();
+	}
+	else{
+		uni.focus();
+		uni.location=locat;
+	}	
+//	return true;
+}
+
+function AddNick()
+{
+	nwin=open('/NewNick', 'NewNick', 'toolbar=0,status=0,resizable=0,scrollbars=0,width=350,height=160');
+	nwin.focus();
+	return false;
+}
+
+function remove_nick()
+{
+	d=document.loginform;
+	n=document.loginform.nick.selectedIndex;
+	if(!confirm('Удалить ник "'+d.nick.options[n].text+'" ?')){
+		return false;
+	}
+	document.tempform.nick.value=d.nick.options[n].value;
+	document.tempform.removenick.value='yes';
+	document.tempform.submit();
+	return false;
+}
+
+function chk_f()
+{
+    if(!document.loginform.nick){return true;}
+	if(document.loginform.nick.options.length==0){
+		alert('У Вас нет ников для входа в чат... Создайте себе хотя бы один ник!');
+		return false;
+	}
+	return true;
+}
+
+function open_n(param)
+{
+    w=780;
+    h=500;
+    if(param!=''){
+    	param='?'+param;
+    }
+	nwin=open('/notes/frames'+param, 'notes', 'toolbar=0,status=0,resizable=1,scrollbars=1,left=10,top=10,width='+w+',height='+h);
+	nwin.focus();
+	return false;
+}
+
+function mOvr(src,tp)
+{
+	if(!tp) tp=0;
+	src.style.cursor='hand';
+	src.style.backgroundColor=document.styleSheets[0].rules[tp+1].style.backgroundColor;
+}
+function mOut(src,tp)
+{
+	if(!tp) tp=0;
+	src.style.cursor='default';
+	src.style.backgroundColor=document.styleSheets[0].rules[tp].style.backgroundColor;
+}
+function mClk(src) 
+{
+	if(event.srcElement.tagName=='TD') src.children.tags('A')[0].click();
+}
+//-->
+</script>
+
+<LINK href="/css/main.css" rel=stylesheet type=text/css>
+<body>
+<TABLE border=0 width=100% cellspacing=0 cellpadding=0>
+~header~
+<TR height=5><TD colspan=5></TD></TR>
+<TR valign=top>
+<TD>
+<table class=borderm width=120 valign=top cellspacing=0 cellpadding=0>
+~navig~
+~menu~
+</table>
+</TD>
+<TD></TD>
+<TD>
+<table width=100% border=0 cellspacing=0 cellpadding=0>
+<tr><td class=borderz align=center><font class=htxtm>Здравствуйте, ~name~</font></td></tr>
+<tr height=5 ><td></td></tr>
+<tr><td>
+<div align=justify valign=top>
+<center>Рады снова видеть Вас в нашем чате ;)<table border="1" width="100%" id="table3" style="border-width: 0px">
+	<tr>
+		<td style="border-style: none; border-width: medium">Если Вы впервые у 
+		нас, то рекомендуем посетить раздел
+		<a href="http://chat.russianamerica.com:8080/html/help.html">Помощь</a>. 
+		</td>
+	</tr>
+	<tr>
+		<td style="border-style: none; border-width: medium">
+		<a href="http://chat.russianamerica.com:8080/Gallery">Галерея</a> чата 
+		поможет Вам узнать более полную информацию о Ваших друзьях и знакомых. 
+		</td>
+	</tr>
+	<tr>
+		<td style="border-style: none; border-width: medium">Кнопка &quot;<a href="http://chat.russianamerica.com:8080/logout">Выход</a>&quot; 
+		предназначена для того чтобы завершить сессию.</td>
+	</tr>
+</table>
+</center>
+
+<p align="center"><font size="2">&nbsp;<a href="javascript: do_f(~uid~);">Мои фотки</a> 
+| <a href="javascript: do_nicks(~uid~);">Мои ники</a>
+<span lang="en-us"> | </span><a href="/ChangeInfo">Моя</a><a title="Сменить информацию о себе" target="_blank" href="/ChangeInfo"> инф<span lang="en-us">a
+</span></a><span lang="en-us">|</span>
+<a target="_blank" title="Различные настройки чата" href="/settings">Мои настройки</a><span lang="en-us"> 
+|</span>
+<a title="Операции с моими кредитами" target="_blank" href="http://chat.russianamerica.com:8080/settings_credit">Кредиты</a> </font></p>
+<table class=borderz width=100% border=0 cellspacing=0 cellpadding=0 style="border-bottom: 1px solid #A0A0A0">
+<tr><td class=borderz align=center><font class=htxtm>Вход</font></td></tr>
+<tr><td>
+
+<form action="/login/settings" name=tempform>
+<input type=hidden name="removenick" value="">
+<input type=hidden name="nick" value="">
+</form>
+
+<form action="/chat/enter" method=POST name="loginform" OnSubmit="return chk_f();">
+<TABLE align=center border=0>
+<TR height=5><TD></TD></TR>
+<TR><TD>
+<TABLE align=center border=0 cellPadding=1 cellSpacing=0>
+<TR>
+<TD align=right>Ник:&nbsp;</TD>
+<TD>~nicks~</TD><TD>&nbsp;~rbutt~<a href=# onclick="return remove_nick();"><img src=/pics/del.gif border=0 width=16 height=16 alt="Удалить ник"></a>~erbutt~&nbsp;
+~newnick~<input type=button onclick="return AddNick();" value="Добавить ник" class=b_l>~enewnick~
+</TD>
+</TR>
+~schannel~<TR><TD align="right">Сидим в:&nbsp;</TD>
+<TD>~channels~</TD>
+</TR>~eschannel~
+</TABLE>
+</TD></TR>
+<TR><TD align=center>
+~msg~
+<input type=submit value="Войти в чат" class=button name=subbtn>
+~admcon~<br><br><input type=button value="Консоль админа" onclick="n=window.open('/admin','admpage','toolbar=0,status=0,scrollbars=0,width=450,height=500,resizable=1');n.focus();">~eadmcon~
+<SCRIPT>
+<!--
+document.loginform.subbtn.focus();
+//-->
+</SCRIPT><br>
+~inv~<input type=checkbox class=c_b name=ininv ~invcheck~>Войти невидимым(ой)~einv~<br>
+~eye~<input type=checkbox class=c_b name=showadm ~eyecheck~>Показывать ~eyes~ глаз~eeye~
+</TD></TR>
+</form>
+</TABLE>
+</td></tr></table>
+~hint~~stat~
+</div>
+</td></tr>
+</table>
+</TD>
+<TD></TD>
+<TD>
+~cusers~
+<br>
+<table class=border width=140 valign=top cellspacing=0 cellpadding=0>
+<tr><td class=blr align=center height=21><font class=htxt>Записки:</font></td></tr>
+<tr><td>
+<table width=100% border=0>
+~folders~
+<tr><td>~newn~<b>~enewn~Новых</td><td nowrap>~newn~<b>~enewn~~newnotes~</td></tr>
+<tr height=5><td colspan=2></td></tr>
+<tr><td>Всего</td><td nowrap>~allnotes~</td></tr>
+<TR><TD colspan=2 align=center><input type=button value="Записки" class=b_l onclick="open_n('')"></TD></TR>
+</table>
+</td></tr>
+</table>
+<table class=border width=140 valign=top cellspacing=0 cellpadding=0 id="table1">
+<tr><td>
+<table width=100% border=0 id="table2">
+<tr><td align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-9958331633547867";
+/* 120x90, создано 23.01.09 */
+google_ad_slot = "6811375809";
+google_ad_width = 120;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>&nbsp;</td></tr>
+</table>
+</td></tr>
+</table>
+<br>
+</TD>
+</TR>
+</TABLE>
+<hr>
+<table cellspacing=0 cellpadding=0 border=0 width=100%>
+<tr align=center><td>~bb1~</td><td>~bb2~</td><td>~bb3~</td><td>~bb4~</td></tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,6 @@
+alter table tbl_users 	add column _setting_invite_sound tinyint not null default 1;
+update tbl_users set 	_setting_invite_sound=(setting_invite_sound='1');
+alter table tbl_users 	drop column setting_invite_sound;
+alter table tbl_users 	add column setting_invite_sound tinyint not null default 1;
+update tbl_users set 	setting_invite_sound=_setting_invite_sound;
+alter table tbl_users 	drop column _setting_invite_sound;

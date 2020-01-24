@@ -1,0 +1,9 @@
+<?
+    function str_nick($s)
+    {
+	$pat= 'ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿabcdefghijklmnopqrstuvwxyz';
+	$repl='AÁBÃÄEÆÇÈÉKËMHOÏPCTÓÔXÖ×ØÙÚÛÜÝÞßAÁBÃÄEÆÇÈÉKËMHOÏPCTÓÔXÖ×ØÙÚÛÜÝÞßABCDEFGHIJKLMNOPQRSTUVWXYZ';
+	return strtr($s,$pat,$repl);
+    
+    }
+?>

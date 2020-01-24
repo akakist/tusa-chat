@@ -1,0 +1,12 @@
+CREATE TABLE score (
+  ID int(10) unsigned NOT NULL auto_increment,
+  login char(18) not null default '',
+  win int(10) unsigned not null default 0,
+  loose int(10) unsigned not null default 0,
+  score int(10) unsigned not null default 0,
+  PRIMARY KEY  (ID),
+  key _login(login),
+  key _win(win),
+  key _loose(loose),
+  key _score(score)
+) TYPE=ISAM PACK_KEYS=1;

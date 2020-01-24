@@ -1,0 +1,12 @@
+sudo killall -9 girl.exe
+sudo killall -9 mafia.exe
+sudo killall -9 mat.exe
+sudo killall -9 quiz.exe
+sudo killall -9 roulette.exe
+
+
+sudo ./girl.exe -d
+sudo ./mafia.exe -d
+sudo ./mat.exe -d
+sudo ./quiz.exe -d
+sudo ./roulette.exe -d

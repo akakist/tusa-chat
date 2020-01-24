@@ -1,0 +1,157 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="PRAGMA" CONTENT="no-cache">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+<TITLE>Чат "Тусовка" - Форум</TITLE>
+</head>
+
+<LINK href="/css/main.css" rel=stylesheet type=text/css>
+<script>
+js2=false;
+</script>
+<script language="JavaScript1.2">
+js2=true;
+</script>
+<script>
+<!--
+function chk_f()
+{
+	if(document.f.msg.value==""){
+		alert('Вы не ввели сообщение...');
+		document.f.msg.focus();
+		return false;
+	}
+	document.f.smt.disabled=true;
+	return true;
+}
+
+uinfo=0;
+function ui(ni)
+{
+	locat='/auserinfo/'+ni;
+	uinfo=open(locat,'fuinfo','toolbar=0,status=0,resizable=1,scrollbars=1,width=505,height=415');
+	uinfo.focus();
+	return false;
+}
+function opwin(l,w,h)
+{
+	ow=open(l,'fed','toolbar=0,status=0,resizable=1,scrollbars=1,width='+w+',height='+h);
+	ow.focus();
+	return false;
+}
+function d_r(n)
+{
+	if(js2){
+		s=document.getElementById('b'+n).innerHTML;
+		re=/<BR>/g;		s=s.replace(re,'\r\n');
+		re=/<\/A>/g;	s=s.replace(re,'');
+		re=/<\/FONT>/g;	s=s.replace(re,'');
+		re=/<[A,F].{1,}>/g;
+		s=s.replace(re,'');
+		re=/&lt;/g;		s=s.replace(re,'<');
+		re=/&gt;/g;		s=s.replace(re,'>');
+		arr=s.split('\r\n');
+		var os='';
+		if(arr.length>1){
+			for(i=0;i<arr.length-1;i++){
+				os+='>'+arr[i]+'\r\n';
+			}	
+		}else{
+			os='>'+arr[i];
+		}
+        document.f.msg.value=os;
+	}
+	ms=document.getElementById('s'+n).value;
+	if(ms.substr(0,3)!='Re:'){
+		document.f.subj.value='Re: '+ms;
+	}else{
+		document.f.subj.value=ms;
+	}
+	document.location="#add";
+//	setTimeout('document.f.msg.focus()',500);
+	return false;
+}
+//-->
+</script>
+<script language="javascript" src="/css/mmove.js"> </script> 
+
+<body>
+<TABLE border=0 width=100% cellspacing=0 cellpadding=0>
+<TR>
+<TD width=120><a href="/"><img border=0 src="/pics/logo.gif"></a></TD>
+<TD class=top_line width=5>&nbsp;</TD>
+<TD class=top_line width=100% align=center>~bannert~</TD>
+<TD class=top_line width=5>&nbsp;</TD>
+<!--<TD class=top_line width=140 align=center>~banner120~</TD>-->
+</TR>
+<TR height=5><TD colspan=5></TD></TR>
+<TR valign=top>
+<TD>
+<table class=borderm border=0 width=120 valign=top cellspacing=0 cellpadding=0>
+<tr height=16><td class=blr align=center><b>Навигация:</b></td></tr>
+~menu~
+<tr height=14><td></td></tr>
+<tr height=16><td class=tbg onmouseover="mOvr(this,2);" onmouseout="mOut(this,2);" onclick="mClk(this);">&nbsp;<a class=ab href="/Forum">Топ 30 тем</a></td></tr>
+<tr height=7><td></td></tr>
+<tr height=16><td class=tbg onmouseover="mOvr(this,2);" onmouseout="mOut(this,2);" onclick="mClk(this);">&nbsp;<a class=ab href="/Forum/search">Поиск</a></td></tr>
+<tr height=7><td></td></tr>
+<tr height=16><td class=tbg onmouseover="mOvr(this,2);" onmouseout="mOut(this,2);" onclick="mClk(this);">&nbsp;<a class=ab href="/Forum?add=1">Добавить тему</a></td></tr>
+</table>
+</TD>
+<TD></TD>
+<TD>
+<table width=100% border=0 cellspacing=0 cellpadding=0>
+<tr><td class=border align=center><b>Форум</b></td></tr>
+<tr height=5><td></td></tr>
+<tr><td>
+
+<center><big><b><a href="/Forum">Форум</a> -> <a href="/Forum?t=~tid~">~theme~</a></b></big></center>
+<br>
+<table cellspacing=1 cellpadding=0 border=0 width="100%">
+<tr>
+<td align=left>~next~<a href="/Forum?t=~tid~&l=~mnext~">След. сообщения</a>~enext~</td>
+<td align=right>~prev~<a href="/Forum?t=~tid~&l=~mprev~">Пред. сообщения</a>~eprev~</a><br></td>
+</tr>
+<tr><td colspan=2 align=center><a href="#add">Добавить сообшение</a></td></tr>
+</table>
+<br>
+<form name=ff>
+~messages~
+</form>
+<div align=center><a href="#top">Вверх страницы</a></div>
+
+<a name="add"></a>
+Добавить сообшение:<br>
+<form method=post name=f onsubmit="return chk_f()">
+<input type=hidden name="addmsg" value="1">
+<input type=hidden name="tid" value="~tid~">
+От:<br>
+~fromnick~
+<br>
+Тема:<br>
+<input class=ta type=textfield name="subj" maxlength=100><br>
+<textarea class=ta rows=8 cols=40 maxlength=10000 name="msg"></textarea><br>
+<input type=submit value="Добавить сообшение" name=smt>
+</form>
+~remove~<div align=right><a href="/Forum?t=~tid~&rmth=1" onclick="return confirm('Точно удалить тему?')">Удалить тему</a>~eremove~
+
+</td></tr>
+</table>
+
+</TD>
+<TD></TD>
+<!--<TD>
+<table class=border width=140 valign=top cellspacing=0 cellpadding=0>
+<tr><td class=blr align=center><b>Сейчас в чате:</b></td></tr>
+<tr><td><iframe src="/users" class=ifu frameborder=0>~nusr~</iframe></td></tr>
+</table>
+</script>
+</TD>-->
+</TR>
+</TABLE>
+<hr>
+<table cellspacing=0 cellpadding=0 border=0 width=100%>
+<tr align=center><td>~bb1~</td><td>~bb2~</td><td>~bb3~</td><td>~bb4~</td></tr>
+</table>
+</body>
+</html>

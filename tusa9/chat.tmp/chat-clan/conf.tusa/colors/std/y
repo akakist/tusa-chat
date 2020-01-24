@@ -1,0 +1,2 @@
+<a class=nick href="javascript: parent.parent.Answer('~nick~')" target=addmessage OnMouseOver="return os();" style="font-weight: bold">~nick~</a>
+<a class=nick href="javascript: parent.parent.Answer('~nick~',1)" target=addmessage OnMouseOver="return os();" style="font-weight: bold">~nick~</a><a class=nick href="javascript: parent.parent.Answer('~nick~',1)" target=addmessage OnMouseOver="return os();" style="font-weight: bold">~nick~</a>

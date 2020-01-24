@@ -1,0 +1,9 @@
+  -O0 
+	-I/usr/local/ssl/include
+	-I/usr/local/include/ 
+	-I/usr/local/include/stlport 
+	-c    -Wno-deprecated  
+	  -ftemplate-depth-30    -DUSER_CREDITS -D__WITH_FILES_CONF__
+	-DDEBUG -DLOCKCTL_DBUG  -DMUTEX_INSPECTOR_DBUG		-DTHREAD_NAME_DBUG 
+		  	-D__OSCAR_SIGN_42 -D__OSCAR_DATALEN_32 -D__OSCAR_NOTHANDLE_MAX_BUFFER
+			 -D__NO_LICENSE  -DWITH_MUTEXES -D_NO_PROXY -DWITH_SENDERS   -DDUMP_TRAF

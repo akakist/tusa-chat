@@ -1,0 +1,70 @@
+-- MySQL dump 10.9
+--
+-- Host: localhost    Database: chat
+-- ------------------------------------------------------
+-- Server version	4.1.21
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `user_sets`
+--
+
+DROP TABLE IF EXISTS `user_sets`;
+CREATE TABLE `user_sets` (
+  `refid` int(20) unsigned NOT NULL default '0',
+  `lpp` int(3) NOT NULL default '100',
+  `show_nicks` char(1) NOT NULL default '1',
+  `show_level` char(1) NOT NULL default '1',
+  `neye` int(3) NOT NULL default '0',
+  `n_color_pack` int(4) NOT NULL default '0',
+  `bought_quota` int(10) NOT NULL default '0',
+  `bought_max_nick_count` int(10) NOT NULL default '0',
+  `contact_mode` char(1) NOT NULL default '0',
+  `contact_options` int(10) unsigned NOT NULL default '0',
+  `bought_invisibility` double NOT NULL default '0',
+  `notes_msg_per_page` int(11) NOT NULL default '20',
+  `notes_save_copy` char(1) NOT NULL default '0',
+  `notes_sort` char(1) NOT NULL default '1',
+  `notes_sort_desc` char(1) NOT NULL default '1',
+  `poweshen` int(11) NOT NULL default '0',
+  `binv_last_recalc` datetime NOT NULL default '0000-00-00 00:00:00',
+  `last_nick_id` int(11) NOT NULL default '0',
+  `last_nick` text NOT NULL,
+  `last_channel` int(11) NOT NULL default '0',
+  `last_status_id` int(11) NOT NULL default '0',
+  `setting_autologin` char(1) NOT NULL default '0',
+  `setting_autochange` char(1) NOT NULL default '0',
+  `setting_show_eye` char(1) NOT NULL default '0',
+  `setting_show_hints` char(1) NOT NULL default '0',
+  `setting_show_stat` char(1) NOT NULL default '0',
+  `setting_invite_sound` char(1) NOT NULL default '0',
+  `setting_full_buttons` char(1) NOT NULL default '0',
+  `hide_fname` char(1) NOT NULL default '0',
+  `hide_lname` char(1) NOT NULL default '0',
+  `hide_bdate` char(1) NOT NULL default '0',
+  `hide_tel` char(1) NOT NULL default '0',
+  `hide_icq` char(1) NOT NULL default '0',
+  `hide_email` char(1) NOT NULL default '0',
+  `ul_mode_hide_female` char(1) NOT NULL default '0',
+  `ul_mode_hide_male` char(1) NOT NULL default '0',
+  `ul_mode_contacts_only` char(1) NOT NULL default '0',
+  `show_credits` char(1) NOT NULL default '0',
+  `primary_photo` int(10) unsigned NOT NULL default '0',
+  `level` int(10) unsigned NOT NULL default '100',
+  `vote_balls` int(10) unsigned NOT NULL default '0',
+  `db_privileges` int(10) NOT NULL default '0',
+  PRIMARY KEY  (`refid`)
+) ENGINE=MyISAM DEFAULT CHARSET=cp1251;
+
+--
+-- Dumping data for table `user_sets`
+--
+

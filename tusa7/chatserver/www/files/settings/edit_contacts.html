@@ -1,0 +1,124 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="PRAGMA" CONTENT="no-cache">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+<TITLE>Чат русских в Америке - Настройки - Контакт лист</TITLE>
+</head>
+
+<LINK href="/css/main.css" rel=stylesheet type=text/css>
+<script>
+<!--
+if(navigator.appName == 'Netscape') document.write('<LINK href="/css/ns.css" rel=stylesheet type=text/css>');
+function checkform()
+{
+	return true;
+}
+
+function do_add()
+{
+	document.form1.new_s.value='yes';
+	document.form1.DATA.value='';
+	document.form1.submit();
+}
+
+var selwin=0;
+
+function do_select(z)
+{
+	url=unescape('/StPic?n='+z);
+	if(!selwin || selwin.closed)
+	{
+		selwin=open(url, 'SelPic', 'toolbar=0,status=0,resizable=0,scrollbars=0,width=600,height=300');
+	}
+	else
+	{
+		selwin.focus();
+		selwin.location=url;
+	}
+}
+
+function mOvr(src,tp)
+{
+	if(!tp) tp=0;
+	src.style.cursor='hand';
+	src.style.backgroundColor=document.styleSheets[0].rules[tp+1].style.backgroundColor;
+}
+function mOut(src,tp)
+{
+	if(!tp) tp=0;
+	src.style.cursor='default';
+	src.style.backgroundColor=document.styleSheets[0].rules[tp].style.backgroundColor;
+}
+function mClk(src) 
+{
+	if(event.srcElement.tagName=='TD') src.children.tags('A')[0].click();
+}
+
+uinfo=0;
+function user_info(ni)
+{
+	locat='/auserinfo?id='+ni;
+	if(!uinfo || uinfo.closed){
+		uinfo=open(locat,'fuinfo','toolbar=0,status=0,resizable=1,scrollbars=1,width=505,height=415');
+	}
+	else{
+		uinfo.focus();
+		if(uinfo.location!=locat){
+			uinfo.location=locat;
+		}
+	}
+	return false;
+}
+function chkall(f)
+{
+	el=document.forms[f].elements;
+	for (i=0;i<el.length;i++) if (el[i].type=='checkbox') el[i].checked=!el[i].checked;
+	return false;
+}
+function n_del()
+{
+    var cnt=get_cnt('f');
+	if(cnt==0){
+		alert('Вы не выбрали для удаления ни одного контакта...');
+		return false;
+	}
+	document.f.cmd.value='del';
+	document.f.submit();
+	return false;
+}
+function get_cnt(f)
+{
+	el=document.forms[f].elements;
+    var cnt=0;
+	for (i=0;i<el.length;i++) if (el[i].type=='checkbox'){
+		if(el[i].checked){
+			cnt++;
+			id=el[i].name;
+		}	
+	}
+	return cnt;
+}
+
+//-->
+</script>
+<body>
+<center>
+<form name=f method=POST>
+<input type=hidden name="cmd" value="">
+
+<TABLE border=0 cellspacing=0 cellpadding=2>
+<tr>
+<td><a ~prev~><img src="/pics/a_left.gif" width=16 height=16 border=0 alt="Предыдушие 20"><br><small>Предыдушие</small></a></td>
+<td><a ~next~><img src="/pics/a_right.gif" width=16 height=16 border=0 alt="Следующие 20"><br><small>Следующие</small></a></td>
+<td><a href="#" onclick="return n_del();"><img src="/pics/del.gif" border=0 alt="Удалить выделенные" width=16 height=16><br><small>Удалить</small></td>
+</tr>
+<tr>
+	<td align=center class=trdd><a href="?start=~start~&srt=n">Ник</a></td>
+	<td align=center class=trdd><a href="?start=~start~&srt=d">Последняя дата<br>захода</a></td>
+	<td align=center class=trdd><a href="#" onclick="return chkall('f');"><img src="/pics/yes.gif" border=0 alt="Выделить все" width=9 height=10></a></td>
+</tr>
+~rows~
+</TABLE>
+</form>
+</body>
+</html>

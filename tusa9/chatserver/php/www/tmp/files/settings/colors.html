@@ -1,0 +1,116 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="PRAGMA" CONTENT="no-cache">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+<TITLE>Чат "Тусовка" - Настройки чата - Цвета</TITLE>
+</head>
+
+<LINK href="/css/main.css" rel=stylesheet type=text/css>
+<script>
+<!--
+
+var imgnames=new Array();
+~imgnames~
+
+function on_ch()
+{
+	var z=document.form1.ncolor.options[document.form1.ncolor.selectedIndex].value;
+	document.im.src=imgnames[z];
+	return true;
+}
+
+function checkform()
+{
+	return true;
+}
+
+//-->
+</script>
+<script language="javascript" src="/css/mmove.js"> </script> 
+
+<body>
+<TABLE border=0 width=100% cellspacing=0 cellpadding=0>
+<TR>
+<TD width=120><a href="/"><img border=0 src="/pics/logo.gif"></a></TD>
+<TD class=top_line width=5>&nbsp;</TD>
+<TD class=top_line width=100% align=center>~bannert~</TD>
+<TD class=top_line width=5>&nbsp;</TD>
+</TR>
+<TR height=5><TD colspan=5></TD></TR>
+<TR valign=top>
+<TD>
+<table class=borderm border=0 width=120 valign=top cellspacing=0 cellpadding=0>
+<tr height=16><td class=blr align=center><b>Навигация:</b></td></tr>
+~menu~
+</table>
+</TD>
+<TD></TD>
+<TD>
+<table width=100% border=0 cellspacing=0 cellpadding=0>
+<tr><td class=border align=center><b>Настройки - цвета</b></td></tr>
+<tr height=5><td></td></tr>
+<tr><td>
+<div align=justify valign=top>
+
+<FORM method="POST" name="form1" onSubmit="return checkform();">
+<input type=hidden name="DATA" value="YES">
+
+<FIELDSET>
+<LEGEND class=leg><big><b>Выберите категорию</b></big></LEGEND>
+<br>
+<input type=button value="Статусы" style="font-size: 10pt" onclick="location='settings_status'">
+<input type=button value="Чат" style="font-size: 10pt" onclick="location='settings_chat'">
+<input class=bp type=button value="Цвета" style="font-size: 10pt">
+<input type=button value="Кредиты" style="font-size: 10pt" onclick="location='settings_credit'">
+<input type=button value="Привилегии" style="font-size: 10pt" onclick="location='settings_privs'">
+<br><br>
+</fieldset>
+<br>
+
+
+<FIELDSET>
+<LEGEND class=leg><big><b>Цвета</b></big></LEGEND>
+
+<TABLE width="100%" border=0 cellspacing=0 cellpadding=3>
+<tr><td colspan=2>
+
+Здесь Вы можете выбрать цветовую схему Ваших сообщений.<br>
+При выборе цветой схемы - обратите внимание на рисунок справа - вот так будут выглядеть Ваши сообщения.<br><br>
+Вам доступны следующие цветовые схемы:
+</td></tr>
+<tr><td align=center width=50%>
+<select name=ncolor onchange="return on_ch()">
+~color_packs~
+</select>
+</td>
+<td align=right><img src="" name=im></td>
+</tr>
+</TABLE>
+
+<script>
+	on_ch();
+</script>
+
+</FIELDSET>
+
+<br><center>
+<input type=submit value="Изменить" class=b_l>
+</center>
+
+</form>
+
+
+</div>
+</td></tr>
+</table>
+
+</TD>
+<TD></TD>
+</TR>
+</TABLE>
+<hr>
+<table cellspacing=0 cellpadding=0 border=0 width=100%>
+<tr align=center><td>~bb1~</td><td>~bb2~</td><td>~bb3~</td><td>~bb4~</td></tr>
+</table>
+</body>
+</html>

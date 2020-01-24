@@ -1,0 +1,16 @@
+sender_timeout_usec=30000
+client_parse_handler_timeout_usec=10000
+client_recv_handler_timeout_usec=20
+client_bind_ip=INADDR_ANY
+client_authorizer_server_port=2771
+client_sio_handler_timeout_usec=10000
+client_poll_handler_timeout_usec=10000
+client_ping_timeout_sec=10
+client_pong_kill_timeout_sec=60
+client_login_timeout_sec=10
+client_authorizer_server_ip=tusovka.tomsk.ru
+#client_authorizer_server_ip=192.168.254.128
+
+client_request_timeout_sec=30
+
+www_bind_ip=0.0.0.0

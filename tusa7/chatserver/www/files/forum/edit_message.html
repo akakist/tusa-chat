@@ -1,0 +1,62 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="PRAGMA" CONTENT="no-cache">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+<TITLE>Russian America Chat. Чат русских в Америке</TITLE>
+</head>
+
+<LINK href="/css/main.css" rel=stylesheet type=text/css>
+<BODY>
+<script language="JavaScript1.2">
+function checkfields()
+{
+/*	if(document.f.subj.value==""){
+		window.alert("Вы забыли ввести тему...");
+		document.f.subj.focus();
+		return false;
+	}*/
+	if(document.f.msg.value==""){
+		window.alert("Вы забыли ввести сообщение...");
+		document.f.msg.focus();
+		return false;
+	}
+	return true;
+}
+function ch_msg()
+{
+		s=document.all['msgid'].innerHTML;
+		re=/<BR>/g;		s=s.replace(re,'\r\n');
+		re=/<\/A>/g;	s=s.replace(re,'');
+		re=/<\/FONT>/g;	s=s.replace(re,'');
+		re=/<[A,F].{1,}>/g;
+		s=s.replace(re,'');
+		re=/&lt;/g;		s=s.replace(re,'<');
+		re=/&gt;/g;		s=s.replace(re,'>');
+		document.f.msg.value=s;
+}
+</script>
+
+<form method="POST" name=f onSubmit="return checkfields();">
+<input type=hidden name="ch" value="1">
+<TABLE class=border border=0 cellspacing=0 cellpadding=0 width=100% height=100%>
+<TR><TD align=center height=17 colspan=2 class=tb style="border-top: 0px">Редактирование сообщения</TD></TR>
+<tr><td>&nbsp;</td></tr>
+<tr><td align=center><div align=left>Тема:</div> <input type=textfield name=subj value="~subj~" maxlength=60 style="width: 99%"></td></tr>
+<TR valign=top>
+<TD align=center height=100%>
+<div align=left>Сообщение:</div>
+<textarea name=msg maxlength=10000 style="width: 99%; height: 150">
+</textarea>
+</td></tr>
+<tr>
+<TD colspan=2 align=center><br><input type=submit value="Изменить"></TD>
+</TR>
+<tr><td colspan=2>&nbsp;</td></tr>
+</TABLE>
+<div id=msgid style="display: none">
+~msg~
+</div>
+<script>
+ch_msg();
+</script>
+</form>

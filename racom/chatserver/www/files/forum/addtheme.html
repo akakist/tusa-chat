@@ -1,0 +1,103 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="PRAGMA" CONTENT="no-cache">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+<TITLE>Russian America Chat. Чат русских в Америке</TITLE>
+</head>
+
+<LINK href="/css/main.css" rel=stylesheet type=text/css>
+<script>
+<!--
+uinfo=0;
+function ui(ni)
+{
+	locat='/auserinfo?n='+ni;
+	uinfo=open(locat,'fuinfo','toolbar=0,status=0,resizable=1,scrollbars=1,width=505,height=415');
+	uinfo.focus();
+	return false;
+}
+function chk_f()
+{
+    if (document.f.nt.value==''){
+    	alert('Вы забыли ввести тему...');
+        document.f.nt.focus();
+        return false;
+    }
+    if (document.f.msg.value==''){
+    	if (confirm('Вы не ввели первое сообщение. Продолжить?')) return true;
+        document.f.msg.focus();
+        return false;
+    }
+	return true;
+}
+function mOvr(src,tp)
+{
+	if(!tp) tp=0;
+	src.style.cursor='hand';
+	src.style.backgroundColor=document.styleSheets[0].rules[tp+1].style.backgroundColor;
+}
+function mOut(src,tp)
+{
+	if(!tp) tp=0;
+	src.style.cursor='default';
+	src.style.backgroundColor=document.styleSheets[0].rules[tp].style.backgroundColor;
+}
+function mClk(src) 
+{
+	if(event.srcElement.tagName=='TD') src.children.tags('A')[0].click();
+}
+//-->
+</script>
+<body>
+<TABLE border=0 width=100% cellspacing=0 cellpadding=0>
+<TR>
+~header2~
+</TR>
+<TR height=5><TD colspan=5></TD></TR>
+<TR valign=top>
+<TD>
+<table class=borderm border=0 width=120 valign=top cellspacing=0 cellpadding=0>
+~navig~
+~menu~
+<tr height=14><td class=tbb colspan=2></td></tr>
+<tr height=16><td class=tb colspan=2 onmouseover="mOvr(this,2);" onmouseout="mOut(this,2);" onclick="mClk(this);">&nbsp;<a class=ab href="/forum">Топ 30 тем</a></td></tr>
+<tr height=7><td class=tbb colspan=2></td></tr>
+<tr height=16><td class=tb colspan=2 onmouseover="mOvr(this,2);" onmouseout="mOut(this,2);" onclick="mClk(this);">&nbsp;<a class=ab href="/forum/Search">Поиск</a></td></tr>
+</table>
+</TD>
+<TD></TD>
+<TD>
+<table width=100% border=0 cellspacing=0 cellpadding=0>
+<tr><td class=borderz align=center><font class=htxtm>Форум - Добавить тему</font></td></tr>
+<tr height=5><td></td></tr>
+<tr><td>
+
+<center><font class=yelmsg><b>~msg~</b></font>
+</center>
+<form method=post onsubmit="return chk_f();" name=f>
+От:<br>
+~fromnick~
+<br>
+Тема:<br>
+<input type=textfield class=ta maxlength=64 name="nt">
+<input type=hidden name="add" value="1">
+<input type=hidden name="data" value="1">
+<br><br>
+Первое сообшение:<br>
+<textarea class=ta rows=8 cols=40 name="msg" maxlength=10240></textarea><br>
+<input type=submit value="Добавить тему">
+</form>
+
+</td></tr>
+</table>
+
+</TD>
+<TD></TD>
+</TR>
+</TABLE>
+<hr>
+<table cellspacing=0 cellpadding=0 border=0 width=100%>
+<tr align=center><td>~bb1~</td><td>~bb2~</td><td>~bb3~</td><td>~bb4~</td></tr>
+</table>
+</body>
+</html>

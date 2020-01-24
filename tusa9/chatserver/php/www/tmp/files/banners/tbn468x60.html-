@@ -1,0 +1,11 @@
+<script>
+// <!--
+var etbn_login = "chatdatingclub";
+var etbn_options = "";
+var etbn_random = Math.round(Math.random() * 100000);
+document.write('<iframe src="http://ad.ent.tbn.ru/cgi-bin/iframe/'+etbn_login+'?'+etbn_random +'&'+etbn_options+'" width=468 height=60 marginwidth=0 marginheight=0 scrolling=no frameborder=0><a href="http://ad.ent.tbn.ru/cgi-bin/href/'+etbn_login+'?'+etbn_random +'" target=_top><img src="http://ad.ent.tbn.ru/cgi-bin/banner/'+etbn_login+'?'+etbn_random +'&'+etbn_options+'" alt="TBN Entertainment" width=468 height=60 border=0 ismap></a></iframe>');
+// -->
+</script>
+<noscript>
+<iframe src="http://ad.ent.tbn.ru/cgi-bin/iframe/chatdatingclub" width=468 height=60 marginwidth=0 marginheight=0 scrolling=no frameborder=0><a href="http://ad.ent.tbn.ru/cgi-bin/href/chatdatingclub" target=_top><img src="http://ad.ent.tbn.ru/cgi-bin/banner/chatdatingclub" alt="TBN Entertainment" width=468 height=60 border=0 ismap></a></iframe>
+</noscript>

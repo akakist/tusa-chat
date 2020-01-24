@@ -1,0 +1,9 @@
+body {margin-top: 0px; margin-left: 0px; margin-right: 0px; background-color: white; font-family: "tahoma"; font-size: 10pt}
+
+TABLE td.buttons { font-family: tahoma; background: url(/images/tusa-logo-2px.gif);}
+div.buttons {color: white; font-size: 12pt; font-weight: bold; position: relative; top: -2px; float: left; padding: 4px; margin-left: 10px; maring-right: 10px}
+a.buttons, a.buttons:link, a.buttons:visited, a.buttons:active {color: #eeeeee; text-decoration: none}
+a.buttons:hover {color: #eeeeee; text-decoration: underline}
+
+font.fio_header {color: rgb(51, 51, 51); font-size: 14pt; font-weight: bold; font-family: "lucida grande"}
+

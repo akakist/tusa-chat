@@ -1,0 +1,1 @@
+cl  mcassa_client.cpp  /MT  /WX /G5 /Ox  /Ob2 /Gs0 /GF /Gy /nologo -DWIN32 -I.   ws2_32.lib /EHsc st_rsa_client.lib   

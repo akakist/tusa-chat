@@ -1,0 +1,172 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="PRAGMA" CONTENT="no-cache">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+<TITLE>Чат "Тусовка" - Галерея</TITLE>
+</head>
+
+<LINK href="/css/main.css" rel=stylesheet type=text/css>
+<script language="javascript" src="/css/mmove.js"> </script> 
+
+<script>
+<!--
+var uf=0;
+var ow=0;
+function do_search(s)
+{
+	window.top.location='/gallery/'+s;
+	return true;
+}
+function do_f(id)
+{
+	var r=Math.random();
+	locat='/userphotos/'+id;
+	sx=screen.width/3*2;
+	sy=screen.height/5*4;
+	if(!uf || uf.closed){
+		uf=open(locat,'uf','toolbar=0,status=0,resizable=1,scrollbars=1,width='+sx+',height='+sy);
+		uf.focus();
+	}
+	else{
+		uf.focus();
+		uf.location=locat;
+	}	
+//	return true;
+}
+function opwin(l,w,h)
+{
+	if(!ow || ow.closed){
+		ow=open(l,'owusr','toolbar=0,status=0,resizable=1,scrollbars=1,width='+w+',height='+h);
+		ow.focus();
+	}
+	else{
+		ow.focus();
+		ow.location=locat;
+	}	
+}
+//-->
+</script>
+<body>
+<TABLE border=0 width=100% cellspacing=0 cellpadding=0>
+<TR>
+<TD width=120><a href="/"><img border=0 src="/pics/logo.gif"></a></TD>
+<TD class=top_line width=5>&nbsp;</TD>
+<TD class=top_line width=100% align=center>~bannert~</TD>
+<TD class=top_line width=5>&nbsp;</TD>
+<TD class=top_line width=140 align=center>~banner120~</TD>
+</TR>
+<TR height=5><TD colspan=5></TD></TR>
+<TR valign=top>
+<TD>
+<table class=borderm border=0 width=120 valign=top cellspacing=0 cellpadding=0>
+<tr height=16><td class=blr align=center><b>Навигация:</b></td></tr>
+~menu~
+</table>
+</TD>
+<TD></TD>
+<TD>
+<table width=100% border=0 cellspacing=0 cellpadding=0>
+<tr><td class=border align=center><b>Галерея</b></td></tr>
+<tr height=5><td></td></tr>
+<tr><td>
+<div align=justify valign=top>
+
+<TABLE border=0 width=100%>
+<tr><td>Бывает так, что Вы как-то раз общались с интересным человеком и не против продолжить знакомство... Но, как это обычно бывает, Вы знаете о своем виртуальном друге только то как он себя называет в чате. Галерея чата Тусовка поможет Вам узнать более полную информацию о Ваших друзьях. Чтобы ее получить воспользуйтесь формой ниже.<br><br></td></tr>
+<form method=POST action="" name=f onsubmit="return do_search(document.f.s.value);">
+<!--<TR><td align=left>
+Поиск по букве:<br><b>
+<a href="/gallery/a">A</a>
+<a href="/gallery/b">B</a>
+<a href="/gallery/c">C</a>
+<a href="/gallery/d">D</a>
+<a href="/gallery/f">F</a>
+<a href="/gallery/g">G</a>
+<a href="/gallery/h">H</a>
+<a href="/gallery/i">I</a>
+<a href="/gallery/j">J</a>
+<a href="/gallery/k">K</a>
+<a href="/gallery/l">L</a>
+<a href="/gallery/m">M</a>
+<a href="/gallery/n">N</a>
+<a href="/gallery/o">O</a>
+<a href="/gallery/p">P</a>
+<a href="/gallery/q">Q</a>
+<a href="/gallery/r">R</a>
+<a href="/gallery/s">S</a>
+<a href="/gallery/t">T</a>
+<a href="/gallery/u">U</a>
+<a href="/gallery/v">V</a>
+<a href="/gallery/w">W</a>
+<a href="/gallery/x">X</a>
+<a href="/gallery/y">Y</a>
+<a href="/gallery/z">Z</a>
+<br>
+<a href="/gallery/а">А</a>
+<a href="/gallery/б">Б</a>
+<a href="/gallery/в">В</a>
+<a href="/gallery/г">Г</a>
+<a href="/gallery/д">Д</a>
+<a href="/gallery/е">Е</a>
+<a href="/gallery/Ё">Ё</a>
+<a href="/gallery/ж">Ж</a>
+<a href="/gallery/з">З</a>
+<a href="/gallery/и">И</a>
+<a href="/gallery/й">Й</a>
+<a href="/gallery/к">К</a>
+<a href="/gallery/л">Л</a>
+<a href="/gallery/м">М</a>
+<a href="/gallery/н">Н</a>
+<a href="/gallery/о">О</a>
+<a href="/gallery/п">П</a>
+<a href="/gallery/р">Р</a>
+<a href="/gallery/с">С</a>
+<a href="/gallery/т">Т</a>
+<a href="/gallery/у">У</a>
+<a href="/gallery/ф">Ф</a>
+<a href="/gallery/х">Х</a>
+<a href="/gallery/ц">Ц</a>
+<a href="/gallery/ч">Ч</a>
+<a href="/gallery/ш">Ш</a>
+<a href="/gallery/щ">Щ</a>
+<a href="/gallery/ъ">Ъ</a>
+<a href="/gallery/ы">Ы</a>
+<a href="/gallery/ь">Ь</a>
+<a href="/gallery/э">Э</a>
+<a href="/gallery/ю">Ю</a>
+<a href="/gallery/я">Я</a>
+</b></td></tr>
+-->
+<tr valign=middle><td><br>Поиск по нику: (введите весь или несколько букв от требуемого ника)</td></tr>
+<tr valign=middle><td><input type=textfield name="s" maxlength=16 size=16 value="~search~">&nbsp;<input type=submit value="Искать" onclick="return do_search(document.f.s.value);"></td></tr>
+</form></TABLE>
+<br>
+~founded~
+<div align=center>
+<table border=0>
+~data~
+</table>
+
+</div>
+</td></tr>
+</table>
+
+</TD>
+<TD></TD>
+<TD>
+<table class=border width=140 valign=top cellspacing=0 cellpadding=0 ID="Table1">
+<form ID="Form1">
+<tr><td class=blr align=center>
+<b>Сейчас в чате:</b>
+</td></tr>
+<tr><td><iframe src="/users" class=ifu frameborder=0>~nusr~</iframe></td></tr>
+</table>
+</center></TD>
+</TR>
+</TABLE>
+<hr>
+<table cellspacing=0 cellpadding=0 border=0 width=100%>
+<tr align=center><td>~bb1~</td><td>~bb2~</td><td>~bb3~</td><td>~bb4~</td></tr>
+</table>
+</body>
+</html>

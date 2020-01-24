@@ -1,0 +1,73 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="PRAGMA" CONTENT="no-cache">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+<TITLE>Чат "Тусовка" - Фотки</TITLE>
+</head>
+
+<LINK href="/css/main.css" rel=stylesheet type=text/css>
+<script>
+<!--
+var lw=0;
+var loaded=0;
+//var ln=0;
+function do_min(n)
+{
+	if(loaded==0){
+		alert('Фотка еще не загрузилась. Подождите...');
+		return false;
+	}
+	w=document.pic.width;
+	if(lw==0){
+		lw=w;
+		ln=n;
+	}	
+	document.pic.width=lw/100*n;
+	return false;
+}
+//-->
+</script>
+<body>
+<center>
+~bannert~
+</center>
+<p>
+
+<form name=f1 method=POST>
+<input type=hidden name=n value=~n~>
+<input type=hidden name=id value=~id~>
+<input type=hidden name=todo value="">
+
+
+<TABLE border=0 cellPadding=0 cellSpacing=0 width=100%>
+<TR>
+<TD class=border align=center height=17>Фотки N~nsec~ (~all~) ~del~ ~add~ ~edit~ ~90~ ~180~ ~270~</TD></TR>
+</TABLE>
+<p>~error~ 
+<center> 
+~mainphoto~<br>
+~many~
+
+<font class=gr>~descrb~</font><br>
+<br>
+<img src="~fname~" border=0 name=pic onLoad="loaded=1;" alt='~descra~'><br>
+<br>
+~rate~
+
+
+<TABLE border=0 cellPadding=0 cellSpacing=0 width=100%>
+<TR>
+<TD class=border align=center height=17>&nbsp;</TD></TR>
+</TABLE>
+</form>
+
+<br>
+<a href="javascript: window.close()">Закрыть</a>
+</center>
+<br>
+<table cellspacing=0 cellpadding=0 border=0 width=100%>
+<tr>
+<td width=50%>~bb3~</td><td width=50% align=right>~bb4~</td>
+</tr>
+
+</table>

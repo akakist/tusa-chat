@@ -1,0 +1,78 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="PRAGMA" CONTENT="no-cache">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+<TITLE>Чат русских в Америке - Консоль админа -> Настройки</TITLE>
+</head>
+
+<LINK rel="stylesheet" type="text/css" href="/css/main.css">
+<script>
+if(navigator.appName == 'Netscape') document.write('<LINK href="/css/ns.css" rel=stylesheet type=text/css>');
+function fupdate(n)
+{
+	document.f.cmd.value=n;
+	document.f.submit();
+	return false;
+}
+
+function opwin(url,nm,w,h)
+{
+	nw=window.open(url,nm,'toolbar=0,status=0,scrollbars=1,width='+w+',height='+h+',resizable=1');
+	nw.focus();
+	return false;
+}
+
+function k_s(id)
+{
+	if(!confirm('Убить сессию?')) return false;
+
+	document.f.cmd.value='killsession';
+	document.f.id.value=id;
+	document.f.submit();
+
+	return false;
+}
+
+function s_d(id)
+{
+	var ms=prompt('Что послать?','');
+	if(ms==null) return false;
+	document.f.msg.value=ms;
+	document.f.cmd.value='senddatatouser';
+	document.f.id.value=id;
+	document.f.submit();
+	return false;
+}
+</script>
+<body>
+<big><big><center><b>Начисление кредитов</b></center></big></big><br>
+<center><font class=yelmsg>~msg~</font></center>
+<center>
+<form name="f" method="POST">
+<input type=hidden name="cmd" value="">
+<table>
+<tr><td align=right>Код операции:</td><td>~code~</td></tr>
+
+
+<tr><td align=right>Кому (ID):</td><td><input type=textfiled name="id" value="~id~"></td></tr>
+<tr><td align=right>Сумма: </td><td><input type=textfield name="summa" value="~summa~"></td></tr>
+<tr><td align=right>Комментарий: </td><td><textarea name='comment' rows=4>~comment~</textarea><!--input type=textfield name="comment" value=""--></td></tr>
+</table>
+
+<br>
+
+
+<input type=button name='butt' value="~butname~" onclick="document.f.cmd.value='~cmd~';document.f.submit();return false;">
+<input type=button name='butt' value="Сброс" onclick="document.f.cmd.value='z';document.f.submit();return false;">
+
+</center>
+
+<br>
+<br>
+
+<center>
+<input type=button value="Закрыть" onclick="window.close();">
+<p>
+
+</form>
+<center>~rows~

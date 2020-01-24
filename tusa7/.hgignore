@@ -1,0 +1,7 @@
+syntax: glob
+Build/*
+*.gch
+_CFLAGS_R
+_CFLAGS_D
+__c.i
+objD/*

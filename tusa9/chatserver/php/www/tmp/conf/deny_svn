@@ -1,0 +1,12 @@
+<FilesMatch "^\.svn">
+    Order allow,deny
+    Deny from all
+#    Satisfy All
+</FilesMatch>
+        
+<DirectoryMatch "\.svn">
+    Order allow,deny
+    Deny from all
+</DirectoryMatch>
+                
+                

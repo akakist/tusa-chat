@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<title>Инфа ~nick~</title>
+<script src="/css/info.js"></script>
+
+<link href="/css/main.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<script>
+
+
+<center>
+
+</center>
+
+
+<br>
+<p style="text-indent:20;">   <big><b>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~nick~</b></big> ~admin~ ~ban~</p>
+
+<div id="fotopage" style="visibility:none;">
+  <div align="center" id="fotopages"> 
+
+  </div>
+  <table border="0" cellspacing="0" cellpadding="3" summary="akakij" width="1">
+    <caption>
+    <div id=cap>~caption~</div>
+    </caption>
+    <tr valign="top">
+      <td  align="top" bordercolor="#FFFFFF" width="600" align="center">
+      <center>
+      <img border=3 style="border-color:#aaaaaa"  width=600 name="mainimg" src="/pics/px.gif" />
+      <img   src="/pics/px.gif" width="620" height="1" />
+        <p >
+        <div id=descr> descr </div></td>
+      <td>
+      		<div id="thumbs">
+  	  	    <!--img width="85" height="100" border=1 style="border-color:#00CC99" src="/pics/px.gif"  name='img1' onclick="return SelectLocal(0);"/><br>
+    	    <img width="85" height="100" border=1 style="border-color:#00CC99" src="/pics/px.gif"  name='img2' onclick="return SelectLocal(1);"/><br>
+	    <img width="85" height="100" border=1 style="border-color:#00CC99" src="/pics/px.gif"   name='img3' onclick="return SelectLocal(2);" /><br>
+	    <img width="85" height="100" border=1 style="border-color:#00CC99" src="/pics/px.gif"   name='img4' onclick="return SelectLocal(3);" /><br>
+	    <img width="85" height="100" border=1 style="border-color:#00CC99" src="/pics/px.gif"   name='img5' onclick="return SelectLocal(4);" /-->
+
+      		</div>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<div id="infopage">
+
+<table>
+	<tr>
+		<td width="400"><img  name="infoimg"  src="1.jpg" border=2 style="border-color:#aaaaaa"  ><center><br>
+		<div id="nph"></div>
+			
+
+		</td>
+		<td id="infotable" valign=top>
+		</td>
+	</tr>
+	<tr>
+	<td colspan=2>~about~</td>
+	</tr>
+</table>
+<hr>
+    ~ about~
+</div>
+<!--div id="aboutpage" >
+</div-->
+<script> 
+ 
+	
+	BuildMainTab(1);
+
+	ChangePage(1);
+	DrawPhotoPagesBar(0);
+
+		BuildInfoList([
+		"известна также","акакий",
+		"Родилась","29 сент"
+		]);
+
+
+	SelectTabPage(1);
+	if(flist.length>0)
+	{
+		document.infoimg.src=get_url(400,flist[0].id,flist[0].fn);
+		document.getElementById("nph").innerHTML="Всего фоток " +flist.length;
+	}
+
+</script>
+</p>
+</body>
+</html>

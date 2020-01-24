@@ -1,0 +1,67 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="PRAGMA" CONTENT="no-cache">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+<TITLE>Чат русских в Америке - Консоль админа -> Смайлы</TITLE>
+</head>
+
+<LINK rel="stylesheet" type="text/css" href="/css/main.css">
+<script>
+if(navigator.appName == 'Netscape') document.write('<LINK href="/css/ns.css" rel=stylesheet type=text/css>');
+function fupdate(n)
+{
+	document.f.cmd.value=n;
+	document.f.submit();
+	return false;
+}
+
+function opwin(url,nm,w,h)
+{
+	nw=window.open(url,nm,'toolbar=0,status=0,scrollbars=1,width='+w+',height='+h+',resizable=1');
+	nw.focus();
+	return false;
+}
+
+function k_s(id)
+{
+	if(!confirm('Убить сессию?')) return false;
+
+	document.f.cmd.value='killsession';
+	document.f.id.value=id;
+	document.f.submit();
+
+	return false;
+}
+
+function s_d(id)
+{
+	var ms=prompt('Что послать?','');
+	if(ms==null) return false;
+	document.f.msg.value=ms;
+	document.f.cmd.value='senddatatouser';
+	document.f.id.value=id;
+	document.f.submit();
+	return false;
+}
+</script>
+<body>
+<big><big><center><b>Админство смайлов</b></center></big></big><br>
+<form method=post name=ff>
+<input type=hidden name=todo value=new>
+<input type=hidden name=id>
+Новый смайл<br>
+Ключ: <input type=text name=key><br>
+Значение: <input type=text name=val><br>
+Цена: <input type=text name=cost><br>
+Это звук: <input type=checkbox name=is_sound value=on><br>
+<select name=grp>
+<option value='common'> Общие
+<option value='punk'> Панковские
+<option value='love'> Любовные
+</select>
+<input type=submit value="Add">
+<table>
+~rows~
+</table>
+</form>
+

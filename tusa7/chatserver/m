@@ -1,0 +1,6 @@
+
+
+cd core1      ; make $1; cd ..
+cd core_web1  ; make $1; cd ..
+cd lib_cs     ; make $1; cd ..
+ make $1; cd ..

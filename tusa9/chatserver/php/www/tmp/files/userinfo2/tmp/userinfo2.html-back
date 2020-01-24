@@ -1,0 +1,190 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<title>Инфа ~nick~</title>
+<script src="/cna/css/info.js"></script>
+
+<link href="/cna/css/minfo.css" rel="stylesheet" type="text/css" />
+<style>
+td{font-size: 10pt;color: #dcdcdc;}
+a:link, a:visited {color: #eecc30; text-decoration: none;}
+a:hover {text-decoration: underline;}
+body{font-family: Verdana, Arial;font-size: 10pt;color: #dcdcdc; background-color: #003570;}
+.infoleft{background: #003060;font-size: 12px;color: #dcdcdc;font-family: Tahoma;border: 1px black solid;padding: 5px;}
+.inforight{background: #003570;font-size: 12px;color: #dcdcdc;font-family: Tahoma;border: 1px black solid;padding: 5px;}
+.infotop{
+background: #006030;
+font-size: 10pt;
+color: #dcdcdc;
+font-family: Tahoma;
+border: 1px black solid;
+padding: 5px;
+}
+a.infolink:link, a.infolink:active, a.infolink:visited{
+color: #dcdcdc;
+font-size: 10pt;
+font-family: Tahoma;
+text-decoration: underline;
+}
+a.infolink:hover{
+color: #dcdcdc;
+font-size: 10pt;
+font-family: Tahoma;
+text-decoration: none;
+}
+.who{
+color: #dcdcdc;
+font-size: 17px;
+font-family: Tahoma;
+margin: 5px;
+}
+</style>
+</head>
+<body>
+
+<div id="main_tab">
+
+</div>
+
+
+<br>
+
+<!-- <p style="text-indent:20;">   <big><b>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~nick~</b></big> </p> -->
+<center><font class=who><b>~nick~</b></font>~admin~</center>
+
+<div id="fotopage">
+  <div align="center" id="fotopages"> 
+
+  </div>
+  <table border="0" cellspacing="0" cellpadding="3" summary="akakij" width="1">
+    <caption>
+    <div id=cap><!--~caption~--></div>
+    </caption>
+    <tr>
+	<td>
+	<table width=600 align=center valign=top><tr>
+      <td  width=600 align=center valign=top>
+        <center>
+        <img border=3 style="border-color:#aaaaaa"  name="mainimg" src="/cna/pics/px.gif" />
+        <p>
+        <div id=descr>  </div>
+    <!--    <br><img border=0 src="/cna/pics/px.gif" width=600 /> -->
+      </td>
+      </tr></table></td>
+      <td valign=top>
+      		<div id="thumbs">
+  	    <!--	    <img width="85" height="100" border=1 style="border-color:#00CC99" src="/cna/pics/px.gif"  name='img1' onclick="return SelectLocal(0);"/><br>
+    	    <img width="85" height="100" border=1 style="border-color:#00CC99" src="/cna/pics/px.gif"  name='img2' onclick="return SelectLocal(1);"/><br>
+	    <img width="85" height="100" border=1 style="border-color:#00CC99" src="/cna/pics/px.gif"   name='img3' onclick="return SelectLocal(2);" /><br>
+	    <img width="85" height="100" border=1 style="border-color:#00CC99" src="/cna/pics/px.gif"   name='img4' onclick="return SelectLocal(3);" /><br>
+	    <img width="85" height="100" border=1 style="border-color:#00CC99" src="/cna/pics/px.gif"   name='img5' onclick="return SelectLocal(4);" />
+	    -->
+
+      		</div>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<div id="infopage">
+
+<table>
+	<tr>
+		<td><img  onclick="return SelectTabPage(2);" name="infoimg" src="1.jpg" border=2 style="border-color:#aaaaaa"  ><center><br>
+		<div id="nph"></div>
+			
+
+		</td>
+		<td id="infotable" valign=top>
+		</td>
+	</tr>
+</table>
+
+</div>
+<!--div id="aboutpage" >
+    ~about~
+</div-->
+<script> 
+	
+/*	InitFotoList([	
+	"0","1.jpg","comment1",	
+	"1","2.jpg","comment2",	
+	"3","3.jpg","comment3",
+	"4","4.jpg","comment4",
+	"5","5.jpg","comment5",
+	"5","5.jpg","comment5",
+	"5","5.jpg","comment5",
+	"5","5.jpg","comment5",
+	"5","5.jpg","comment5",
+	"5","5.jpg","comment5",
+	"5","5.jpg","comment5",
+	"5","5.jpg","comment5",
+	"5","5.jpg","comment5",
+	"5","5.jpg","comment5",
+	"5","5.jpg","comment5",
+	"5","5.jpg","comment5",
+	"5","5.jpg","comment5",
+	"5","5.jpg","comment5",
+	"5","5.jpg","comment5",
+	"5","5.jpg","comment5",
+	"5","5.jpg","comment5",
+	"5","5.jpg","comment5",
+	"5","5.jpg","comment5",
+	"5","5.jpg","comment5",
+	"5","5.jpg","comment5",
+	"5","5.jpg","comment5",
+	"5","5.jpg","comment5",
+	"5","5.jpg","comment5",
+	"6","6.jpg","comment6",
+	"1","2.jpg","comment2",	
+	"3","3.jpg","comment3",
+	"1","2.jpg","comment2",	
+	"3","3.jpg","comment3"
+	
+	]);
+	*/
+
+	uid=~uid~;
+	~fotolist~
+	
+/*    if(nphoto!=0)
+    {
+
+	InitFotoList([~fotolist~]);
+    }
+    else
+    {
+		document.getElementById("tab3").innerHTML='';
+		document.getElementById("fotopage").innerHTML="";
+	
+    }	
+    */
+	
+	BuildMainTab(1);
+
+	ChangePage(1);
+	DrawPhotoPagesBar(0);
+
+	/*	BuildInfoList([
+		"известна также","акакий",
+		"Родилась","29 сент"
+		]);
+	*/
+//		BuildInfoList([~infolist~]);
+	~infolist~
+
+	SelectTabPage(1);
+	if(flist.length>0)
+	{
+		//document.infoimg.src=get_url(400,flist[0].id,flist[0].fn);
+		document.infoimg.src=get_thumb(400,550,flist[0].id,flist[0].fn);
+//		n get_thumb(resx,resy,id,fn)
+
+		document.getElementById("nph").innerHTML="Всего фоток " +flist.length;
+	}
+
+</script>
+</p>
+</body>
+</html>

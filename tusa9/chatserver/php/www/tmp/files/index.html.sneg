@@ -1,0 +1,215 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="PRAGMA" CONTENT="no-cache">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+<TITLE>Чат "Тусовка"</TITLE>
+</head>
+
+<link rel=stylesheet type=text/css href=/cna/css/main.css>
+
+<body>
+
+</style>
+
+<SCRIPT LANGUAGE="JavaScript1.2">
+<!--
+var no = 8; // колличество снежинок
+var speed = 80; // скорость снежинок
+var snowflake = "/cna/pics/sn1.gif";
+
+var ns4up = (document.layers) ? 1 : 0;
+var ie4up = (document.all) ? 1 : 0;
+var dx, xp, yp; 
+var am, stx, sty; 
+var i, doc_width = 800, doc_height = 600;
+if (ns4up) {
+doc_width = self.innerWidth;
+doc_height = self.innerHeight;
+} else if (ie4up) {
+doc_width = document.body.clientWidth;
+doc_height = document.body.clientHeight;
+}
+dx = new Array();
+xp = new Array();
+yp = new Array();
+am = new Array();
+stx = new Array();
+sty = new Array();
+for (i = 0; i < no; ++ i) {  
+dx[i] = 0;         
+xp[i] = Math.random()*(doc_width-50); 
+yp[i] = Math.random()*doc_height;
+am[i] = Math.random()*20;         
+stx[i] = 0.02 + Math.random()/10; 
+sty[i] = 0.7 + Math.random();   
+if (ns4up) {                  
+if (i == 0) {
+document.write("<layer name=\"dot"+ i +"\" left=\"15\" ");
+document.write("top=\"15\" background-color: transparent; visibility=\"show\"><img src=\"");
+document.write(snowflake + "\" border=\"0\"></layer>");
+} else {
+document.write("<layer name=\"dot"+ i +"\" left=\"15\" ");
+document.write("top=\"15\" background-color: transparent; visibility=\"show\"><img src=\"");
+document.write(snowflake + "\" border=\"0\"></layer>");
+   }
+} else if (ie4up) {
+if (i == 0) {
+document.write("<div id=\"dot"+ i +"\" style=\"POSITION: ");
+document.write("absolute; Z-INDEX: "+ i +"; VISIBILITY: ");
+document.write("visible; background-color: transparent; TOP: 15px; LEFT: 15px;\"><img src=\"");
+document.write(snowflake + "\" border=\"0\"></div>");
+} else {
+document.write("<div id=\"dot"+ i +"\" style=\"POSITION: ");
+document.write("absolute; background-color: transparent; Z-INDEX: "+ i +"; VISIBILITY: ");
+document.write("visible; TOP: 15px; LEFT: 15px;\"><img src=\"");
+document.write(snowflake + "\" border=\"0\"></div>");
+      }
+   }
+}
+function snowNS() { 
+for (i = 0; i < no; ++ i) {  
+yp[i] += sty[i];
+if (yp[i] > doc_height-50) {
+xp[i] = Math.random()*(doc_width-am[i]-30);
+yp[i] = 0;
+stx[i] = 0.02 + Math.random()/10;
+sty[i] = 0.7 + Math.random();
+doc_width = self.innerWidth;
+doc_height = self.innerHeight;
+}
+dx[i] += stx[i];
+document.layers["dot"+i].top = yp[i];
+document.layers["dot"+i].left = xp[i] + am[i]*Math.sin(dx[i]);
+}
+setTimeout("snowNS()", speed);
+}
+function snowIE() { 
+for (i = 0; i < no; ++ i) { 
+yp[i] += sty[i];
+if (yp[i] > doc_height-50) {
+xp[i] = Math.random()*(doc_width-am[i]-30);
+yp[i] = 0;
+stx[i] = 0.02 + Math.random()/10;
+sty[i] = 0.7 + Math.random();
+doc_width = document.body.clientWidth;
+doc_height = document.body.clientHeight;
+}
+dx[i] += stx[i];
+document.all["dot"+i].style.pixelTop = yp[i];
+document.all["dot"+i].style.pixelLeft = xp[i] + am[i]*Math.sin(dx[i]);
+}
+setTimeout("snowIE()", speed);
+}
+if (ns4up) {
+snowNS();
+} else if (ie4up) {
+snowIE();
+}
+// End -->
+</script>
+
+
+<TABLE border=0 width=100% cellspacing=0 cellpadding=0>
+<TR>
+<TD width=120><a href="/"><img border=0 src="/cna/pics/logo_ny.gif"></a></TD>
+<TD class=top_line width=5>&nbsp;</TD>
+<TD class=top_line width=100% align=center>
+<!--<iframe src=http://www.scalpnet.ru/work/b.php width=468 height=60 frameborder=0 scrolling=no></iframe>-->
+~bannert~
+</TD>
+<TD class=top_line width=5>&nbsp;</TD>
+<TD class=top_line width=140 align=center>~banner120~</TD>
+</TR>
+<TR height=5><TD colspan=5></TD></TR>
+<TR valign=top>
+<TD>
+<table class=borderm border=0 width=120 valign=top cellspacing=0 cellpadding=0>
+<tr height=16><td class=blr align=center><b>Навигация:</b></td></tr>
+~menu~
+</table>
+<br>
+<center><small>Хостинг:<br><br>
+<a href="http://www.scalpnet.ru"><img src=/cna/pics/b/88_31.gif border=0></a>
+</TD>
+<TD></TD>
+<TD>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td class=border align=center><b>Добро пожаловать в наш чат! :)</b></td></tr>
+<tr height=5><td></td></tr>
+<tr><td>
+<div align=justify valign=top>
+Мы приветствуем Вас в нашем чате! Если Вы до сих пор еще не <a href="/Registration">зарегистрированы</a> у нас, то мы предлагаем Вам это сделать. Так же Вы можете зайти в чат без регистрации - как Гость, введя в поле "логин" только Ник (псевдоним), при этом оставив поле пароля пустым. Однако, у зарегистрированных пользователей гораздо больше возможностей, к тому же уже никто не сможет воспользоваться Вашим ником.
+Нам будет очень важно услышать Ваши предложения, замечания или жалобы, направляйте их нам по почте: <a href="mailto:support@tusovka.tomsk.ru">support@tusovka.tomsk.ru</a>.
+</div>
+</td></tr>
+<tr height=10><td></td></tr>
+<tr><td align=center class=borderg><b>Вход</b></td></tr>
+<tr><td>
+<form action="/login" method=POST name="start" onSubmit="return checkform();">
+<input type=hidden name="scr" value="">
+<script>
+<!--
+s=screen;
+document.start.scr.value=s.width+'x'+s.height+'x'+s.colorDepth;
+//-->
+</script>
+<TABLE border=0 width=100%>
+<TR>
+<TD align=right width=50%>
+<TABLE border=0 cellPadding=1 cellSpacing=0>
+<TR><TD align=right>Логин:&nbsp;</TD>
+<TD><input type="textfield" name="login" value="" maxlength=16 size=16>
+</TD></TR>
+<TR><TD align="right">Пароль:&nbsp;</TD><TD><input type="password" name="pass" maxlength=16 size=16>
+</TD></TR>
+</TABLE>
+</TD>
+<TD width=35%>&nbsp; <input type="submit" value="Войти"></TD>
+<script>
+<!--
+	document.start.login.focus();
+//-->
+</script>
+</table>
+</td></tr>
+</form>
+
+<tr><td align=center class=borderg><b>НОВОСТИ</b></td></tr>
+<tr><td>
+<table border=0 cellPadding=1 cellSpacing=0 width=100%>
+Новости
+
+</table>
+</td></tr>
+</table>
+</TD>
+<TD></TD>
+<TD>
+<table class=border width=140 valign=top cellspacing=0 cellpadding=0>
+<form>
+<tr><td class=blr align=center>
+<b>Сейчас в чате:</b>
+</td></tr>
+<tr><td><iframe src="/users" class=ifu frameborder=0>~nusr~</iframe></td></tr>
+
+</table>
+</center></TD>
+
+<!-- up to 22 may-->
+
+</TR>
+</form>
+<script>
+<!--
+	document.start.login.focus();
+//-->
+</script>
+</TABLE>
+<hr>
+<table cellspacing=0 cellpadding=0 border=0 width=100%>
+<tr align=center><td>~bb1~</td><td>~bb11~</td><td>~bb3~</td><td>~bb4~</td></tr>
+</table>
+
+
+</body>
+</html>

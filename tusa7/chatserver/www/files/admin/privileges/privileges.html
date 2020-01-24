@@ -1,0 +1,89 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="PRAGMA" CONTENT="no-cache">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+<TITLE>Чат русских в Америке - Консоль админа -> Привилегии</TITLE>
+</head>
+
+<LINK rel="stylesheet" type="text/css" href="/css/main.css">
+<script>
+if(navigator.appName == 'Netscape') document.write('<LINK href="/css/ns.css" rel=stylesheet type=text/css>');
+var lvl=~level~;
+var ow=0;
+function l_info(id)
+{
+	if(lvl<9){
+		alert('У Вас нет прав, чтобы посмотреть инфу о логине.');
+		return false;
+	}
+	l='logininfo?id='+id;
+	if(!ow || ow.closed){
+		ow=open(l,'owusr','toolbar=0,status=0,resizable=1,scrollbars=1,width=550,height=500');
+		ow.focus();
+	}
+	else{
+		ow.focus();
+		ow.location=l;
+	}
+	return false;
+}
+function fupdate(n)
+{
+	document.ff.cmd.value=n;
+	document.ff.submit();
+	return false;
+}
+
+function opwin(url,nm,w,h)
+{
+	nw=window.open(url,nm,'toolbar=0,status=0,scrollbars=1,width='+w+',height='+h+',resizable=1');
+	nw.focus();
+	return false;
+}
+function chk_form()
+{
+	if(document.ff.add.value==""){
+		alert('Надо бы ввести ник...');
+		document.ff.add.focus();
+		return false;
+	}
+	document.ff.cmd.value="add";
+}
+</script>
+
+<style>
+.cc {border:0; background-color: #003060;}
+</style>
+<body>
+<big><big><center><b>Привилегии пользователей</b></center></big></big><br>
+<center><font class=yelmsg>~msg~</font></center>
+
+~user~
+
+<table border=0 cellspacing=1 cellpadding=1 class=border>
+<tr align=center>
+	<td class=trdd>Логин</td>
+	<td class=trdd></td>
+	<td class=trdd>Привелегии</td></tr>
+~users~
+</table>
+<p>
+
+Всего: <b>~cnt~</b>
+
+<form name="ff" method="POST" onsubmit="return chk_form()">
+<input type=hidden name="cmd" value="">
+<input type=hidden name="id" value="">
+
+Ник: <input type=textfield name="add" maxlength=16 size=16>
+<input type=submit value="Добавить">
+<br><br>
+<center>
+<input type=button value="Обновить" onclick="return fupdate('');">
+<input type=button value="Закрыть" onclick="window.close();">
+
+</form>
+<p>
+<table border=0 width="100%">
+<tr align=center><td>~bb3~</td><td>~bb4~</td></tr>
+</table>

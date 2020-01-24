@@ -1,0 +1,210 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="PRAGMA" CONTENT="no-cache">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+<TITLE>Чат русских в Америке - Консоль админа -> Учетные записи -> Изменение инфы</TITLE>
+</head>
+
+<LINK rel="stylesheet" type="text/css" href="/css/main.css">
+<script>
+if(navigator.appName == 'Netscape') document.write('<LINK href="/css/ns.css" rel=stylesheet type=text/css>');
+function rm_ph(n)
+{
+	document.form1.rm_ph.value=n;
+	document.form1.submit();
+//	return true;
+}
+function checkform()
+{
+	if(document.form1.firstname.value=="")
+	{
+		alert("Вы забыли ввести имя...");
+		document.form1.firstname.focus();
+		return false;
+	}
+	if(document.form1.lastname.value=="")
+	{
+		alert("Вы забыли ввести фамилию...");
+		document.form1.lastname.focus();
+		return false;
+	}
+	if(document.form1.bd_day.value!="")
+	{
+		if(document.form1.bd_day.value>31 || document.form1.bd_day.value<1)
+		{
+			alert("Некорректная дата рождения!");
+			document.form1.bd_day.focus();
+			return false;
+		}
+	}
+	if(document.form1.pass.value!="")
+	{
+		if(document.form1.pass.value.length<3)
+		{
+			alert("Пароль должен быть не короче 3 символов...");
+			document.form1.pass.focus();
+			return false;
+		}
+		if(document.form1.pass2.value!=document.form1.pass.value)
+		{
+			alert("Ваш пароль не совпадает с подтверждением...");
+			document.form1.pass.focus();
+			return false;
+		}
+	}
+	return true;
+}
+</script>
+
+<BODY>
+
+<FORM method="POST" name="form1" onSubmit="return checkform();" enctype="multipart/form-data">
+<input type=hidden name="rm_ph" value="-1">
+
+<center><font class=yelmsg>~error~</font></center>
+<FIELDSET>
+<LEGEND class=leg><big><b>Основные сведения:</b></big></LEGEND>
+
+<TABLE border=0 cellspacing=0 cellpadding=5 width="100%">
+<TR><TD align=right>Логин: </td><td><b>~login~</b></td><td>Логин изменить нельзя.</TD></TR>
+<TR valign=top>
+<TD align=right>Новый пароль:</TD>
+<TD><INPUT TYPE="password" MAXLENGTH=16 SIZE=20 NAME="pass" VALUE="~pass~"></TD>
+<TD rowspan=3 valign=middle>Смена пароля. Если Вы не хотите менять пароль, то оставьте эти
+поля пустыми.
+</TD>
+</TR>
+<TR valign=top>
+<TD align=right>Подтвердите пароль:</TD>
+<TD><INPUT TYPE="password" MAXLENGTH=16 SIZE=20 NAME="pass2" VALUE="~pass~"></TD>
+</TR>
+</TABLE>
+</FIELDSET>
+
+<br>
+
+<FIELDSET>
+<LEGEND class=leg><big><b>Личные сведения:</b></big></LEGEND>
+<TABLE width="100%" border=0 cellspacing=0 cellpadding=5>
+<tr><td width=125></td><td></td><td></td></tr>
+<TR valign=top>
+<TD align=right>Имя:</TD>
+<TD><INPUT TYPE="TEXT" MAXLENGTH=20 SIZE=20 NAME="firstname" VALUE="~fname~"></TD>
+<TD>
+Реальное имя. Обязательно указывайте. По Вашему желанию оно может быть не
+доступно другим пользователям чата.
+</TD>
+</TR>
+<TR valign=top>
+<TD align="right">Фамилия:</TD>
+<TD><INPUT TYPE="TEXT" MAXLENGTH=20 SIZE=20 NAME="lastname" VALUE="~lname~"></TD>
+<TD>
+Фамилия.
+</TD>
+</TR>
+<TR>
+<TD align="right">Пол:</TD>
+<TD>
+~gender~
+</TD>
+<TD>
+Тут думается всё понятно :)
+</TD>
+</TR>
+<TR valign=top>
+<TD align="right">Дата Рождения:</TD>
+<TD colspan=2>
+<input type="text" name="bd_day" value="~bd_day~" size=2 maxlength=2>
+&nbsp;
+~bd_month~
+<input type="text" name="bd_year" value="~bd_year~" size=4 maxlength=4> года</TD>
+</TR>
+<TR valign=top>
+<TD align="right">Город:</TD>
+<TD><INPUT TYPE="TEXT" MAXLENGTH="32" SIZE="20" NAME="city" VALUE="~city~"></TD>
+<TD>
+Место жительства.
+</TD>
+</TR>
+<TR valign=top>
+<TD align="right">Домашняя страничка:</TD>
+<TD><INPUT TYPE="TEXT" MAXLENGTH="128" SIZE="20" NAME="homepage" VALUE="~homepage~"></TD>
+<TD>
+Если есть домашняя страничка, то введите ее адрес, а если нету, то просто
+оставьте это поле без изменений.
+</TD>
+</TR>
+</TABLE>
+</FIELDSET>
+
+<br>
+<FIELDSET>
+<LEGEND class=leg><big><b>Контактные сведения:</b></big></LEGEND>
+<TABLE width="100%" border="0" cellspacing="0" cellpadding="5">
+<TR valign=top>
+<TD align="right" width=120>E-Mail:</TD>
+<TD><INPUT TYPE="TEXT" MAXLENGTH="32" SIZE="20" NAME="email" VALUE="~email~"></TD>
+<TD>
+Сюда напишите адрес электронной почты, если он есть. Он необходим для всяких нештатных
+ситуаций.
+</TD>
+</TR>
+<TR valign=top>
+<TD align="right">ICQ UIN:</TD>
+<TD><INPUT TYPE="TEXT" MAXLENGTH="16" SIZE="20" NAME="icq" VALUE="~icq~"></TD>
+<TD>
+Если есть ICQ (в простонародье "Аська"), то здесь напишите номер.
+</TD>
+</TR>
+<TR valign=top>
+<TD align="right">Телефон:</TD>
+<TD><INPUT TYPE="TEXT" MAXLENGTH="24" SIZE="20" NAME="tel" VALUE="~tel~"></TD>
+<TD>
+Необязательное поле, ну если хотите поделиться телефоном со всеми, то
+напишите его :)
+</TD>
+</TR>
+</TABLE>
+</FIELDSET>
+
+<br>
+
+
+<FIELDSET>
+<LEGEND class=leg><FONT class=pt><big><b>Дополнительные сведения:</b></big></FONT></LEGEND>
+<TABLE width=100% border=0 cellspacing=0 cellpadding=5>
+<TR valign=top>
+<TD colspan=2 align=left>Немного о себе:<br><TEXTAREA COLS=45 ROWS=5 MAXLENGTH=1024 NAME="info" style="">~info~</TEXTAREA></TD>
+<TD>
+Здесь Вы можете написать что-нибудь...
+</TD>
+</TR>
+</table>
+<table border=0 cellspacing=0 cellpadding=5>
+<TR><TD colspan=3 align=center><b>Публиковать</b> следующие данные:</TD></TR>
+<TR valign=middle>
+<TD><input type=checkbox name="h_fname" class=c_b ~h_fname~> Фамилию</TD>
+<TD><input type=checkbox name="h_lname" class=c_b ~h_lname~> Имя</TD>
+<TD rowspan=7>Поставьте там галочку, где хотите чтобы данные были доступны другим пользователям</TD>
+</TD>
+<TR valign=top>
+<TD nowrap><input type=checkbox name="h_ddmm" class=c_b ~h_ddmm~> Дату рождения</TD>
+<TD nowrap><input type=checkbox name="h_tel" class=c_b ~h_tel~> Телефон</TD>
+</TR>
+<TR valign=top>
+<TD nowrap><input type=checkbox name="h_email" class=c_b ~h_email~> E-Mail</TD>
+<TD nowrap><input type=checkbox name="h_icq" class=c_b ~h_icq~> ICQ</TD>
+</TR>
+</TABLE>
+</FIELDSET>
+
+<br><center>
+<input type=hidden name="DATA" value="YES">
+<input type=hidden name="DATA2" value="YES">
+<input type=submit value="Изменить" class=b_l>
+</center>
+</form>
+<p>
+<table border=0 width="100%">
+<tr align=center><td>~bb3~</td><td>~bb4~</td></tr>
+</table>

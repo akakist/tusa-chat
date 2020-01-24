@@ -1,0 +1,171 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="PRAGMA" CONTENT="no-cache">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+<TITLE>Чат русских в Америке - Настройки чата - Кредиты</TITLE>
+</head>
+
+<LINK href="/css/main.css" rel=stylesheet type=text/css>
+<script>
+<!--
+if(navigator.appName == 'Netscape') document.write('<LINK href="/css/ns.css" rel=stylesheet type=text/css>');
+
+function checkform()
+{
+	if(document.form1.cmd.value=='transaction'){
+		if(Number(document.form1.summa.value)<=0){
+			alert('Вы не ввели сумму перевода!');
+			document.form1.summa.focus();
+			return false;
+		}
+		if(document.form1.nick.value==''){
+			alert('Вы не ввели ник!');
+			document.form1.nick.focus();
+			return false;
+		}
+	}
+	return true;
+}
+
+function mOvr(src,tp)
+{
+	if(!tp) tp=0;
+	src.style.cursor='hand';
+	src.style.backgroundColor=document.styleSheets[0].rules[tp+1].style.backgroundColor;
+}
+function mOut(src,tp)
+{
+	if(!tp) tp=0;
+	src.style.cursor='default';
+	src.style.backgroundColor=document.styleSheets[0].rules[tp].style.backgroundColor;
+}
+function mClk(src) 
+{
+	if(event.srcElement.tagName=='TD') src.children.tags('A')[0].click();
+}
+function commit(id)
+{
+	if(!confirm('Завершить перевод?')) return false;
+	document.form1.cmd.value='commit';
+	document.form1.id.value=id;
+	document.form1.submit();
+	return false;
+}
+function remove(id)
+{
+	if(!confirm('Отменить перевод?')) return false;
+	document.form1.cmd.value='remove';
+	document.form1.id.value=id;
+	document.form1.submit();
+	return false;
+}
+//-->
+</script>
+<body>
+<TABLE border=0 width=100% cellspacing=0 cellpadding=0>
+<TR>
+<TD width=120><a href="/"><img border=0 src="/pics/logo.gif"></a></TD>
+<TD class=top_line width=5>&nbsp;</TD>
+<TD class=top_line width=100% align=center>~bannert~</TD>
+<TD class=top_line width=5>&nbsp;</TD>
+</TR>
+<TR height=5><TD colspan=5></TD></TR>
+<TR valign=top>
+<TD>
+<table class=borderm border=0 width=120 valign=top cellspacing=0 cellpadding=0>
+<tr height=16><td class=blr align=center><b>Навигация:</b></td></tr>
+~menu~
+</table>
+</TD>
+<TD></TD>
+<TD>
+<table width=100% border=0 cellspacing=0 cellpadding=0>
+<tr><td class=border align=center><b>Настройки - кредиты</b></td></tr>
+<tr height=5><td></td></tr>
+<tr><td>
+<div align=justify valign=top>
+
+
+<FIELDSET>
+<LEGEND class=leg><big><b>Выберите категорию</b></big></LEGEND>
+<br>
+<input type=button value="Статусы" style="font-size: 10pt" onclick="location='settings_status'">
+<input type=button value="Чат" style="font-size: 10pt" onclick="location='settings_chat'">
+<input type=button value="Цвета" style="font-size: 10pt" onclick="location='settings_color'">
+<input class=bp type=button value="Кредиты" style="font-size: 10pt">
+<input type=button value="Привилегии" style="font-size: 10pt" onclick="location='settings_privs'">
+<br><br>
+</fieldset>
+<br>
+
+
+<FIELDSET>
+<LEGEND class=leg><big><b>Кредиты</b></big></LEGEND>
+<br><center><font class=yelmsg>~error~</font></center>
+<TABLE width="100%" border=0 cellspacing=0 cellpadding=3>
+<tr><td colspan=2>
+<br>
+Ваш номер счета: <b>~uid~</b> <br>
+Кредитов: <b>~credits~</b><p>
+На данной странице Вы можете осуществлять операции со своими кредитами.
+<p>
+<hr>
+
+<b>Пополнение при помощи пинкодов:</b><p>
+<FORM method="POST" name="form_pa">
+
+Введите пинкод и нажмите "Пополнить"
+<input type=hidden name="cmd" value="pincode_activate">
+<input input type=text name=v1 maxlength=4 size=4>-<input input type=text name=v2 maxlength=4 size=4>-<input input type=text name=v3 maxlength=4 size=4>
+<input type=submit value="Пополнить">
+<br>
+</form>
+
+<p>
+<hr>
+
+<big><b>Перевод</b></big><p>
+
+Для перевода другому человеку введите в поле ввода ник и нажмите <b>Перевести</b>. После этого подтвердите перевод нажав на <img src=/pics/granted.gif>
+
+<br><br>
+
+<FORM method="POST" name="form1" onSubmit="return checkform();">
+
+~uncommitted~
+
+<br><br>
+
+<input type=hidden name="cmd" value="transaction">
+<input type=hidden name="id" value="0">
+
+Перевести <input type=text name=summa value="0" maxlength=10 size=10> кредитов на ник <input type=text name=nick value="" maxlength=16 size=20> <input type=submit value="Перевести">
+</form>
+
+<br><br>
+</td>
+</tr>
+</TABLE>
+
+</FIELDSET>
+
+<br><!--center>
+<input type=submit value="Изменить" class=b_l>
+</center-->
+
+
+
+</div>
+</td></tr>
+</table>
+
+</TD>
+<TD></TD>
+</TR>
+</TABLE>
+<hr>
+<table cellspacing=0 cellpadding=0 border=0 width=100%>
+<tr align=center><td>~bb1~</td><td>~bb2~</td><td>~bb3~</td><td>~bb4~</td></tr>
+</table>
+</body>
+</html>

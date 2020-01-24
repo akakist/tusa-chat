@@ -1,0 +1,144 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="PRAGMA" CONTENT="no-cache">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+<TITLE>Чат "Тусовка"</TITLE>
+</head>
+
+<link rel=stylesheet type=text/css href=/css/main.css>
+
+<script>
+function mOvr(src,tp)
+{
+	if(!tp) tp=0;
+	src.style.cursor='hand';
+	src.style.backgroundColor=document.styleSheets[0].rules[tp+1].style.backgroundColor;
+}
+function mOut(src,tp)
+{
+	if(!tp) tp=0;
+	src.style.cursor='default';
+	src.style.backgroundColor=document.styleSheets[0].rules[tp].style.backgroundColor;
+}
+function mClk(src) 
+{
+	if(event.srcElement.tagName=='TD') src.children.tags('A')[0].click();
+}
+
+</script>
+<body>
+
+
+
+<TABLE border=0 width=100% cellspacing=0 cellpadding=0>
+<TR>
+<TD width=120><a href="/"><img border=0 src="/pics/logo.gif"></a></TD>
+<TD class=top_line width=5>&nbsp;</TD>
+<TD class=top_line width=100% align=center>
+<!--<iframe src=http://www.scalpnet.ru/work/b.php width=468 height=60 frameborder=0 scrolling=no></iframe>-->
+<!--~ban ner t~-->
+</TD>
+<TD class=top_line width=5>&nbsp;</TD>
+<TD class=top_line width=140 align=center>~banner120~</TD>
+</TR>
+<TR height=5><TD colspan=5></TD></TR>
+<TR valign=top>
+<TD>
+<table class=borderm border=0 width=120 valign=top cellspacing=0 cellpadding=0>
+<tr height=16><td class=blr align=center><b>Навигация:</b></td></tr>
+~menu~
+</table>
+<br>
+<center><small>Хостинг:<br><br>
+<a href="http://www.scalpnet.ru"><img src=/pics/b/88_31.gif border=0></a>
+</TD>
+<TD></TD>
+<TD>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td class=border align=center><b>Добро пожаловать в наш чат! :)</b></td></tr>
+<tr height=5><td></td></tr>
+<tr><td>
+<div align=justify valign=top>
+Мы приветствуем Вас в нашем чате! Если Вы до сих пор еще не <a href="/Registration">зарегистрированы</a> у нас, то мы предлагаем Вам это сделать. Так же Вы можете зайти в чат без регистрации - как Гость, введя в поле "логин" только Ник (псевдоним), при этом оставив поле пароля пустым. Однако, у зарегистрированных пользователей гораздо больше возможностей, к тому же уже никто не сможет воспользоваться Вашим ником.
+Нам будет очень важно услышать Ваши предложения, замечания или жалобы, направляйте их нам по почте: <a href="mailto:support@chat.russianamerica.com">support@chat.russianamerica.com</a>.
+</div>
+</td></tr>
+<tr height=10><td></td></tr>
+<tr><td align=center class=borderg><b>Вход</b></td></tr>
+<tr><td>
+<form action="/login" method=POST name="start" onSubmit="return checkform();">
+<input type=hidden name="scr" value="">
+<script>
+<!--
+s=screen;
+document.start.scr.value=s.width+'x'+s.height+'x'+s.colorDepth;
+//-->
+</script>
+<TABLE border=0 width=100%>
+<TR>
+<TD align=right width=50%>
+<TABLE border=0 cellPadding=1 cellSpacing=0>
+<TR><TD align=right>Логин:&nbsp;</TD>
+<TD><input type="textfield" name="login" value="" maxlength=16 size=16>
+</TD></TR>
+<TR><TD align="right">Пароль:&nbsp;</TD><TD><input type="password" name="pass" maxlength=16 size=16>
+</TD></TR>
+</TABLE>
+</TD>
+<TD width=35%>&nbsp; <input type="submit" value="Войти"></TD>
+<script>
+<!--
+	document.start.login.focus();
+//-->
+</script>
+</table>
+</td></tr>
+</form>
+
+<tr><td align=center class=borderg><b>НОВОСТИ</b></td></tr>
+<tr><td>
+<table border=0 cellPadding=1 cellSpacing=0 width=100%>
+~news~
+<tr valign=top><td width=1></td><td align=right><a href="/news">Более старые новости</a></td></tr>
+</table>
+</td></tr>
+</table>
+</TD>
+<TD></TD>
+<script>
+if(navigator.appName != 'Netscape'){
+document.write('<TD>');
+document.write('<table class=border width=140 valign=top cellspacing=0 cellpadding=0>');
+document.write('<form>');
+document.write('<tr><td class=blr align=center>');
+document.write('<b>Сейчас в чате:</b>');
+document.write('</td></tr>');
+document.write('<tr><td><iframe src="/Users" class=ifu frameborder=0>~nusr~</iframe></td></tr>');
+//document.write('<tr><td>&nbsp;</td></tr>');
+document.write('</table>');
+
+
+
+document.write('</center></TD>');
+}
+
+</script>
+
+<!-- up to 22 may-->
+
+</TR>
+</form>
+<script>
+<!--
+	document.start.login.focus();
+//-->
+</script>
+</TABLE>
+<hr>
+<table cellspacing=0 cellpadding=0 border=0 width=100%>
+<tr align=center><td>~bb10~</td><td>~bb11~</td><td>~bb3~</td><td>~bb4~</td></tr>
+</table>
+
+
+</body>
+</html>

@@ -1,0 +1,89 @@
+c++ ./objD/chatserver.o -o chatserver.exe libchat.a  /usr/lib64/libssl.a /usr/lib64/libcrypto.a /usr/lib64/mysql/libmysqlclient.a -lpthread -lz /usr/lib64/libgdbm.a   -lstlport -ldl
+/usr/lib64/mysql/libmysqlclient.a(client.o): In function `mysql_close_free_options':
+(.text+0x76f): undefined reference to `SSL_CTX_free'
+/usr/lib64/mysql/libmysqlclient.a(client.o): In function `mysql_get_ssl_cipher':
+(.text+0x810): undefined reference to `SSL_get_current_cipher'
+/usr/lib64/mysql/libmysqlclient.a(client.o): In function `mysql_real_connect':
+(.text+0x37ff): undefined reference to `SSL_get_peer_certificate'
+/usr/lib64/mysql/libmysqlclient.a(client.o): In function `mysql_real_connect':
+(.text+0x3817): undefined reference to `X509_get_subject_name'
+/usr/lib64/mysql/libmysqlclient.a(client.o): In function `mysql_real_connect':
+(.text+0x3827): undefined reference to `X509_NAME_oneline'
+/usr/lib64/mysql/libmysqlclient.a(client.o): In function `mysql_real_connect':
+(.text+0x382f): undefined reference to `X509_free'
+/usr/lib64/mysql/libmysqlclient.a(client.o): In function `mysql_get_ssl_cipher':
+(.text+0x81c): undefined reference to `SSL_CIPHER_get_name'
+/usr/lib64/mysql/libmysqlclient.a(viossl.o): In function `ssl_do':
+(.text+0x9a): undefined reference to `SSL_new'
+/usr/lib64/mysql/libmysqlclient.a(viossl.o): In function `ssl_do':
+(.text+0xaa): undefined reference to `SSL_clear'
+/usr/lib64/mysql/libmysqlclient.a(viossl.o): In function `ssl_do':
+(.text+0xb2): undefined reference to `SSL_get_session'
+/usr/lib64/mysql/libmysqlclient.a(viossl.o): In function `ssl_do':
+(.text+0xbd): undefined reference to `SSL_SESSION_set_timeout'
+/usr/lib64/mysql/libmysqlclient.a(viossl.o): In function `ssl_do':
+(.text+0xc8): undefined reference to `SSL_set_fd'
+/usr/lib64/mysql/libmysqlclient.a(viossl.o): In function `ssl_do':
+(.text+0xda): undefined reference to `SSL_get_fd'
+/usr/lib64/mysql/libmysqlclient.a(viossl.o): In function `ssl_do':
+(.text+0x140): undefined reference to `SSL_free'
+/usr/lib64/mysql/libmysqlclient.a(viossl.o): In function `sslconnect':
+(.text+0x153): undefined reference to `SSL_connect'
+/usr/lib64/mysql/libmysqlclient.a(viossl.o): In function `sslaccept':
+(.text+0x163): undefined reference to `SSL_accept'
+/usr/lib64/mysql/libmysqlclient.a(viossl.o): In function `vio_ssl_close':
+(.text+0x196): undefined reference to `SSL_set_quiet_shutdown'
+/usr/lib64/mysql/libmysqlclient.a(viossl.o): In function `vio_ssl_close':
+(.text+0x19e): undefined reference to `SSL_shutdown'
+/usr/lib64/mysql/libmysqlclient.a(viossl.o): In function `vio_ssl_delete':
+(.text+0x1dc): undefined reference to `SSL_free'
+/usr/lib64/mysql/libmysqlclient.a(viossl.o): In function `vio_ssl_write':
+(.text+0x218): undefined reference to `SSL_write'
+/usr/lib64/mysql/libmysqlclient.a(viossl.o): In function `vio_ssl_read':
+(.text+0x228): undefined reference to `SSL_read'
+/usr/lib64/mysql/libmysqlclient.a(viosslfactories.o): In function `new_VioSSLFd':
+(.text+0xd4): undefined reference to `SSL_CTX_new'
+/usr/lib64/mysql/libmysqlclient.a(viosslfactories.o): In function `new_VioSSLFd':
+(.text+0xf1): undefined reference to `SSL_CTX_set_cipher_list'
+/usr/lib64/mysql/libmysqlclient.a(viosslfactories.o): In function `new_VioSSLFd':
+(.text+0x10c): undefined reference to `SSL_CTX_load_verify_locations'
+/usr/lib64/mysql/libmysqlclient.a(viosslfactories.o): In function `new_VioSSLFd':
+(.text+0x12d): undefined reference to `SSL_CTX_use_certificate_file'
+/usr/lib64/mysql/libmysqlclient.a(viosslfactories.o): In function `new_VioSSLFd':
+(.text+0x14c): undefined reference to `SSL_CTX_use_PrivateKey_file'
+/usr/lib64/mysql/libmysqlclient.a(viosslfactories.o): In function `new_VioSSLFd':
+(.text+0x15c): undefined reference to `SSL_CTX_check_private_key'
+/usr/lib64/mysql/libmysqlclient.a(viosslfactories.o): In function `new_VioSSLFd':
+(.text+0x169): undefined reference to `DH_new'
+/usr/lib64/mysql/libmysqlclient.a(viosslfactories.o): In function `new_VioSSLFd':
+(.text+0x1c8): undefined reference to `SSL_CTX_ctrl'
+/usr/lib64/mysql/libmysqlclient.a(viosslfactories.o): In function `new_VioSSLFd':
+(.text+0x1d0): undefined reference to `DH_free'
+/usr/lib64/mysql/libmysqlclient.a(viosslfactories.o): In function `new_VioSSLFd':
+(.text+0x208): undefined reference to `SSL_library_init'
+/usr/lib64/mysql/libmysqlclient.a(viosslfactories.o): In function `new_VioSSLFd':
+(.text+0x20d): undefined reference to `OPENSSL_add_all_algorithms_noconf'
+/usr/lib64/mysql/libmysqlclient.a(viosslfactories.o): In function `new_VioSSLFd':
+(.text+0x228): undefined reference to `SSL_load_error_strings'
+/usr/lib64/mysql/libmysqlclient.a(viosslfactories.o): In function `new_VioSSLFd':
+(.text+0x236): undefined reference to `SSL_CTX_set_default_verify_paths'
+/usr/lib64/mysql/libmysqlclient.a(viosslfactories.o): In function `new_VioSSLFd':
+(.text+0x2a2): undefined reference to `SSL_CTX_free'
+/usr/lib64/mysql/libmysqlclient.a(viosslfactories.o): In function `new_VioSSLFd':
+(.text+0x2f8): undefined reference to `DH_free'
+/usr/lib64/mysql/libmysqlclient.a(viosslfactories.o): In function `new_VioSSLFd':
+(.text+0x31f): undefined reference to `SSL_CTX_free'
+/usr/lib64/mysql/libmysqlclient.a(viosslfactories.o): In function `new_VioSSLAcceptorFd':
+(.text+0x3b5): undefined reference to `TLSv1_server_method'
+/usr/lib64/mysql/libmysqlclient.a(viosslfactories.o): In function `new_VioSSLAcceptorFd':
+(.text+0x3ec): undefined reference to `SSL_CTX_ctrl'
+/usr/lib64/mysql/libmysqlclient.a(viosslfactories.o): In function `new_VioSSLAcceptorFd':
+(.text+0x3fb): undefined reference to `SSL_CTX_set_verify'
+/usr/lib64/mysql/libmysqlclient.a(viosslfactories.o): In function `new_VioSSLAcceptorFd':
+(.text+0x40b): undefined reference to `SSL_CTX_set_session_id_context'
+/usr/lib64/mysql/libmysqlclient.a(viosslfactories.o): In function `new_VioSSLConnectorFd':
+(.text+0x46d): undefined reference to `TLSv1_client_method'
+/usr/lib64/mysql/libmysqlclient.a(viosslfactories.o): In function `new_VioSSLConnectorFd':
+(.text+0x4aa): undefined reference to `SSL_CTX_set_verify'
+collect2: ld returned 1 exit status
+make: *** [chatserver.exe] Error 1

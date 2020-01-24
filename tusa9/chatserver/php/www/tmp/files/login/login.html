@@ -1,0 +1,220 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="PRAGMA" CONTENT="no-cache">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+<TITLE>Чат "Тусовка" - Вход</TITLE>
+</head>
+
+<LINK href="/css/main.css" rel=stylesheet type=text/css>
+
+<script>
+<!--
+
+var uf=0;
+function do_f(id)
+{
+	var r=Math.random();
+	locat='/userphotos/'+id;
+	sx=screen.width/3*2;
+	sy=screen.height/5*4;
+	if(!uf || uf.closed){
+		uf=open(locat,'uf','toolbar=0,status=0,resizable=1,scrollbars=1,width='+sx+',height='+sy);
+		uf.focus();
+	}
+	else{
+		uf.focus();
+		uf.location=locat;
+	}	
+//	return true;
+}
+var uni=0;
+function do_nicks(id)
+{
+	var r=Math.random();
+	locat='/settings_nicks';
+	sx=400;//screen.width/3*2;
+	sy=200;//screen.height/5*4;
+	if(!uni || uni.closed){
+		uni=open(locat,'uni','toolbar=0,status=0,resizable=1,scrollbars=1,width='+sx+',height='+sy);
+		uni.focus();
+	}
+	else{
+		uni.focus();
+		uni.location=locat;
+	}	
+//	return true;
+}
+
+function AddNick()
+{
+	nwin=open('/newnick.tse', 'NewNick', 'toolbar=0,status=0,resizable=0,scrollbars=0,width=350,height=160');
+	nwin.focus();
+	return false;
+}
+
+function remove_nick()
+{
+	d=document.loginform;
+	n=document.loginform.nick.selectedIndex;
+	if(!confirm('Удалить ник "'+d.nick.options[n].text+'" ?')){
+		return false;
+	}
+	document.tempform.nick.value=d.nick.options[n].value;
+	document.tempform.removenick.value='yes';
+	document.tempform.submit();
+	return false;
+}
+
+function chk_f()
+{
+    if(!document.loginform.nick){return true;}
+	if(document.loginform.nick.options.length==0){
+		alert('У Вас нету ников для входа в чат... Создайте себе хотя бы один ник!');
+		return false;
+	}
+	return true;
+}
+
+function open_n(param)
+{
+    w=780;
+    h=500;
+    if(param!=''){
+    	param='?'+param;
+    }
+	nwin=open('/notes/frames'+param, 'notes', 'toolbar=0,status=0,resizable=1,scrollbars=1,left=10,top=10,width='+w+',height='+h);
+	nwin.focus();
+	return false;
+}
+
+//-->
+</script>
+<script language="javascript" src="/css/mmove.js"> </script> 
+
+<body>
+<TABLE border=0 width=100% cellspacing=0 cellpadding=0>
+<TR>
+<TD width=120><a href="/"><img border=0 src="/pics/logo.gif"></a></TD>
+<TD class=top_line width=5>&nbsp;</TD>
+<TD class=top_line width=100% align=center>~bannert~</TD>
+<TD class=top_line width=5>&nbsp;</TD>
+<TD class=top_line width=140 align=center>~banner120~</TD>
+</TR>
+<TR height=5><TD colspan=5></TD></TR>
+<TR valign=top>
+<TD>
+<table class=borderm width=120 valign=top cellspacing=0 cellpadding=0>
+<tr height=16><td class=blr align=center><b>Навигация:</b></td></tr>
+~menu~
+</table>
+</TD>
+<TD></TD>
+<TD>
+<table width=100% border=0 cellspacing=0 cellpadding=0>
+<tr><td class=border align=center><b>Здравствуйте, ~name~</b></td></tr>
+<tr height=5 ><td></td></tr>
+<tr><td>
+<div align=justify valign=top>
+<center>Рады снова видеть Вас в нашем чате ;)</center>
+
+Здесь Вы можете создать себе <a href=# onclick="return AddNick();">новый ник</a>, 
+либо выбрать комнату, в которой Вы будете общаться. 
+Например, для знакомств лучше всего использовать "Кусты".<br>
+Так же Вы можете изменять свои "<a href="/settings">Настройки</a>", 
+где можете включить/отключить полезные советы, статистику и т.п. 
+При желании сменить информацию о себе 
+Вы можете в разделе "<a href="/changeinfo">Сменить инфу</a>".<br>
+В разделе "<a href=# onclick="return open_n('');">Записки</a>" Вы можете написать кому-либо, к примеру, 
+Вы не успели с кем то договорить в чате.<br>
+Кнопка "<a href="/logout">Выход</a>" предназначена для того чтобы завершить сессию, 
+это Вам понадобится, например, если Вы хотите зайти под другим логином. 
+<P>
+При помощи <a href='/settings_credit' target=_new><b>кредитов Тусовки</b></a> Вы можете прибрести новый более высокий уровень, а также сменить его наименование. 
+Также можете стать невидимым для остальных пользователей. <!--купить дополнительное дисковое пространство, поставить топик комнаты и многое другое--><p>
+
+
+<center><a href="javascript: do_f(~uid~);"><b>Мои фотки</b></a></center> &nbsp;&nbsp;&nbsp;&nbsp;
+<center><a href="javascript: do_nicks(~uid~);"><b>Мои ники</b></a></center>
+
+
+
+<br><br>
+<table class=border width=100% border=0 cellspacing=0 cellpadding=0>
+<tr><td class=tbg align=center style="border-top: 0px"><b>Вход</b></td></tr>
+<tr><td>
+
+<form action="/login.tse/settings.tse" name=tempform>
+<input type=hidden name="removenick" value="">
+<input type=hidden name="nick" value="">
+</form>
+
+<form action="/chat/enter" method=POST name="loginform" OnSubmit="return chk_f();">
+<TABLE align=center border=0>
+<TR height=5><TD></TD></TR>
+<TR><TD>
+<TABLE align=center border=0 cellPadding=1 cellSpacing=0>
+<TR>
+<TD align=right>Ник:&nbsp;</TD>
+<TD>~nicks~</TD><TD>&nbsp;~rbutt~<a href=# onclick="return remove_nick();"><img src=/pics/del.gif border=0 width=16 height=16 alt="Удалить ник"></a>~erbutt~&nbsp;
+~newnick~<input type=button onclick="return AddNick();" value="Добавить ник" class=b_l>~enewnick~
+</TD>
+</TR>
+~schannel~<TR><TD align="right">Тусуемся в:&nbsp;</TD>
+<TD>~channels~</TD>
+</TR>~eschannel~
+</TABLE>
+</TD></TR>
+<TR><TD align=center>
+~msg~
+<input class=border type=submit value="Войти в чат" class=button name="subbtn">
+~admcon~<br><br><input type=button value="Консоль админа" onclick="n=window.open('/admin','admpage','toolbar=0,status=0,scrollbars=0,width=450,height=500,resizable=1');n.focus();">~eadmcon~
+<SCRIPT>
+<!--
+document.loginform.subbtn.focus();
+//-->
+</SCRIPT><br>
+~inv~<input type=checkbox class=c_b name=ininv ~invcheck~>Войти невидимым(ой)~einv~<br>
+~eye~<input type=checkbox class=c_b name=showadm ~eyecheck~>Показывать ~eyes~ глаз~eeye~
+</TD></TR>
+</form>
+</TABLE>
+</td></tr></table>
+<!--~hint~-->~stat~
+</div>
+</td></tr>
+</table>
+</TD>
+<TD></TD>
+<TD>
+<TD>
+    <table class=border width=140 valign=top cellspacing=0 cellpadding=0 ID="Table1">
+<form ID="Form1">
+<tr><td class=blr align=center>
+<b>Сейчас в чате:</b>
+</td></tr>
+<tr><td><iframe src="/users" class=ifu frameborder=0>~nusr~</iframe></td></tr>
+    </table>
+<!--/center></TD-->
+
+<table class=border width=140 valign=top cellspacing=0 cellpadding=0>
+<tr><td class=blr align=center><b>Записки:</b></td></tr>
+<tr><td>
+<table width=100% border=0>
+~folders~
+<tr><td>~newn~<b>~enewn~Новых</td><td nowrap>~newn~<b>~enewn~~newnotes~</td></tr>
+<tr height=5><td colspan=2></td></tr>
+<tr><td>Всего</td><td nowrap>~allnotes~</td></tr>
+<TR><TD colspan=2 align=center><input type=button class=border value="Записки" class=b_l onclick="open_n('')"></TD></TR>
+</table>
+</td></tr>
+</table>
+<br>
+</TD>
+</TR>
+</TABLE>
+<hr>
+<table cellspacing=0 cellpadding=0 border=0 width=100%>
+<tr align=center><td>~bb1~</td><td>~bb2~</td><td>~bb3~</td><td>~bb4~</td></tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<html> 
+<head> 
+<script language="javascript" src=md5.js> </script> 
+<script language="javascript" src=base64.js> </script> 
+<script language="javascript"> 
+function doSend(){ 
+
+//alert("Ваш пароль не совпадает с подтверждением...");
+document.login.phoneMD.value=calcMD5(document.login.phone.value); 
+alert("phoneMD: " +document.login.phoneMD.value);
+
+document.login.phoneX.value=document.login.phone.value; 
+	alert("phoneX: " +document.login.phoneX.value);
+
+_sms=Base64.encode(document.login.smstext.value);
+_key="kall?time="+document.login.time.value+"&operarator="+document.login.operarator.value+"&short="+document.login.short.value+"&phoneX="+document.login.phoneX.value+"&phoneMD="+document.login.phoneMD.value+"&sms="+_sms+"&cost="+document.login.cost.value;
+alert("string to keygen: "+_key);
+document.login.sms.value=_sms;
+document.login.key.value=calcMD5(_key);
+alert("keyMD: "+document.login.key.value);
+
+//alert("Ваш пароль не совпадает с подтверждением...");
+//document.login.password.value=MD5(document.login.password.value+document.login.nonce.value); 
+//document.login.pass.value=''; // NOT to send password as a plain text 
+//document.login.nonce.value='';// NOT to send random key 
+document.login.submit();
+return false;
+} 
+</script> 
+</head> 
+<body> 
+<form name="login" method="get" action="http://82.200.72.148:4353/ifree/176644" onSubmit="doSend()"> 
+<table>
+<tr><td>sms<td>  <input type="text" name="smstext" value="777 2 1 48143">  
+<tr><td>time<td>   <input type="text" name="time" value="2007-02-14(07:22:05)">   
+
+<tr><td>cost<td>   <input type="text" name="cost" value="99"> 
+<tr><td>oper<td>   <input type="text" name="operarator" value="MTS"> 
+<tr><td>phone<td>   <input type="text" name="phone" value="79138533340"> 
+<tr><td>short<td>   <input type="text" name="short" value="6006"> 
+
+<tr><td colspan=2>  <input type="submit" value="send" onclick="return doSend();"> 
+</table>
+ <input type="hidden" name="phoneX" value="">  
+ <input type="hidden" name="phoneMD" value="">  
+ <input type="hidden" name="key" value="">  
+ <input type="hidden" name="sms" value="">  
+
+</form> 
+</body> 
+</html> 

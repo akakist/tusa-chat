@@ -1,0 +1,347 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="PRAGMA" CONTENT="no-cache">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+<TITLE>add message</TITLE>
+</head>
+
+<script>
+
+var can_set_topic=~cansettopic~;
+var last_date=new Date();
+
+function ch_top()
+{
+	
+	ntop=window.open('/chat_topic?channel=~channel~','topchan','toolbar=0,status=0,scrollbars=1,resizable=1,width=600,height=300'); 
+	
+
+	ntop.focus(); 
+
+//	var z=prompt('Топик',parent.topic);
+//	if(z==null) return false;
+//	window.top.buttons.document.sf.cmd.value='topic';
+//	window.top.buttons.document.sf.msg.value=z;
+//	window.top.buttons.document.sf.submit();
+	return false;
+}
+
+function ch_voice()
+{
+	var z=prompt('Кому дать/забрать голос? Введите ник..','');
+	if(z==null) return false;
+	window.top.buttons.document.sf.cmd.value='vmode';
+	window.top.buttons.document.sf.msg.value=z;
+	window.top.buttons.document.sf.submit();
+	return false;
+}
+
+function ch_mode()
+{
+	window.top.buttons.document.sf.cmd.value='cmode';
+	window.top.buttons.document.sf.submit();
+	return false;
+}
+
+var nav=navigator.appName == 'Netscape';
+msgs = new Array();
+max_m  = 0;
+curr_m = 0;
+
+function XMM2RUS (obj) {
+	chrs=" !Э№;%?э()*+б-ю.0123456789ЖжБ=Ю,\"ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯх/ъ:_ёфисвуапршолдьтщзйкыегмцчняХ\\ЪЁ"
+	so=document.SendForm.msgbox.value;
+	s="";
+	for (i=0;i<so.length;i++){
+		ch = so.charAt(i).charCodeAt();
+		s+=ch<0x80 ? chrs.charAt(ch-0x20) : so.charAt(i);
+	}
+	document.SendForm.msgbox.value=s;
+	document.SendForm.msgbox.focus();
+}
+
+var	chr1="abcdefghijklmnopqrstuvwxyz`'ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var	chr2="абцдефгхижклмнопкрстуввхйзъьАБЦДЕФГХИЖКЛМНОПКРСТУВВХЙЗ";
+
+function TRANS2RUS(){
+	so=document.SendForm.msgbox.value;
+	s="";
+	ar=new Array();
+	ar=[
+		{a:'shch',b:'щ'}, {a:'shc',b:'щ'}, {a:'yo',b:'ё'}, {a:'jo',b:'ё'},
+		{a:'zh',b:'ж'}, {a:"i'",b:'ы'}, {a:'ch',b:'ч'}, {a:'sh',b:'ш'},
+		{a:"e'",b:'э'}, {a:'yu',b:'ю'}, {a:'ju',b:'ю'}, {a:'ya',b:'я'},
+		{a:'ja',b:'я'}, {a:'Shch',b:'Щ'}, {a:'Shc',b:'Щ'}, {a:'Yo',b:'Ё'},
+		{a:'Jo',b:'Ё'}, {a:'Zh',b:'Ж'}, {a:"I'",b:'Ы'}, {a:'Ch',b:'Ч'},
+		{a:'Sh',b:'Ш'}, {a:"E'",b:'Э'}, {a:'Yu',b:'Ю'}, {a:'Ju',b:'Ю'},
+		{a:'Ya',b:'Я'}, {a:'Ja',b:'Я'}, {a:'SHC',b:'Щ'}, {a:'YO',b:'Ё'},
+		{a:'JO',b:'Ё'}, {a:'ZH',b:'Ж'}, {a:'CH',b:'Ч'}, {a:'SH',b:'Ш'},
+		{a:'YU',b:'Ю'}, {a:'JU',b:'Ю'}, {a:'YA',b:'Я'}, {a:'JA',b:'Я'}];
+	for(i=0;i<ar.length;i++){
+		el=ar[i];
+		st=el.a;
+		re=eval('/'+st+'/g');
+		so=so.replace(re,el.b);
+	}
+	for(i=0;i<so.length;i++){
+		ch=so.charAt(i);
+		c=ch;
+		for(j=0;j<chr1.length;j++){
+			if(ch==chr1.charAt(j)){
+				c=chr2.charAt(j);
+				break;
+			}
+		}
+		s+=c;
+	}
+	document.SendForm.msgbox.value=s;
+	document.SendForm.msgbox.focus();
+}
+
+function on_key(code)
+{
+//    alert(code);
+	if(code==113){XMM2RUS(); return false;}
+	if(code==114){TRANS2RUS(); return false;}
+	if(code==118){document.tmpform.privbox.checked=!document.tmpform.privbox.checked; return false;}
+	if(code==119){document.tmpform.makeitbox.checked=!document.tmpform.makeitbox.checked; return false;}
+	if(code==27) {document.SendForm.msgbox.value=''; return false;}
+	if(code!=38 && code!=40) return true;
+	if(max_m<=0) return true;
+	if(code==38 && curr_m>0) curr_m--;
+	if(code==40 && curr_m<max_m) curr_m++; 
+	s = "";
+	if(curr_m<max_m) s=msgs[curr_m];
+	document.SendForm.msgbox.value=s;
+	return false;
+}
+
+function DoSend()
+{
+    parent.mm(0);
+	var d=document.SendForm;
+	var d1=document.tmpform;
+	if (d.msgbox.value=='')
+	{
+		d.msgbox.focus();
+		return false;
+	}
+        d.msg.value=d.msgbox.value;
+        if(d1.makeitbox.checked)
+        {
+        	d.makeit.value="on";
+	}else{d.makeit.value="";}
+        if(d1.privbox.checked)
+        {
+        	d.priv.value="on";
+	}else{d.priv.value="";}
+	msgs[max_m]=d.msgbox.value;
+	max_m++;
+	curr_m=max_m;
+	d.msgbox.focus();
+	d.msgbox.value="";
+	d1.makeitbox.checked=false;
+	d.fornick.value=d1.fornick.value;
+~s_script~	if(d1.sysbox.checked){
+		d.sys.value='on';
+	}else{
+		d.sys.value='';
+	}
+	d1.sysbox.checked=false;~es_script~
+	d.submit();
+
+	secs=last_date.getSeconds();
+	dt2=new Date();
+	secs2=dt2.getSeconds();
+	var psec;
+	if(secs>secs2){
+		psec=(60-secs)+secs2;
+	}else{
+		psec=secs2-secs;
+	}
+	return true;
+}
+
+function ChSt()
+{
+    parent.mm(0);
+    parent.cstatus=document.StatusForm.status.selectedIndex;
+	document.SendForm.msgbox.focus();
+	document.StatusForm.submit();
+}
+
+function set_status(n)
+{
+//    alert(n);
+	parent.lstatus=parent.cstatus;
+	document.StatusForm.status.selectedIndex=n;
+	parent.cstatus=n;
+	document.StatusForm.submit();
+}
+
+function DoAll()
+{
+	document.forms[1].fornick.value='Всем';
+	document.SendForm.msgbox.focus();
+	document.tmpform.privbox.checked=false;
+	document.tmpform.makeitbox.checked=false;
+	return false;
+}
+
+function ch_scroll()
+{
+	if(document.StatusForm.scr.checked)
+	{
+		parent.scr=1;
+	}
+	else
+	{
+		parent.scr=0;
+        }
+        document.SendForm.msgbox.focus();
+}
+function ch_panel()
+{
+	var bb=document.all["addpanel"];
+	var bp=document.SendForm.bp;
+	if (parent.console_size==30){
+		bb.style.visibility="visible";
+		parent.rw.rows=parent.butt_size+",*,50";
+		parent.console_size=50;
+		document.SendForm.bp.value="<";
+	}else{
+		bb.style.visibility="hidden";
+		parent.rw.rows=parent.butt_size+",*,30";
+		document.SendForm.bp.value=">";
+		parent.console_size=30;
+	}
+	document.SendForm.msgbox.focus();
+}
+function on_s(s)
+{
+	document.SendForm.msgbox.value+=' '+s+' ';
+	document.SendForm.msgbox.focus();
+	return false;
+}
+//-->
+</script>
+<LINK href="/css/main.css" rel=stylesheet type=text/css>
+<style>
+#s {cursor: hand}
+#ss {cursor: hand}
+.bb {font-size: 6pt}
+body,td,  p, pre,.ccb {background-color: #e8e8e8}
+</style>
+
+<BODY OnMouseMove="parent.mm(0);" topmargin=3>
+
+<TABLE vspace=0 border=0 cellspacing=0 cellpadding=0 height="100%">
+<FORM method="POST" action="sendmessage" name="SendForm" target="hidden" onSubmit="DoSend(); return false;">
+<TR valign=top>
+<TD align=center nowrap>
+<input type="hidden" name="msg" value="">
+<input type="hidden" name="priv" value="">
+<input type="hidden" name="makeit" value="">
+<input type="hidden" name="fornick" value="">
+~hsys~<input type=hidden name=sys>~ehsys~
+<input type=button value=">" name=bp onclick="ch_panel()" title="Открыть/закрыть мини панель" style="height: 20px">
+<script>
+<!--
+z=screen.width;
+s=37;
+if(z<800){s=20;}
+if(z==800){s=30;}
+if(z==1024){s=60;}
+if(z==1152){s=70;}
+if(z>=1280){s=100;}
+document.write('<input style="height: 20px" type="text" size="'+s+'" maxlength="~msglen~" name="msgbox" value="" onKeyDown="return on_key(event.keyCode);">');
+//-->
+</script>
+<!--  class=bb-->
+<input type="submit"  value="OK" style="height: 20px; width: 4em; position-relative: 1px " >
+</TD>
+</form>
+<form name="tmpform" onSubmit="DoSend(); return false;">
+<TD width=5>&nbsp;</TD>
+<TD nowrap>
+<script>
+s=12;
+if(z==800) s=8;
+if(nav){s=5;}
+document.write('<input style="height: 20px" type=text size='+s+' maxlength=15 name="fornick" value="Всем">');
+</script>
+<a title="Отправлять сообщения для всех" href="/EmptyFrame" target="hidden" onMouseOver="window.status=''; return true;" onClick="return DoAll();"><B><small>Всем</small></b></a>
+</TD>
+<TD nowrap>
+<small><input type="checkbox" class=ccb name="privbox" onClick="document.forms[0].msgbox.focus(); return true;">Личное&nbsp;</small>
+<small><input type="checkbox" class=ccb name="makeitbox" onClick="document.forms[0].msgbox.focus(); return true;">Действие&nbsp;</small>
+~sysmsg~<small><input type="checkbox" class=ccb name="sysbox" onclick="document.forms[0].msgbox.focus(); return true;">Системное</small>~esysmsg~
+</td>
+</FORM>
+<FORM method="POST" action="setstatus" name="StatusForm" target="hidden">
+<td align=center nowrap>
+&nbsp;
+<select name="status" OnChange="ChSt();">
+~status~
+</select>
+<script>
+	parent.cstatus=document.StatusForm.status.selectedIndex;
+</script>
+<small><input type="checkbox" class=ccb name="scr" OnClick="ch_scroll(); return true;" checked title="Означает, прокручивать ли вниз окно при получении новых сообщений.
+Очень полезно выключать когда требуется прочитать старые сообщения">Скроллинг</small>
+</TD>
+</FORM>
+</TR>
+<tr>
+<td colspan=5 align=left valign=top>
+<div id="addpanel">
+<input type=button value="XMM2RUS" onclick="XMM2RUS(this)" title="qwerty -> йцукен">
+<input type=button value="TRANS2RUS" onclick="TRANS2RUS()" title="privet -> привет">
+<input type=button value="Сменить топик" onclick="return ch_top()" title="Сменить топик комнаты">&nbsp;&nbsp;
+
+<script>
+//if(can_set_topic) 
+//document.write('<input type=button value="Сменить топик" onclick="return ch_top()" title="Сменить топик комнаты"  style="width: 125">&nbsp;');
+if(parent.level>=9){
+	document.write('<input type=button value="Дать голос (+v)" onclick="return ch_voice()" title="Дать/забрать пользователю возможность писать. (+v)"  style="width: 125">&nbsp;');
+	document.write('<small><input type=checkbox name=moderated onclick="return ch_mode();" class=c_b ~moderated~> Модерируемый (+m)</small>');
+}
+</script>
+
+<img src=/pics/smiles/icon_smile.gif id=s onclick="return on_s(':smile:')">
+<img src=/pics/smiles/icon_cry.gif id=s onclick="return on_s(':cry:')">
+<img src=/pics/smiles/icon_smile.gif id=ss onclick="return on_s(':smile:')">
+<img src=/pics/smiles/icon_wink.gif id=ss onclick="return on_s(':wink:')">
+<img src=/pics/smiles/icon_biggrin.gif id=ss onclick="return on_s(':-D')">
+<img src=/pics/smiles/icon_sad.gif id=ss onclick="return on_s(':sad:')">
+<img src=/pics/smiles/icon_surprised.gif id=ss onclick="return on_s(':eek:')">
+<img src=/pics/smiles/icon_eek.gif id=ss onclick="return on_s(':shock:')">
+<img src=/pics/smiles/icon_confused.gif id=ss onclick="return on_s(':-?')">
+<img src=/pics/smiles/icon_lol.gif id=ss onclick="return on_s(':lol:')">
+<img src=/pics/smiles/icon_mad.gif id=ss onclick="return on_s(':-x')">
+<img src=/pics/smiles/icon_cool.gif id=ss onclick="return on_s('8-)')">
+<img src=/pics/smiles/icon_razz.gif id=ss onclick="return on_s(':-P')">
+<img src=/pics/smiles/icon_redface.gif id=ss onclick="return on_s(':oops:')">
+<img src=/pics/smiles/icon_cry.gif id=ss onclick="return on_s(':cry:')">
+<img src=/pics/smiles/icon_evil.gif id=ss onclick="return on_s(':evil:')">
+<img src=/pics/smiles/icon_twisted.gif id=ss onclick="return on_s(':twisted:')">
+<img src=/pics/smiles/icon_exclaim.gif id=ss onclick="return on_s(':!:')">
+<img src=/pics/smiles/icon_neutral.gif id=ss onclick="return on_s(':-|')">
+&nbsp;&nbsp; <a href="/html/help/smiles.html" target=_blank style="font-size: 12pt">Все смайлики...</a>
+<script>
+var st=document.styleSheets[1].rules[1].style;
+if(parent.level<=1)	st.visibility='hidden';
+</script>
+
+</div>
+</td>
+</tr>
+</TABLE>
+<script>
+	if (parent.console_size!=65){
+		ch_panel();
+//		parent.messages.DS();
+	}
+</script>
+</BODY>
+</HTML>

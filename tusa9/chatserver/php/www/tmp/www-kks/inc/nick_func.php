@@ -1,0 +1,19 @@
+<?
+    function str_nick($s)
+    {
+	$pat= "ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿabcdefghijklmnopqrstuvwxyz";
+	$repl="AÁBÃÄEÆÇÈÉKËMHOÏPCTÓÔXÖ×ØÙÚÛÜÝÞßAÁBÃÄEÆÇÈÉKËMHOÏPCTÓÔXÖ×ØÙÚÛÜÝÞßABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	return strtr($s,$pat,$repl);
+    
+    }
+    
+    function check_nick($s)
+    {
+    	if(preg_match("/^[A-Z,a-z,à-ÿ,À-ß]+[A-Z,a-z,à-ÿ,À-ß,0-9]+$/",$s)){
+		return 1;
+	}else{
+		return 0;
+	}
+    }
+    
+?>

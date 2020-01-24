@@ -1,0 +1,83 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="PRAGMA" CONTENT="no-cache">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+<TITLE>Чат русских в Америке - Консоль админа -> Учетные записи</TITLE>
+</head>
+
+<LINK rel="stylesheet" type="text/css" href="/css/main.css">
+<script>
+<!--
+if(navigator.appName == 'Netscape') document.write('<LINK href="/css/ns.css" rel=stylesheet type=text/css>');
+var ow=0;
+var lvl=~level~;
+function l_info(id)
+{
+	if(lvl<9){
+		alert('У Вас нет прав, чтобы посмотреть инфу о логине.');
+		return false;
+	}
+	l='logininfo?id='+id;
+	if(!ow || ow.closed){
+		ow=open(l,'owusr','toolbar=0,status=0,resizable=1,scrollbars=1,width=550,height=500');
+		ow.focus();
+	}
+	else{
+		ow.focus();
+		ow.location=l;
+	}
+	return false;
+}
+function fupdate(n)
+{
+	document.f.cmd.value=n;
+	document.f.submit();
+}
+function chk_form()
+{
+	if(document.f.nick.value=="" && document.f.login.value==""){
+		alert('Введите ник или логин для поиска');
+		return false;
+	}
+	if(document.f.nick.value!="" && document.f.login.value!=""){
+		alert('Введите что то одно!');
+		return false;
+	}
+	return true;
+}
+function ch_info(id)
+{
+	w=window.open('?id='+id,'chinfo','toolbar=0,status=0,resizable=1,scrollbars=1,width=550,height=500');
+	w.focus();
+	return false;
+}
+//-->
+</script>
+<body>
+<big><big><center><b>Учетные записи</b></center></big></big><br>
+<form name="f" method="POST" onsubmit="return chk_form();">
+<input type=hidden name="cmd" value="">
+Чтобы изменить персональную инфу о выбранном пользователе ткните на "<img src="/pics/cc/info.gif" width=16 height=16>".<br>
+Информацию о выбранном логине можно посмотреть нажав на этот логин (если у вас есть право ессно).<p>
+<table cellspacing=1 border=0>
+<tr><td align=right>Поиск по нику:</td><td><input type=text name="nick" value="~nick~"></td><td rowspan=2 valign=middle><input type=submit value="Искать"></td></tr>
+<tr><td align=right>Поиск по логину:</td><td><input type=text name="login" value="~login~"></td></tr>
+</table>
+<br>
+
+<center><big>Найденные учетные записи (~cnt~)</big></center><p>
+<table cellspacing=1 cellpadding=1 class=border>
+<tr><td class=trdd>ID</td><td class=trdd>Логин</td><td class=trdd></td></tr>
+~users~
+</table>
+
+<p>
+<center>
+<input type=button value="Обновить" onclick="fupdate('');">
+<input type=button value="Закрыть" onclick="window.close();">
+</center>
+<p>
+<table border=0 width="100%">
+<tr align=center><td>~bb3~</td><td>~bb4~</td></tr>
+</table>
+</form>

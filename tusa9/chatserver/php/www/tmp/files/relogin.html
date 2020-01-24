@@ -1,0 +1,119 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="PRAGMA" CONTENT="no-cache">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+<TITLE>Чат "Тусовка" - Повторный вход</TITLE>
+</head>
+
+<LINK href="/css/main.css" rel=stylesheet type=text/css>
+<script language="javascript" src="/css/mmove.js"> </script> 
+<script>
+<!--
+function checkform()
+{
+	if(document.start.login.value=="")
+	{
+		alert("Вы забыли ввести свой логин...");
+		document.start.login.focus();
+		return false;
+	}
+	if(document.start.pass.value!='' && document.start.pass.value.length<3)
+	{
+		alert("Пароль должен быть не короче 3 символов...");
+		document.start.pass.focus();
+		return false;
+	}
+}
+//-->
+</script>
+<body>
+<TABLE border=0 width=100% cellspacing=0 cellpadding=0>
+<TR>
+<TD width=120><a href="/"><img border=0 src="/pics/logo.gif"></a></TD>
+<TD class=top_line width=5>&nbsp;</TD>
+<TD class=top_line width=100% align=center>~bannert~</TD>
+<TD class=top_line width=5>&nbsp;</TD>
+<TD class=top_line width=140 align=center>~banner120~</TD>
+</TR>
+<TR height=5><TD colspan=5></TD></TR>
+<TR valign=top>
+<TD>
+<table class=borderm border=0 width=120 valign=top cellspacing=0 cellpadding=0>
+<tr height=16><td class=blr align=center><b>Навигация:</b></td></tr>
+~menu~
+</table>
+</TD>
+<TD></TD>
+<TD>
+<table width=100% border=0 cellspacing=0 cellpadding=0>
+<tr><td class=border align=center><b>Ошибка входа</b></td></tr>
+<tr height=5><td></td></tr>
+<tr><td>
+<div align=justify valign=top>
+<center>Это может быть вызвано следующими причинами:</center>
+<UL>
+<LI>Вы закрыли окно с чатом.
+<LI>Вы из окна чата открыли другую страницу.
+<LI>У Вас произошёл разрыв связи.
+<LI>Вы очень долго не проявляли активности.
+<LI>Ваш браузер не поддерживает cookies.
+</UL>
+<div align=justify>
+Однако, ничего страшного не произошло. Вы сейчас находитесь в чате со статусом <img src="/pics/s/sp1000.gif" height=16 alt="Вылетел из чата">,
+но через некоторое время Вы удалитесь из списка присутствующих.<BR>
+Если Вы хотите вернуться в чат, то просто введите свой логин и пароль.
+</div>
+</td></tr>
+<tr height=10><td></td></tr>
+<tr bgcolor=#006030><td class=borderg align=center><b>Вход</b></td></tr>
+<tr><td>
+<form action="/login" method=POST name="start" onSubmit="return checkform();">
+<input type=hidden name="scr" value="">
+<script>
+<!--
+s=screen;
+document.start.scr.value=s.width+'x'+s.height+'x'+s.colorDepth;
+//-->
+</script>
+<TABLE border=0 width=100%>
+<TR>
+<TD align=right width=50%>
+<TABLE border=0 cellPadding=1 cellSpacing=0>
+<TR><TD align=right>Логин:&nbsp;</TD>
+<TD><input type="textfield" name="login" value="~login~" maxlength=16 size=16>
+</TD></TR>
+<TR><TD align="right">Пароль:&nbsp;</TD><TD><input type="password" name="pass" maxlength=16 size=16>
+</TD></TR>
+</TABLE>
+</TD>
+<TD width=35%>&nbsp; <input type="submit" value="Войти"></TD>
+<script language="JavaScript">
+<!--
+	document.start.login.focus();
+//-->
+</script>
+</table>
+</form>
+</td></tr>
+
+</table>
+
+</TD>
+<TD></TD>
+<TD>
+<table class=border width=140 valign=top cellspacing=0 cellpadding=0 ID="Table1">
+<form ID="Form1">
+<tr><td class=blr align=center>
+<b>Сейчас в чате:</b>
+</td></tr>
+<tr><td><iframe src="/users" class=ifu frameborder=0>~nusr~</iframe></td></tr>
+</table>
+</center></TD>
+</TR>
+</TABLE>
+<hr>
+<table cellspacing=0 cellpadding=0 border=0 width=100%>
+<tr align=center><td>~bb1~</td><td>~bb2~</td><td>~bb3~</td><td>~bb4~</td></tr>
+</table>
+</body>
+</html>

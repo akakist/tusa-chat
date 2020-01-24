@@ -1,0 +1,105 @@
+<HTML>
+<HEAD>
+<TITLE>Чат "Тусовка" - Консоль админа -> Учетные записи -> Изменение инфы</TITLE>
+<META HTTP-EQUIV="PRAGMA" CONTENT="no-cache">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+
+<LINK rel="stylesheet" type="text/css" href="/css/main.css">
+<script>
+
+function rm_ph(n)
+{
+	document.form1.rm_ph.value=n;
+	document.form1.submit();
+//	return true;
+}
+function checkform()
+{
+	if(document.form1.firstname.value=="")
+	{
+		alert("Вы забыли ввести имя...");
+		document.form1.firstname.focus();
+		return false;
+	}
+	if(document.form1.lastname.value=="")
+	{
+		alert("Вы забыли ввести фамилию...");
+		document.form1.lastname.focus();
+		return false;
+	}
+	if(document.form1.bd_day.value!="")
+	{
+		if(document.form1.bd_day.value>31 || document.form1.bd_day.value<1)
+		{
+			alert("Некорректная дата рождения!");
+			document.form1.bd_day.focus();
+			return false;
+		}
+	}
+	if(document.form1.pass.value!="")
+	{
+		if(document.form1.pass.value.length<3)
+		{
+			alert("Пароль должен быть не короче 3 символов...");
+			document.form1.pass.focus();
+			return false;
+		}
+		if(document.form1.pass2.value!=document.form1.pass.value)
+		{
+			alert("Ваш пароль не совпадает с подтверждением...");
+			document.form1.pass.focus();
+			return false;
+		}
+	}
+	return true;
+}
+</script>
+<script id=clientEventHandlersJS language=javascript>
+<!--
+
+function Text1_onblur() {
+
+}
+
+//-->
+</script>
+</HEAD>
+
+<BODY>
+
+<FORM method="post" name="form1" onSubmit="return checkform();" enctype="multipart/form-data">
+<input type=hidden name="rm_ph" value="-1">
+
+<center><font class=yelmsg>~error~</font></center>
+<FIELDSET>
+<LEGEND class=leg><big><b>Основные сведения:</b></big></LEGEND>
+
+<TABLE border=0 cellspacing=0 cellpadding=5 width="100%">
+<TR><TD align=right>Логин: </TD><td><b>~login~</b></td><td>Логин изменить нельзя.</td></TR>
+<TR valign=top>
+<TD align=right>Новый пароль:</TD>
+<TD><INPUT TYPE="password" MAXLENGTH=16 SIZE=20 NAME="pass" VALUE ~pass~></TD>
+<TD rowspan=3 valign=middle>Смена пароля. Если Вы не хотите менять пароль, то оставьте эти
+поля пустыми.
+</TD>
+</TR>
+<TR valign=top>
+<TD align=right>Подтвердите пароль:</TD>
+<TD><INPUT TYPE="password" MAXLENGTH=16 SIZE=20 NAME="pass2" VALUE ~pass~></TD>
+</TR>
+</TABLE>
+</FIELDSET>
+
+<br>
+
+
+
+
+
+<br><center>
+<input type=hidden name="DATA" value="YES">
+<input type=hidden name="DATA2" value="YES">
+<input type=submit value="Изменить" class=b_l>
+</center>
+</FORM>
+</BODY></HTML>

@@ -1,0 +1,188 @@
+<?
+	session_start();
+        import_request_variables("gp", "arg_");
+	include "inc/db_conn.php";
+    if(!isset($_SESSION['login']))
+     {
+          include 'inc/auth.php';
+          check_auth();
+          
+     }
+     if(isset($_SESSION['login']))
+     {
+     	$login=$_SESSION['login'];
+	$uid=$_SESSION['uid'];
+     }
+	if(isset($login))
+	{
+//		header('Location: /c2/')
+	}
+  ?>
+<html>
+<head>
+  <meta http-equiv="PRAGMA" content="no-cache">
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+
+  <title>Чат "Тусовка"</title>
+  <link rel="stylesheet" type="text/css" href="/css/main.css">
+  <script language="javascript" src="/css/mmove.js" type="text/javascript">
+</script>
+</head>
+
+<body>
+
+  <?
+//  	echo $login;
+    if(!isset($login))
+    {
+  ?>
+      <script type="text/javascript">
+        <!--
+//	    document.start.login.focus();
+      //-->
+      </script>
+  <?
+    }
+  ?>
+
+  <table border="0" width="100%" cellspacing="0" cellpadding="0">
+  <?
+    include 'diz/head_row.php';
+  ?>
+
+    <tr height="5">
+      <td colspan="5"></td>
+    </tr>
+
+    <tr valign="top">
+	<?
+	    include 'diz/left_col.php';
+    	?>
+
+      <td></td>
+
+      <td>
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td class="border" align="center"><b>Добро пожаловать в наш чат! :)</b></td>
+          </tr>
+
+          <tr height="5">
+            <td></td>
+          </tr>
+
+          <tr>
+            <td>
+              <div align="justify" valign="top">
+                <p style="line-height: 150%">Вы хотели непринужденного общения, и поэтому заглянули к нам? Мы с радостью приветствуем Вас в нашем чате :) Пройдите несложную <a href=
+                "http://tusovka.tomsk.ru/registration">регистрацию</a>, и чувствуйте себя как дома. Если Вы впервые у нас, рекомендуем заглянуть в раздел <a href="/help">Помощь</a>, там
+                мы постарались рассмотреть основные <span lang="ru">моменты</span>. Также все вопросы, пожелания и жалобы принимаются запиской на ник Support. Удачного общения :)</p>
+              </div>
+            </td>
+          </tr>
+
+          <tr height="10">
+            <td></td>
+          </tr>
+
+	    <?
+			if(!isset($login))
+                        {
+                            include 'inc/login_form.php';
+                        }
+                        else
+                        {
+			echo "<script>window.location='/url_login.php';</script><tr><td align=center><a href='/url_login.php'>Вход в чат</a></td></tr><p>";
+                        }
+                    ?>
+
+          <tr>
+            <td align="center" class="borderg"><b>Н<span lang="ru">овости</span></b></td>
+          </tr>
+
+          <tr>
+            <td>
+              <table border="0" cellpadding="1" cellspacing="0" width="100%">
+                <!--bnews-->
+
+                <tr valign="top">
+                  <td nowrap>
+                    <p style="line-height: 150%"><b>27-08-2008</b></p>
+                  </td>
+
+                  <td>
+                    <p style="line-height: 150%"><span lang="ru"> Обновлен и расширен раздел <a href="/help">Помощь</a>.</span> <font size="2">@Support</font></p>
+                  </td>
+                </tr>
+
+                <tr valign="top">
+                  <td nowrap>
+                    <p style="line-height: 150%"><b>09-05-2008</b></p>
+                  </td>
+
+                  <td>
+                    <div align="justify">
+                      <p style="line-height: 150%"><b> </b><span lang="ru">"<b>Арена</b>" - увлекательная игра, знакомьтесь с <a href="/help/arena.php">правилами</a> и играйте :)</span>
+                      <font size="2">@Support </font></p>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr valign="top">
+                  <td nowrap>
+                    <p style="line-height: 150%"><b>13-04-2008</b></p>
+                  </td>
+
+                  <td>
+                    <p style="line-height: 150%"><span lang="ru"> Добавлены новые уровни, подробности в настройках.</span> @<font style="font-size: 9pt">Support</font></p>
+                  </td>
+                </tr>
+
+                <tr valign="top">
+                  <td width="90">
+                    <p style="line-height: 150%"><b>03-02-2008</b></p>
+                  </td>
+
+                  <td align="right">
+                    <p align="left" style="line-height: 150%"> <span lang="ru">Внимание! Стартует конкурс "Мисс Тусовка", подробности <a href="http://tusovka.tomsk.ru/forum?t=15431">тут...</a></span>
+                    <font size="2">@</font><span lang="ru"><font size="2">Конкурс</font></span></p>
+                  </td>
+                </tr><!--enews-->
+
+                <tr valign="top">
+                  <td width="90"> </td>
+
+                  <td align="right"><a href="/news">Более старые новости</a></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+
+      <td></td>
+
+      <td>
+        <?
+            include 'inc/user_list.php';
+        ?>
+      </td><!-- up to 22 may-->
+    </tr>
+  </table>
+
+  <p align="left"> </p>
+  <hr>
+
+    <?
+    include 'diz/bottom_table.php';
+    ?>
+    <?
+/*
+	include 'inc/http_request.php';
+	$res=http_get("/?kallobong");
+	echo $res;
+	*/
+    ?>
+    
+</body>
+</html>

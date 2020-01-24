@@ -1,0 +1,204 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="PRAGMA" CONTENT="no-cache">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+<TITLE>Чат русских в Америке - Настройки - Чат</TITLE>
+</head>
+
+<LINK href="/css/main.css" rel=stylesheet type=text/css>
+<script>
+<!--
+if(navigator.appName == 'Netscape') document.write('<LINK href="/css/ns.css" rel=stylesheet type=text/css>');
+function checkform()
+{
+	return true;
+}
+
+function do_add()
+{
+	document.form1.new_s.value='yes';
+	document.form1.DATA.value='';
+	document.form1.submit();
+}
+
+var selwin=0;
+
+function do_select(z)
+{
+	url=unescape('/StPic?n='+z);
+	if(!selwin || selwin.closed)
+	{
+		selwin=open(url, 'SelPic', 'toolbar=0,status=0,resizable=0,scrollbars=0,width=600,height=300');
+	}
+	else
+	{
+		selwin.focus();
+		selwin.location=url;
+	}
+}
+
+function mOvr(src,tp)
+{
+	if(!tp) tp=0;
+	src.style.cursor='hand';
+	src.style.backgroundColor=document.styleSheets[0].rules[tp+1].style.backgroundColor;
+}
+function mOut(src,tp)
+{
+	if(!tp) tp=0;
+	src.style.cursor='default';
+	src.style.backgroundColor=document.styleSheets[0].rules[tp].style.backgroundColor;
+}
+function mClk(src) 
+{
+	if(event.srcElement.tagName=='TD') src.children.tags('A')[0].click();
+}
+function open_contacts()
+{
+	nwin=open('/settings_edit_contacts', 'EdtTct11', 'toolbar=0,status=0,resizable=1,scrollbars=1,width=400,height=600'); 
+	nwin.focus();
+	return false;
+}
+//-->
+</script>
+<body>
+<TABLE border=0 width=100% cellspacing=0 cellpadding=0>
+<TR>
+<TD width=120><a href="/"><img border=0 src="/pics/logo.gif"></a></TD>
+<TD class=top_line width=5>&nbsp;</TD>
+<TD class=top_line width=100% align=center>~bannert~</TD>
+<TD class=top_line width=5>&nbsp;</TD>
+</TR>
+<TR height=5><TD colspan=5></TD></TR>
+<TR valign=top>
+<TD>
+<table class=borderm border=0 width=120 valign=top cellspacing=0 cellpadding=0>
+<tr height=16><td class=blr align=center><b>Навигация:</b></td></tr>
+~menu~
+</table>
+</TD>
+<TD></TD>
+<TD>
+<table width=100% border=0 cellspacing=0 cellpadding=0>
+<tr><td class=border align=center><b>Настройки - чат</b></td></tr>
+<tr height=5><td></td></tr>
+<tr><td>
+<div align=justify valign=top>
+
+<FORM method="POST" name="form1" onSubmit="return checkform();">
+<input type=hidden name="DATA" value="YES">
+
+<FIELDSET>
+<LEGEND class=leg><big><b>Выберите категорию</b></big></LEGEND>
+<br>
+<input type=button value="Статусы" style="font-size: 10pt" onclick="location='settings_status'">
+<input class=bp type=button value="Чат" style="font-size: 10pt">
+<input type=button value="Цвета" style="font-size: 10pt" onclick="location='settings_color'">
+<input type=button value="Кредиты" style="font-size: 10pt" onclick="location='settings_credit'">
+<input type=button value="Привилегии" style="font-size: 10pt" onclick="location='settings_privs'">
+<br><br>
+</fieldset>
+<br>
+
+
+<FIELDSET>
+<LEGEND class=leg><big><b>Настройки чата</b></big></LEGEND>
+<TABLE width="100%" border=0 cellspacing=0 cellpadding=3>
+<TR valign=middle>
+<TD align="right" width=125>Сообщений:</TD>
+<TD><INPUT TYPE="TEXT" MAXLENGTH=20 SIZE=10 NAME="lpp" VALUE="~lpp~"></TD>
+<TD>
+Количество предыдущих сообщений которые будут показаны при входе в чат. Число от 1 до 100.
+</TD>
+</TR>
+<TR valign=middle>
+<TD align="right" colspan=2>
+Авто смена статуса <INPUT TYPE=checkbox name="autochange" ~ac~ class=c_b></TD>
+<TD>
+Если опция включена, то когда Вы не используете чат в течении 5 минут, то Ваш статус автоматически будет сменен на <img src="/pics/s/sp3.gif" alt="Отошел">.
+</TD>
+</TR>
+<TR valign=middle>
+<TD align="right" colspan=2>
+Участвовать в иерархии<INPUT TYPE=checkbox name="slevel" ~sl~ class=c_b></TD>
+<TD>
+Если галочка не стоит то Ваш уровень в чате никому не будет показываться, однако возможности данные уровнем у Вас останутся.
+</TD>
+</TR>
+
+<TR valign=middle>
+<TD align="right" colspan=2>
+Показывать кредиты<INPUT TYPE=checkbox name="showcredits" ~sc~ class=c_b></TD>
+<TD>
+Если галочка стоит то Ваш счет кредитов будет отображен в Вашей инфе.
+</TD>
+</TR>
+
+<TR valign=middle>
+<TD align="right" colspan=2>
+Показывать все ники<INPUT TYPE=checkbox name="snicks" ~sn~ class=c_b></TD>
+<TD>
+У Вас в инфе будут показаны все Ваши ники.
+</TD>
+</TR>
+<TR valign=middle>
+<TD align="right" colspan=2>
+Звук при "позвать"<INPUT TYPE=checkbox name="inv_sound" ~is~ class=c_b></TD>
+<TD>
+Если стоит галочка - то когда Вас "зовут", будет издаваться звуковой сигнал.
+</TD>
+</TR>
+<TR valign=middle>
+<TD align="right" colspan=2>
+Показывать все иконки<INPUT TYPE=checkbox name="full_buttons" ~fb~ class=c_b></TD>
+<TD>
+При стоящей галочке в списке пользователей чата будут отображаться все иконки, такие как
+"Игнор" и для админов "Выпнуть", при выключенной опции чат будет работать быстрее.
+</TD>
+</TR>
+</tr>
+</td>
+</TR>
+
+<tr><td colspan=3 align=left>Показывать на странице входа:</td></tr>
+<TR valign=middle><TD align="right" colspan=2>Полезные советы<input type=checkbox name="showhints" class=c_b ~sh~></TD><TD>На странице входа будут показываться случайные полезные советы</TD></TR>
+<TR valign=middle><TD align="right" colspan=2>Статистику<input type=checkbox name="showstat" class=c_b ~ss~></TD><TD>На странице входа будет показано окно с Вашей статистикой, такой как свободное место, время, проведенное в чате и пр.</TD></TR>
+
+<tr><td colspan=3 align=left> Контакт лист:</td></tr>
+<TR valign=middle><TD align="right" colspan=2>На входящих приватах<input type=checkbox name="in_contact" class=c_b ~in_contact~></TD><TD>
+	Пишущий вам приватно автоматически добавляется в Ваш контакт-лист</TD></TR>
+<TR valign=middle><TD align="right" colspan=2>На исходящих приватах<input type=checkbox name="out_contact" class=c_b ~out_contact~></TD><TD>Тот кому Вы пишете приватно автоматически добавляется в Ваш контакт-лист</TD></TR>
+<TR valign=middle><TD align="right" colspan=2>Режим контакт-листа<input type=checkbox name="contact_mode" class=c_b ~contact_mode~></TD>
+		<TD>Режим контакт листа. В списке юзеров отображаются только те, кто находится в Вашем контакт-листе.<br>
+			<a href=# onclick="return open_contacts();">
+			Изменить контакт-лист
+			</a>
+		</TD></TR>
+
+</TABLE>
+</FIELDSET>
+<br>
+
+</table>
+<center>
+<input type=submit value="Изменить" class=b_l>
+</center>
+
+</form>
+
+
+</div>
+</td></tr>
+</table>
+
+</TD>
+<TD></TD>
+</TR>
+</TABLE>
+
+<hr>
+<table cellspacing=0 cellpadding=0 border=0 width=100%>
+<tr align=center><td>~bb1~</td><td>~bb2~</td><td>~bb3~</td><td>~bb4~</td></tr>
+</table>
+</body>
+</html>

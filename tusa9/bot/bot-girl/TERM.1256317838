@@ -1,0 +1,4 @@
+Terminating on SIGNAL 2
+---THREAD REPORT 136202320 (0x81E4850)
+	./c_conn.cpp: 240, , dt:02
+	./misc.cpp: 172, , dt:02

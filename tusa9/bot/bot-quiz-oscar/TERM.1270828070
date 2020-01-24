@@ -1,0 +1,3 @@
+Terminating on SIGNAL 11
+---THREAD REPORT 136206416 (0x81E5850)
+	./mysql_extens.cpp: 127, , dt:00

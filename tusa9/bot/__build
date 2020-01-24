@@ -1,0 +1,9 @@
+cd bot-shared		; make $1; cd ..
+cd bot-girl		; make $1; cd ..
+cd bot-mafia-new	; make $1; cd ..
+#cd bot-mafia-new1	; make $1; cd ..
+cd bot-mat		; make $1; cd ..
+cd bot-quiz-oscar	; make $1; cd ..
+cd bot-roulette		; make $1; cd ..
+cd bot-zags		; make $1; cd ..
+

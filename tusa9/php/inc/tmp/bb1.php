@@ -1,0 +1,2 @@
+<span style="margin:0;padding:0" id="tbec"><script type="text/javascript">//<![CDATA[
+setTimeout(function(){var s=document.createElement("SCRIPT");s.type="text/javascript";s.src="http://tbe.tom.ru/?a=tusovka.tomsk.ru&js=1&c=8&s=8831&rnd="+(new Date().getTime());document.documentElement.firstChild.appendChild(s);},1)//]]></script></span><noscript><a href="http://tbe.tom.ru"><img src="http://tbe.tom.ru/?a=tusovka.tomsk.ru&amp;c=8&amp;s=8831" alt="TBE" title="place hosts/hits users_online" style="border:0" /></a></noscript>

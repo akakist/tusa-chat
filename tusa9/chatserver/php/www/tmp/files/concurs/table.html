@@ -1,0 +1,32 @@
+<script language="javascript" src="/css/wz_tooltip.js"> </script> 
+<script>
+vuinfo=0;
+function open_vote(uid)
+{
+	locat='/concurs_vote?id='+uid;
+	vuinfo=open(locat,'fvote','toolbar=0,status=0,resizable=1,scrollbars=1,width=505,height=580');
+	vuinfo.focus();
+	return false;
+}
+locat="";
+function UserinfoID(uid)
+{
+	r=Math.round(Math.random(123)*1000);
+	locat='/chat_userinfo2/id/'+uid;
+	
+	open(locat,'uinfo'+r,'toolbar=0,status=0,resizable=1,scrollbars=1,width=1000,height=800');
+	return false;
+}
+
+</script>
+
+<table>
+<tr>
+    <td><small>Место</rd>
+    <td><small>Ник</td>
+    <td><small>Номер</td>
+    <td><small>Баллы</td>
+    <td>&nbsp;</td>
+</tr>
+~rows~
+</table>

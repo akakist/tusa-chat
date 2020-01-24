@@ -1,0 +1,23 @@
+lock
+name pptpd
+proxyarp
+bsdcomp 0
+
+mtu 1490
+mru 1490
+ipcp-accept-local
+ipcp-accept-remote
+#lcp-echo-failure 3
+#lcp-echo-interval 5
+deflate 0
+auth
++chap
+-pap
+#+chapms
+#+chapms-v2
+nobsdcomp
+nodeflate
+nodefaultroute
+#+mppe-40
+#+mppe-128
+#+mppe-stateless

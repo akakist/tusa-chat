@@ -31,7 +31,7 @@ _mutex::_mutex()
 #else
     pthread_mutexattr_t mt;
     pthread_mutexattr_init(&mt);
-#ifndef __FreeBSD__
+#if !defined __FreeBSD__ && !defined __MACH__
     pthread_mutexattr_settype(&mt, PTHREAD_MUTEX_RECURSIVE_NP);
 #else
     pthread_mutexattr_settype(&mt, PTHREAD_MUTEX_RECURSIVE);

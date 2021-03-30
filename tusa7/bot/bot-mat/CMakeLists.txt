@@ -9,6 +9,6 @@ mat.h
 
 )
 
-target_link_libraries(mat.exe bot-shared mysqlclient)
+target_link_libraries(mat.exe bot-shared mysqlclient pthread)
 install(TARGETS mat.exe DESTINATION ${BIN_TARGET_DIR})
 

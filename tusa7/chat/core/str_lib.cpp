@@ -225,7 +225,7 @@ string rjoin(const char *pattern, const deque < string > &st)
     }
     return join(pattern,arr);
 }
-const char l_table[] = {
+const unsigned char l_table[] = {
     /*
     	lowercase table
     */
@@ -253,7 +253,7 @@ const char l_table[] = {
     0xfe, 0xff
 };
 
-const char u_table[] = {
+const unsigned char u_table[] = {
     /*
     	uppercase table
     */

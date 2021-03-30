@@ -20,6 +20,6 @@ user.h
 
 )
 
-target_link_libraries(mafia.exe bot-shared mysqlclient)
+target_link_libraries(mafia.exe bot-shared mysqlclient pthread)
 install(TARGETS mafia.exe DESTINATION ${BIN_TARGET_DIR})
 

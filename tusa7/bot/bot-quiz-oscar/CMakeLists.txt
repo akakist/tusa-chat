@@ -11,6 +11,6 @@ stdafx.h
 
 )
 
-target_link_libraries(quiz.exe bot-shared mysqlclient)
+target_link_libraries(quiz.exe bot-shared mysqlclient pthread)
 install(TARGETS quiz.exe DESTINATION ${BIN_TARGET_DIR})
 

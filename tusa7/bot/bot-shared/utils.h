@@ -13,8 +13,8 @@ string strlower(const string &s);
 string str_nick(const string &n);
 
 
-extern char l_table[];
-extern char u_table[];
+extern unsigned char l_table[];
+extern unsigned char u_table[];
 extern unsigned char nicks_char[256];
 
 bool strex(const string &str,const string &patt);

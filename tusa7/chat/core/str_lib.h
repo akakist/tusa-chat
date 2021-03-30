@@ -79,8 +79,8 @@ std::string from_mac_dec(const std::string &s);
 void mk_path(const std::string &path);
 int atoi(const std::string&);
 
-extern const char l_table[];
-extern const char u_table[];
+extern const unsigned char l_table[];
+extern const unsigned char u_table[];
 extern const char* cypher_names[];
 extern int cypher_names_size;
 void hex_dump(char *data, long size);

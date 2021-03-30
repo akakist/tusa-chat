@@ -11,6 +11,6 @@ stdafx.h
 
 )
 
-target_link_libraries(mandalina.exe bot-shared mysqlclient)
+target_link_libraries(mandalina.exe bot-shared mysqlclient pthread)
 install(TARGETS mandalina.exe DESTINATION ${BIN_TARGET_DIR})
 

@@ -164,7 +164,7 @@ htmlout_entry::~htmlout_entry()
     else
     {
         logErr2("unknown htmlout_entry type (%d) %s %d",type,__FILE__,__LINE__);
-        throw cError("unknown htmlout_entry type");
+//        throw cError("unknown htmlout_entry type");
     }
 
 }

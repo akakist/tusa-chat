@@ -125,7 +125,7 @@ public:
             if (count_val == 0)
                 delete ___ptr;
             if (count_val < 0)
-                throw cError("refcount underflow");
+                printf("refcount underflow\n");
         }
     }
     int operator==(const PTR_getter & bcg)const
@@ -206,7 +206,7 @@ public:
             if (count_val == 0)
                 delete ___ptr;
             if (count_val < 0)
-                throw cError("refcount underflow");
+                printf("refcount underflow\n");
         }
     }
     int operator==(const PTR_getter_nm & bcg)const
